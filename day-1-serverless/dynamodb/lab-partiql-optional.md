@@ -18,6 +18,6 @@ Example queries:
 
 `select song, album FROM "Music" WHERE Artist='Nightwish'`
 
-Note: the table names have to be in double quotes and attributes in single quotes for the queries to work.&#x20;
+Note: the table names and attribute names have to be in double quotes and attribute values in single quotes for the queries to work.&#x20;
 
 ![](<../../.gitbook/assets/image (272).png>)
