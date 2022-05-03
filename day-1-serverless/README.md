@@ -7,9 +7,9 @@ description: 'The holy trinity of serverless: API GW, Lambda and DynamoDB.'
 ## Schedule
 
 * 09:00-09:30 Set-up
-* 09:30-11:30 Lambda
-* 11:30-12:30 Lunch
-* 12:30-16:00 DynamoDB, API Gateway
+* 09:30-11:00 Lambda
+* 11:00-12:00 Lunch
+* 12:00-16:00 DynamoDB, API Gateway
 
 ### Setting things up&#x20;
 
