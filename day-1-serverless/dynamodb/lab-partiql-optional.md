@@ -14,9 +14,9 @@ Then go back to the console. The DynamoDB service has a PartiQL editor where you
 
 Example queries:
 
-`select ID FROM "Dogs" WHERE breed='husky'`
+`select ID FROM "Dogs" WHERE "breed"='husky'`
 
-`select song, album FROM "Music" WHERE Artist='Nightwish'`
+`select song, album FROM "Music" WHERE "Artist"='Nightwish'`
 
 Note: the table names and attribute names have to be in double quotes and attribute values in single quotes for the queries to work.&#x20;
 
