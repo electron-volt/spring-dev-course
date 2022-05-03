@@ -14,7 +14,7 @@ aws dynamodb batch-write-item \
             "PutRequest": {
                 "Item": {
                     "ID": {"N": "123"},
-                    "Breed": {"S": "husky"}
+                    "breed": {"S": "husky"}
                 }
             }
         },
@@ -22,7 +22,7 @@ aws dynamodb batch-write-item \
             "PutRequest": {
                 "Item": {
                     "ID": {"N": "234"},
-                    "Breed": {"S": "belgian shepherd"}
+                    "breed": {"S": "belgian shepherd"}
                 }
             }
         },
@@ -30,7 +30,7 @@ aws dynamodb batch-write-item \
             "PutRequest": {
                 "Item": {
                     "ID": {"N": "345"},
-                    "Breed": {"S": "husky"}
+                    "breed": {"S": "husky"}
                 }
             }
         },
@@ -38,7 +38,7 @@ aws dynamodb batch-write-item \
             "PutRequest": {
                 "Item": {
                     "ID": {"N": "456"},
-                    "Breed": {"S": "husky"}
+                    "breed": {"S": "husky"}
                 }
             }
         },
@@ -46,7 +46,7 @@ aws dynamodb batch-write-item \
             "PutRequest": {
                 "Item": {
                     "ID": {"N": "567"},
-                    "Breed": {"S": "husky"}
+                    "breed": {"S": "husky"}
                 }
             }
         },
@@ -54,7 +54,7 @@ aws dynamodb batch-write-item \
             "PutRequest": {
                 "Item": {
                     "ID": {"N": "678"},
-                    "Breed": {"S": "labrador"}
+                    "breed": {"S": "labrador"}
                 }
             }
         },
@@ -62,7 +62,7 @@ aws dynamodb batch-write-item \
             "PutRequest": {
                 "Item": {
                     "ID": {"N": "980"},
-                    "Breed": {"S": "labrador"}
+                    "breed": {"S": "labrador"}
                 }
             }
         }
