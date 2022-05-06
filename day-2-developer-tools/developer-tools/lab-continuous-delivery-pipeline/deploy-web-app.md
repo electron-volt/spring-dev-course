@@ -28,4 +28,4 @@ Click on the URL of your environment to make sure it's running.&#x20;
 
 ## Where we're at
 
-![](<../../../.gitbook/assets/image (161).png>)
+![](<../../../.gitbook/assets/image (161) (1).png>)

@@ -37,21 +37,29 @@ Follow these instructions:
 
 Head over to **CodeCommit**.
 
+![landing page](<../../../.gitbook/assets/image (376).png>)
+
 Click **create repository.**
 
-Give the repo a name and click **create.**
+Name your repo **yourname-repo**
+
+Click **create.**
+
+![](<../../../.gitbook/assets/image (204).png>)
 
 That's it!&#x20;
 
 ## Clone the repository
 
-### Opion 1: If you have the Git credentials&#x20;
+### Opion 1: If you have the Git credentials (personal account)&#x20;
 
-From the console, get the HTTPS URL that you need to clone your repository;
+From the CodeCommit console, you will get the HTTPS URL that you need to clone your repository;
 
-![pick HTTPS](<../../../.gitbook/assets/image (359).png>)
+![](<../../../.gitbook/assets/image (457).png>)
 
-Then in a terminal, run the following command and ignore the warning. Username and password are the IAM credentials we created:
+Then in a terminal, run the following command and ignore the warning.&#x20;
+
+For **Username** and **password** use the IAM credentials we created earlier:
 
 ```
 git clone https://git-codecommit.region.amazonaws.com/v1/repos/name
@@ -61,91 +69,149 @@ Password for ...: ****
 warning: You appear to have cloned an empty repository.
 ```
 
-Optional - set main as the default branch:
+**Optional** - set main as the default branch:
 
 ```
 git config --global init.defaultBranch main
 ```
 
-Otherwise the default branch will be called master.&#x20;
+Otherwise the default branch will be called master. If you are okay with that, then skip this step.&#x20;
 
-## Option 2: GRC
+### Option 2: GRC
 
-go to CloudShell
+Go to **CloudShell**
 
-no need to configure credentials. No access keys, no profile, no nothing.
+No need to configure credentials. No access keys, no profile, no nothing. Just wait until you see a prompt.
 
-run these commands
+In the shell, run these commands:
 
 ```
-curl -O https://bootstrap.pypa.io/get-pip.py
-python3 get-pip.py --user
+sudo yum install pip -y
 pip install git-remote-codecommit
 ```
 
-then if your codecommit repository is already created, go to codecommit, clone url, pick HTTPS (GRC)
+You should eventually see this text:
 
-you will get a url like codecommit::eu-west-1://test-repo
+"Successfully installed botocore-1.20.112 git-remote-codecommit-1.16 ...."
 
-here my repo name is "test-repo"
+Navigate back to **CodeCommit.**&#x20;
 
-![GRC URL ](<../../../.gitbook/assets/image (170).png>)
+Look for the tab HTTPS (GRC):
 
-For my repo, which is called test-repo the command is&#x20;
+![GRC tab](<../../../.gitbook/assets/image (280).png>)
 
-```
-git clone codecommit::eu-west-1://test-repo
-```
+Scroll down until you see Step 3 (please ignore steps 1 and 2):
+
+![clone URL](<../../../.gitbook/assets/image (276).png>)
+
+**Copy** this string to your clipboard.&#x20;
+
+Navigate back to CloudShell and paste the text into the terminal:
+
+![your prompt may look different ](<../../../.gitbook/assets/image (248).png>)
 
 ## First commit
 
-Run git config to set up your username and email:
+In your terminal where you cloned the repo, go into the **yourname-repo** directory.&#x20;
+
+Run **git config** to set up your username and email:
 
 ```
 git config --local user.name "your-user-name" 
 git config --local user.email your-email-address
 ```
 
-Change into the directory where your repository was cloned. Create two text files on your machine, `foo.txt` and `bar.txt.`&#x20;
+Create two text files on your machine, `foo.txt` and `bar.txt.`&#x20;
 
-Run git add&#x20;
+The content of these files does not matter, it can be lorem ipsum or asdf.
+
+Run **git add**&#x20;
 
 ```
 git add foo.txt bar.txt
 ```
 
-Optional: run the useful and informative
+Optional: run the useful and informative **git status:**
 
 ```
 git status
 ```
 
-Then git commit:
+Then **git commit** with a message:
 
 ```
 git commit -m "Added two text files."
 ```
 
+![example](<../../../.gitbook/assets/image (108).png>)
+
 ## Push&#x20;
 
-We have made a commit, but we have yet to push the changes to the repo. If your default branch is main, use this:
+We have made a commit, but we have yet to push the changes to the repo.&#x20;
+
+#### If you did the optional step of changing your default branch from master to main
+
+Use this:
 
 ```
 git push -u origin main
 ```
 
-Else, just git push.&#x20;
+#### If you did not change the default branch to main
 
-Your best friend, git status:
+Use&#x20;
+
+```
+git push
+```
+
+Then run git status again:
 
 ```
 git status
 ```
 
-![good luck finding a good git meme. ](<../../../.gitbook/assets/image (324).png>)
+![it is hard to find a good git meme. ](<../../../.gitbook/assets/image (324).png>)
 
-## Clean up
+## Let's take a look&#x20;
 
-AWS CodeCommit is very generous with its free tier offering, so this repo won't really cost us anything. We won't be needing it though, so go ahead and delete it.
+Let's navigate back to the console and CodeCommit.&#x20;
 
-That's it for CodeCommit, although it will resurface in our CodeBuild lab.
+![there they are! ](<../../../.gitbook/assets/image (464).png>)
+
+Under commits, you see the commit with the message you used:
+
+![](<../../../.gitbook/assets/image (161).png>)
+
+## More testing
+
+If you are already familiar with Git, then feel free to skip this step.&#x20;
+
+Back in the terminal, try making some changes to your text files. For example:
+
+Delete bar.txt.&#x20;
+
+Change the contents of foo.txt.
+
+Make another file like cat.jpeg.&#x20;
+
+Then use&#x20;
+
+* git add to stage the changes&#x20;
+* git commit to commit them&#x20;
+* git push to push the changes to your repository
+* git status to check what status your repo is in.&#x20;
+
+Extra: make changes to the repo in the console.&#x20;
+
+Go to Code, select a file, then click Edit.
+
+Make changes, add an author and an email and then save changes.&#x20;
+
+Then use **git pull** in the terminal to fetch the changed files.&#x20;
+
+## End result
+
+We have seen how easy it is to use Git and CodeCommit. We have learned how to use GRC.&#x20;
+
+That's it for CodeCommit, although it will resurface later in our CodeBuild lab.

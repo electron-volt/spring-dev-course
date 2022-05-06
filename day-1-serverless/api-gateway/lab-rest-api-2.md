@@ -181,7 +181,7 @@ Next we need to define the method request payload.&#x20;
 * Click **Integration request**
 * At the bottom you see **Mapping templates**, expand it&#x20;
 
-![mapping templates](<../../.gitbook/assets/image (464).png>)
+![mapping templates](<../../.gitbook/assets/image (464) (1).png>)
 
 * Click **add mapping template**
 * Content type is **application/json**

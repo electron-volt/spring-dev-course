@@ -173,7 +173,7 @@ This updates packages on the system**.**
 
 By changing the text in /var/www/html/index.html, you can change what your web server is serving up to the world.&#x20;
 
-![New text](<../../.gitbook/assets/image (248).png>)
+![New text](<../../.gitbook/assets/image (248) (1).png>)
 
 Maybe do a little \<marquee> to make it feel like it's 1998 again.&#x20;
 

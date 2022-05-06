@@ -31,7 +31,7 @@ Click on the name of the object, then click the Versions tab.
 
 &#x20;
 
-![Versions of version1.txt](<../../.gitbook/assets/image (457).png>)
+![Versions of version1.txt](<../../.gitbook/assets/image (457) (1).png>)
 
 Select both and click Open. They open in different tabs. First one:
 

@@ -12,7 +12,7 @@ In the Lambda console, in the Versions tab, click on the version 2:
 
 You should land on a tab called Configuration. Under Aliases, click **+ Create alias.**&#x20;
 
-![Create alias](<../../.gitbook/assets/image (108).png>)
+![Create alias](<../../.gitbook/assets/image (108) (1).png>)
 
 A dialogue appears.&#x20;
 

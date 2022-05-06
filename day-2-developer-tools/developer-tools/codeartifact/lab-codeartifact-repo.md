@@ -50,7 +50,7 @@ Click on **View connection instructions**.
 
 This dialogue opens up. Choose pip from the dropdown to reveal the CLI command.&#x20;
 
-![](<../../../.gitbook/assets/image (376).png>)
+![](<../../../.gitbook/assets/image (376) (1).png>)
 
 Copy the CLI command and run it.&#x20;
 

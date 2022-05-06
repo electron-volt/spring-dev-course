@@ -61,7 +61,7 @@ The hooks section for ECS deployments has these hooks. The deployment type will 
 * `BeforeAllowTraffic`&#x20;
 * `AfterAllowTraffic`&#x20;
 
-![](<../../.gitbook/assets/image (204).png>)
+![](<../../.gitbook/assets/image (204) (1).png>)
 
 ### AppSpec for Lambda
 

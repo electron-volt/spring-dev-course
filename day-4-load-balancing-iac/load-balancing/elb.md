@@ -29,7 +29,7 @@ A _listener_ checks for connection requests from clients, using the protocol and
 
 Each _target group_ routes requests to one or more registered targets. Targets can be for example EC2 instances.
 
-![Load balancing in AWS ](<../../.gitbook/assets/image (276).png>)
+![Load balancing in AWS ](<../../.gitbook/assets/image (276) (1).png>)
 
 ## NLB and ALB
 

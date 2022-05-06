@@ -75,7 +75,7 @@ You should see a white background and whatever text you used to modify the line 
 
 ## Where we're at
 
-![architecture now](<../../../.gitbook/assets/image (280).png>)
+![architecture now](<../../../.gitbook/assets/image (280) (1).png>)
 
 We have created a continuous delivery pipeline on AWS CodePipeline with three stages: source, build, and deploy.&#x20;
 
