@@ -95,11 +95,13 @@ Open the file **hello-cloud9.js**
 
 There is a button to Run your program. **Click it.**&#x20;
 
+Follow the instructions in the terminal.&#x20;
+
 ### Debug
 
 If you click the margin next to line 10, a red dot appears - a breakpoint.
 
-Also notice the little i that says we are missing a semicolon on line 10?&#x20;
+Also notice the little i that says we are missing a semicolon on line 10? Useful hint.&#x20;
 
 ![](<../../../.gitbook/assets/image (261).png>)
 
@@ -133,6 +135,8 @@ To stop the debugger, click the red square in the terminal window.
 
 ![Red Square](<../../../.gitbook/assets/image (21).png>)
 
+To get rid of the debugger, go back to the right side panel, click on the bug and remove "input" from Watch expressions.&#x20;
+
 ## Clean up&#x20;
 
 At the top left hand corner, click the cloud icon and choose Go to your dashboard.
@@ -140,3 +144,5 @@ At the top left hand corner, click the cloud icon and choose Go to your dashboar
 ![](<../../../.gitbook/assets/image (271).png>)
 
 Then click the Delete button. This terminates the Cloud9 environment.&#x20;
+
+![Delete the environment.](<../../../.gitbook/assets/image (460).png>)

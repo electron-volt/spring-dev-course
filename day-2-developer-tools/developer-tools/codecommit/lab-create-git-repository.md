@@ -15,7 +15,7 @@ Windows users: I recommend Git Bash for this lab.&#x20;
 
 ### Option 1: Set up HTTPS Git credentials for CodeCommit
 
-We will create credentials for our admin user. Just make sure that you are signed in as the user that you intend to create credentials for.&#x20;
+If you are using a stand-alone personal AWS accout where you have full administrator access, you can use HTTPS Credentials. Just make sure that you are signed in as the user that you intend to create credentials for.&#x20;
 
 Go to **IAM > Users** and select your user.&#x20;
 
@@ -27,7 +27,7 @@ Be sure to download your credentials or store them in a password manager. You ca
 
 ### **Option 2: Git-remote-commit**
 
-If for some reason you can't access your IAM user permissions, then you can use git-remote-commit. It works well when used inside **AWS CloudShell**.&#x20;
+If for some reason you can't access your IAM user permissions - for example your AWS account is part of an AWS organization and you do not have direct access to your IAM user -  then you can use git-remote-commit. It works well when used inside **AWS CloudShell**.&#x20;
 
 Follow these instructions:
 

@@ -384,7 +384,7 @@ In the EC2 instances section we have this:&#x20;
 
 In the target groups we have this:
 
-![ALB health checks ](<../../.gitbook/assets/image (460).png>)
+![ALB health checks ](<../../.gitbook/assets/image (460) (1).png>)
 
 ![](<../../.gitbook/assets/image (395).png>)
 
