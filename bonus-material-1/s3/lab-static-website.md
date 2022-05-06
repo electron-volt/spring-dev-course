@@ -7,11 +7,13 @@ S3 can also be used to serve static resources over the internet. Let's make a si
 First we want to create a new bucket that will be open to the public.&#x20;
 
 1. Create bucket
-2. Give it a unique name
+2. Give it a unique name like **Yourname-ddmmyyyy**
 3. **Uncheck** "Block all public access"
 4. Leave all "Block..."  checkboxes unchecked
 5. Check the box next to "I acknowledge that the current settings might result in this bucket and the objects within becoming public."
 6. Create bucket.
+
+![](<../../.gitbook/assets/image (395).png>)
 
 ## Static website hosting
 
@@ -25,22 +27,35 @@ On the way down you will see strange things like Requester pays, Transfer accele
 
 ### Settings&#x20;
 
-We want to Enable static website hosting.&#x20;
+We want to **Enable static website hosting.**&#x20;
 
-Hosting type: host a static website
+Hosting type: **host a static website**
 
-Index document: index.html
+Index document: **index.html**
 
-Error document: error.html
+Error document: **error.html**
 
-Leave redirection rules blank and click Save changes.&#x20;
+Leave redirection rules blank and click **Save changes.**&#x20;
+
+![](<../../.gitbook/assets/image (445).png>)
 
 ## Upload the html
 
-You are free to make your own HTML files or use mine. Upload both documents to the bucket.&#x20;
+You will need two HTML files in your bucket:
+
+**error.html**
+
+**index.html**
+
+The content of the files can be anything.&#x20;
+
+You are free to make your own HTML files or use the files below.&#x20;
+
+Upload both documents to the bucket.&#x20;
 
 {% code title="index.html" %}
 ```html
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,10 +71,15 @@ You are free to make your own HTML files or use mine. Upload both documents to t
 <h2>Button</h2>
 <p>Whatever you do - DO NOT PUSH THIS BUTTON</p>
 
-<button>don't do it</button>
+<button onclick="location.href='https://yourname-0605.s3.eu-central-1.amazonaws.com/error.html'" type="button">
+    Don't do it</button>
 
 </body>
 </html>
+
+
+
+
 ```
 {% endcode %}
 
@@ -91,9 +111,13 @@ You'd think that it's, right? But if you try to view your website, you will get 
 
 ![](<../../.gitbook/assets/image (254).png>)
 
-Go back to your website bucket and go to the Permissions tab. There you will find Bucket policy. Click edit.&#x20;
+Go back to your website bucket and go to the **Permissions** tab. There you will find Bucket policy. Click **edit**.&#x20;
 
-Change line 12 to contain the ARN of your bucket (you will find the ARN above the Policy text area). Then paste the following in:
+Paste in the following policy,
+
+Change line 12 to contain the ARN of your bucket (you will find the ARN in the console above the Policy text area).
+
+Make sure to include the / and \* at the end of line 12!
 
 ```json
 {
@@ -114,7 +138,7 @@ Change line 12 to contain the ARN of your bucket (you will find the ARN above th
 }
 ```
 
-Then Save changes.&#x20;
+Then **Save changes.**&#x20;
 
 ## View your website
 
@@ -132,10 +156,3 @@ You begin to appreciate that AWS is not. going. to. let. you. expose your bucket
 
 ![](<../../.gitbook/assets/image (347).png>)
 
-### Sidenote: AWS Amplify
-
-Another option for hosting static content:
-
-AWS Amplify Console makes it really easy to deploy static websites following a continuous integration and delivery model. It has capabilities for "building" more complicated Javascript framework based applications and has features such as feature branch deployments, easy custom domain setup, instant deployments, and password protection.
-
-Amplify does not feature in the current version of the Developer associate certification exam, but something tells me that it will in the future. It will show up in our final lab of day 5.

@@ -386,7 +386,7 @@ In the target groups we have this:
 
 ![ALB health checks ](<../../.gitbook/assets/image (460) (1).png>)
 
-![](<../../.gitbook/assets/image (395).png>)
+![](<../../.gitbook/assets/image (395) (1).png>)
 
 We are going to discuss health checks in detail later.
 

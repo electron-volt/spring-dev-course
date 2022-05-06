@@ -349,6 +349,6 @@ service: **hello-server.**&#x20;
 
 Leave other fields as blank.&#x20;
 
-![deploy stage](<../../.gitbook/assets/image (445).png>)
+![deploy stage](<../../.gitbook/assets/image (445) (1).png>)
 
 Click next - review - create. Pipeline has been created!
