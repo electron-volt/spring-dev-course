@@ -22,7 +22,7 @@ Click Next to get to password requirements. You can proceed with the Cognito def
 
 We do not want MFA for this lab.&#x20;
 
-![](<../../.gitbook/assets/image (155).png>)
+![](<../../.gitbook/assets/image (155) (1).png>)
 
 ![](<../../.gitbook/assets/image (461).png>)
 

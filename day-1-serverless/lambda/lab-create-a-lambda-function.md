@@ -106,7 +106,7 @@ You will see many graphs detailing the number of invocations, duration and many 
 
 We will go into much more detail about monitoring and AWS CloudWatch later in the course, but for now this is all you need to know about monitoring your function.&#x20;
 
-![](<../../.gitbook/assets/image (422).png>)
+![](<../../.gitbook/assets/image (422) (1).png>)
 
 ### End result
 

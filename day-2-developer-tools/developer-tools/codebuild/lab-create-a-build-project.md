@@ -29,12 +29,6 @@ For the names, call them **YOURNAME-CB-EXAMPLE** and have one of them end with "
 
 If for some reason the name happened to be taken, then try adding some numbers in the middle, like john-cb-example-123-input.&#x20;
 
-### Note: Buildspec.yml and S3
-
-For build input stored in S3 buckets only, you must create a ZIP file that contains the source code and, by convention, a build spec file named `buildspec.yml` at the root (top level) or include the build spec declaration as part of the build project definition.
-
-In our case the buildspec.yml is INSIDE the ZIP file, so from the point of view of CodeBuild it is not at the top level. Not to worry, we can work around that. I think.&#x20;
-
 ### Get source code
 
 Go to [https://github.com/electron-volt/codebuild-example](https://github.com/electron-volt/codebuild-example)
@@ -43,9 +37,9 @@ Under Code, choose Download ZIP.
 
 ![Git repo](<../../../.gitbook/assets/image (264).png>)
 
-Unzip it.
+**Unzip** it.
 
-You should have a folder with the following contents.&#x20;
+You should have a folder called **codebuild-example-main** with the following contents.&#x20;
 
 ![ZIP contents](<../../../.gitbook/assets/image (463) (1).png>)
 
@@ -81,21 +75,21 @@ artifacts:
 
 In S3, navigate to the bucket that ends with -**input**.&#x20;
 
-Choose Upload > Add folder
+Choose **Upload > Add folder**
 
-Add the entire folder to S3.&#x20;
+Add the entire **codebuild-example-main** folder to S3.&#x20;
 
 You should have the following structure:
 
-![Top level ](<../../../.gitbook/assets/image (52).png>)
+![Top level has one folder](<../../../.gitbook/assets/image (52).png>)
 
 ![files in a folder](<../../../.gitbook/assets/image (310).png>)
 
 ## Create the build
 
-Let's navigate to CodeBuild.&#x20;
+Let's navigate to **CodeBuild.**&#x20;
 
-Your landing page may look different, but look for an orange "Create project" or "Create Build project" button.
+Your landing page may look different, but look for an orange "**Create project**" or "**Create Build project"** button.
 
 ![](<../../../.gitbook/assets/image (98).png>)
 
@@ -105,7 +99,11 @@ Name the project **YOURNAME-cb-project.**
 
 Under Source, use the following settings (choose your own input bucket in the Bucket field).
 
-For S3 object key, use codebuild-example-main/
+For S3 object key, use
+
+```
+codebuild-example-main/
+```
 
 ![](<../../../.gitbook/assets/image (137).png>)
 
@@ -128,12 +126,12 @@ Accept the defaults:&#x20;
 
 Use these settings:
 
-![Buildspec settings.](<../../../.gitbook/assets/image (339).png>)
+![](<../../../.gitbook/assets/image (422).png>)
 
 For buildspec name, put in&#x20;
 
 ```
-codebuild-example-main/buildspec.yml
+buildspec.yml
 ```
 
 Adding the buildspec name is mandatory as otherwise our build would fail - CodeBuild would look for it in the wrong place.
@@ -167,50 +165,18 @@ You will be able to follow along as it progresses by clicking the Phase details 
 
 If it looks stuck in "In progress", refresh the page.&#x20;
 
-### Failure
-
-Hmm.
-
-![](<../../../.gitbook/assets/image (251).png>)
-
-Ok clearly CodeBuild has found our buildspec.yml since it is attempting to install maven.&#x20;
-
-Lots of googling and StackOverflow later.. no luck.&#x20;
-
-## Switch to CodeCommit
-
-I put all my code into a CodeCommit repository (No ZIP involved there) and created a new build. Everything went smoothly:
-
-![Codecommit as source works. ](<../../../.gitbook/assets/image (132).png>)
-
-## Another go at S3
-
-Ok let's try again. Exact same ZIP from the same GitHub repo, but this time I unzip it on my local machine and upload the files to S3 unzipped.&#x20;
-
-Here are my buckets:
-
-![S3 buckets ](<../../../.gitbook/assets/image (319).png>)
-
-Here are the contents of the input bucket:
-
-![Objects inside folder test/](<../../../.gitbook/assets/image (355).png>)
-
-### The build project
-
-Same settings, expect for "S3 object key or S3 folder", which in this case is "test/". Also artifacts go to bucket cb-no-zip-output.&#x20;
-
 ### Run the build:
 
-Everything runs smoothly now:
+Everything runs smoothly:
 
 ![100% success](<../../../.gitbook/assets/image (182).png>)
 
 ### Artifact
 
-My build project called "testing-no-zip" has successfully uploaded an artifact into the output bucket:
+My build project has successfully uploaded an artifact into the output bucket:
 
-![.jar artifact in S3. ](../../../.gitbook/assets/image.png)
+![](<../../../.gitbook/assets/image (155).png>)
 
-## Post-mortem
+### End result
 
-CodeBuild should work with ZIP files stored in S3, but there was something wrong with my ZIP file I suppose.&#x20;
+We created our first build project!&#x20;
