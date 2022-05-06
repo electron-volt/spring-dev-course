@@ -9,13 +9,17 @@ We will&#x20;
 * Clone it
 * Push some content into our repo.&#x20;
 
-Windows users: I recommend Git Bash for this lab.&#x20;
+Windows users: I recommend either CloudShell or Git Bash for this lab.&#x20;
+
+First we are going to set up our credentials.&#x20;
 
 ## Setting up access&#x20;
 
 ### Option 1: Set up HTTPS Git credentials for CodeCommit
 
-If you are using a stand-alone personal AWS accout where you have full administrator access, you can use HTTPS Credentials. Just make sure that you are signed in as the user that you intend to create credentials for.&#x20;
+If you are using a stand-alone personal AWS account where you have full administrator access, you can choose to use HTTPS Credentials or Git-remote-commit (option 2).&#x20;
+
+&#x20;If you want to create Git credentials, first make sure that you are signed in to AWS as the user that you intend to create credentials for.&#x20;
 
 Go to **IAM > Users** and select your user.&#x20;
 
@@ -25,13 +29,13 @@ On the user details page, choose the **Security Credentials** tab, and in **HTTP
 
 Be sure to download your credentials or store them in a password manager. You cannot choose your own username and **you cannot view the password later.**&#x20;
 
+Once you have downloaded the credentials, please move on to creating the repository.
+
 ### **Option 2: Git-remote-commit**
 
 If for some reason you can't access your IAM user permissions - for example your AWS account is part of an AWS organization and you do not have direct access to your IAM user -  then you can use git-remote-commit. It works well when used inside **AWS CloudShell**.&#x20;
 
-Follow these instructions:
-
-{% embed url="https://github.com/aws/git-remote-codecommit" %}
+We will set up Git-remote-commit later. You can move on to creating a repository.&#x20;
 
 ## Create the Git repository&#x20;
 
@@ -57,13 +61,13 @@ From the CodeCommit console, you will get the HTTPS URL that you need to clone y
 
 ![](<../../../.gitbook/assets/image (457).png>)
 
-Then in a terminal, run the following command and ignore the warning.&#x20;
+Then in a terminal, run the following command and ignore the warning about the empty repo.&#x20;
 
 For **Username** and **password** use the IAM credentials we created earlier:
 
 ```
-git clone https://git-codecommit.region.amazonaws.com/v1/repos/name
-Cloning into 'name'...
+git clone https://the url you got from codecommit
+Cloning into 'yourname-repo'...
 Username for ...: *****
 Password for ...: ****
 warning: You appear to have cloned an empty repository.
@@ -109,6 +113,14 @@ Scroll down until you see Step 3 (please ignore steps 1 and 2):
 Navigate back to CloudShell and paste the text into the terminal:
 
 ![your prompt may look different ](<../../../.gitbook/assets/image (248).png>)
+
+**Optional** - set main as the default branch:
+
+```
+git config --global init.defaultBranch main
+```
+
+Otherwise the default branch will be called master. If you are okay with that, then skip this step.&#x20;
 
 ## First commit
 
@@ -185,7 +197,7 @@ Under commits, you see the commit with the message you used:
 
 ## More testing
 
-If you are already familiar with Git, then feel free to skip this step.&#x20;
+#### If you are already familiar with Git, then feel free to skip this step.&#x20;
 
 Back in the terminal, try making some changes to your text files. For example:
 
@@ -202,7 +214,7 @@ Then use&#x20;
 * git push to push the changes to your repository
 * git status to check what status your repo is in.&#x20;
 
-Extra: make changes to the repo in the console.&#x20;
+Extra bonus challenge: make changes to the repo in the console.&#x20;
 
 Go to Code, select a file, then click Edit.
 
