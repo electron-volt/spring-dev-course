@@ -7,9 +7,9 @@ We are going to have CodeBuild build some Java code for us and produce an artifa
 Here is what happened:
 
 * get source code from GitHub as ZIP&#x20;
-* put the code into CodeCommit&#x20;
+* put the code into S3
 * create a build project in CodeBuild
-* trigger the build
+* trigger the build.
 
 ## Preparation
 
@@ -17,17 +17,17 @@ First we have to prepare the source code that we want to compile. All the code i
 
 * We'll create input and output S3 buckets
 * We will get the source code as a ZIP file
-* We will upload the ZIP file to the input S3 bucket.
+* We will unzip the file and upload the contents to the input S3 bucket.
 
 ### Create S3 buckets
 
 We will need two buckets. When you create them, just give them names and hit create - all other settings can be kept as default.&#x20;
 
-For the names, have one of them end with "input" and the other with "output". For example:
+For the names, call them **YOURNAME-CB-EXAMPLE** and have one of them end with "**input**" and the other with "**output**". For example:
 
 ![example S3 bucket names](<../../../.gitbook/assets/image (420).png>)
 
-To make sure the names are available, it's good to use something unique like your account ID (12 digits) or your name + ddmm. Generic names like codebuild-bucket are most def already taken.
+If for some reason the name happened to be taken, then try adding some numbers in the middle, like john-cb-example-123-input.&#x20;
 
 ### Note: Buildspec.yml and S3
 
@@ -43,13 +43,15 @@ Under Code, choose Download ZIP.
 
 ![Git repo](<../../../.gitbook/assets/image (264).png>)
 
-You should have the ZIP file with the following contents (you don't need to unzip it):
+Unzip it.
+
+You should have a folder with the following contents.&#x20;
 
 ![ZIP contents](<../../../.gitbook/assets/image (463) (1).png>)
 
 ### Buildspec.yml
 
-Here is what the buildspec.yml looks like. You can go take a look at the source code in /src in GitHub.&#x20;
+Here is what the buildspec.yml looks like. You do not need to do anything to this file, just take a look at its contents. It's fine if you don't fully understand each line.&#x20;
 
 {% code title="buildspec.yml" %}
 ```yaml
@@ -75,21 +77,37 @@ artifacts:
 ```
 {% endcode %}
 
-### Upload to S3
+### Upload files to S3
 
-Upload the ZIP into the S3 bucket with name that ends with **input**.&#x20;
+In S3, navigate to the bucket that ends with -**input**.&#x20;
+
+Choose Upload > Add folder
+
+Add the entire folder to S3.&#x20;
+
+You should have the following structure:
+
+![Top level ](<../../../.gitbook/assets/image (52).png>)
+
+![files in a folder](<../../../.gitbook/assets/image (310).png>)
 
 ## Create the build
 
-1. Go to CodeBuild
-2. Click create a build
-3. Give the project a name.
+Let's navigate to CodeBuild.&#x20;
+
+Your landing page may look different, but look for an orange "Create project" or "Create Build project" button.
+
+![](<../../../.gitbook/assets/image (98).png>)
+
+Name the project **YOURNAME-cb-project.**
 
 ### Source
 
-Under Source, use the following settings (substitute the name of your input bucket):
+Under Source, use the following settings (choose your own input bucket in the Bucket field).
 
-![Source in new build](<../../../.gitbook/assets/image (128).png>)
+For S3 object key, use codebuild-example-main/
+
+![](<../../../.gitbook/assets/image (137).png>)
 
 ### Environment
 
@@ -99,13 +117,24 @@ Under Environment, use the following settings:
 
 ### Service role
 
-Accept the defaults: create new role and the name that AWS suggest.
+Accept the defaults:&#x20;
+
+* new service role&#x20;
+* accept the name that AWS suggests.&#x20;
+
+![](<../../../.gitbook/assets/image (206).png>)
 
 ### Buildspec
 
 Use these settings:
 
 ![Buildspec settings.](<../../../.gitbook/assets/image (339).png>)
+
+For buildspec name, put in&#x20;
+
+```
+codebuild-example-main/buildspec.yml
+```
 
 Adding the buildspec name is mandatory as otherwise our build would fail - CodeBuild would look for it in the wrong place.
 
@@ -115,11 +144,12 @@ Use these settings, again substituting your output S3 bucket:
 
 ![](<../../../.gitbook/assets/image (340).png>)
 
-Leave name and path blank. Packaging: None.
+* Leave **name, path** and **namespace** blank.&#x20;
+* Packaging: **None**.
 
 ### Logs
 
-Uncheck CloudWatch. We don't need logs.&#x20;
+Uncheck both CloudWatch and S3. Who needs logs.&#x20;
 
 ### Create build
 
@@ -129,7 +159,9 @@ Create build project.&#x20;
 
 Start the build with the orange button that says "Start build".&#x20;
 
-You will be able to follow along as it progresses:
+![](<../../../.gitbook/assets/image (157).png>)
+
+You will be able to follow along as it progresses by clicking the Phase details tab:
 
 ![build phase details](<../../../.gitbook/assets/image (221).png>)
 

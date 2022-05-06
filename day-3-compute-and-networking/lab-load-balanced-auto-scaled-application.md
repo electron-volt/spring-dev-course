@@ -2,7 +2,7 @@
 
 We got a big one here! We want to build the following;
 
-![Graphics this good - you know I didn't make this myself](<../.gitbook/assets/image (137).png>)
+![Graphics this good - you know I didn't make this myself](<../.gitbook/assets/image (137) (1).png>)
 
 We are going to create
 

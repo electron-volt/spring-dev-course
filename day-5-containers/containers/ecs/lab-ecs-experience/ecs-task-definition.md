@@ -32,7 +32,7 @@ Launch type compatibility: EC2
 * Task role and network mode: leave as default
 * Task execution role: None.
 
-![Network mode has to be default, otherwise we will be in trouble. ](<../../../../.gitbook/assets/image (310).png>)
+![Network mode has to be default, otherwise we will be in trouble. ](<../../../../.gitbook/assets/image (310) (1).png>)
 
 Task size: leave these as blank. They are optional for the EC2 launch type.&#x20;
 

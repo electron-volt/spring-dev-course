@@ -109,7 +109,7 @@ Upload both documents to the bucket.&#x20;
 
 You'd think that it's, right? But if you try to view your website, you will get a 403 error for Forbidden. Just because public access isn't _blocked_ does not mean that it is _allowed_.&#x20;
 
-![](<../../.gitbook/assets/image (254).png>)
+![](<../../.gitbook/assets/image (254) (1).png>)
 
 Go back to your website bucket and go to the **Permissions** tab. There you will find Bucket policy. Click **edit**.&#x20;
 

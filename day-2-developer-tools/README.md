@@ -8,7 +8,7 @@
 
 ## S3&#x20;
 
-First we will take a look at S3, AWS' object storage.
+First we will take a quick look at S3, AWS' object storage.
 
 ## Developer tools
 

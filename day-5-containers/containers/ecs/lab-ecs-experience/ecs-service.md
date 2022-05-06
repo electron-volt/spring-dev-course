@@ -170,7 +170,7 @@ security group is created automatically for you.&#x20;
 
 Auto assign public IP: **DISABLED**.&#x20;
 
-![network settings](<../../../../.gitbook/assets/image (372).png>)
+![network settings](<../../../../.gitbook/assets/image (372) (1).png>)
 
 ### Load balancing&#x20;
 
@@ -184,7 +184,7 @@ Click on Add to load balancer.&#x20;
 
 Here are the settings to use:
 
-![](<../../../../.gitbook/assets/image (98).png>)
+![](<../../../../.gitbook/assets/image (98) (1).png>)
 
 When you scroll down, you can see the existing paths used on the HTTP : 80 listener:
 

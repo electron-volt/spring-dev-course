@@ -43,8 +43,6 @@
     * [Some theory](bonus-material-1/s3/some-theory.md)
     * [LAB: Versioning](bonus-material-1/s3/lab-versioning.md)
     * [LAB: Static website](bonus-material-1/s3/lab-static-website.md)
-    * [CloudFront](bonus-material-1/s3/cloudfront.md)
-    * [More S3 theory](bonus-material-1/s3/more-s3-theory.md)
   * [Developer tools](day-2-developer-tools/developer-tools/README.md)
     * [Cloud9](day-2-developer-tools/developer-tools/cloud9/README.md)
       * [LAB: Cloud9](day-2-developer-tools/developer-tools/cloud9/lab-cloud9.md)

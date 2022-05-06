@@ -13,8 +13,6 @@ There are different ways to encrypt data in your S3 bucket:
 * SSE with AWS-managed keys (KMS)
 * SSE with S3-managed keys.
 
-&#x20;We will talk more about KMS (Key management service) on day 5.&#x20;
-
 ## Access control
 
 There are different ways of controlling who can access your buckets and objects:

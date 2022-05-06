@@ -10,7 +10,7 @@ Click get started.&#x20;
 
 Choose Host your web app.&#x20;
 
-![](<../../.gitbook/assets/image (206).png>)
+![](<../../.gitbook/assets/image (206) (1).png>)
 
 In "From your existing code", choose CodeCommit
 

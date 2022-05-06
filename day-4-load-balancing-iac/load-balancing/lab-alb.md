@@ -54,7 +54,7 @@ Once the route table has been named, we need to find out which AZ our public sub
 3. Find out which AZ it is in (for example eu-north-1**a**)
 4. Then name the subnet **alb-public-a.**
 
-![alb-public-a subnet](<../../.gitbook/assets/image (52).png>)
+![alb-public-a subnet](<../../.gitbook/assets/image (52) (1).png>)
 
 ### Create new subnet
 

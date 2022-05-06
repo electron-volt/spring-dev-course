@@ -91,7 +91,7 @@ The index creation takes a while. Just wait until the Status turns to Active.
 
 Once the index has been successfully created, let's go back to View items. We want to run a query,  not on the Dogs table but the new breed-ID-index. I will query my table for all dogs whose breed is Husky.&#x20;
 
-![](<../../.gitbook/assets/image (157).png>)
+![](<../../.gitbook/assets/image (157) (1).png>)
 
 Running the same query for rottweiler:
 
