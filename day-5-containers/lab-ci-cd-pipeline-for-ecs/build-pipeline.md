@@ -135,7 +135,7 @@ We will still need to register our task definition. Run this;
 
 The revision number should be 1.&#x20;
 
-![revision is 1.](<../../.gitbook/assets/image (92).png>)
+![revision is 1.](<../../.gitbook/assets/image (92) (1).png>)
 
 ### ECS service
 

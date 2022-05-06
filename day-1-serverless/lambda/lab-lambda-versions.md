@@ -55,7 +55,7 @@ So let's create a production-ready version of our Lambda function. In order to m
 
 At the top of the screen you should see this:
 
-![breadcrumbs](<../../.gitbook/assets/image (188).png>)
+![breadcrumbs](<../../.gitbook/assets/image (188) (1).png>)
 
 Click on the name of your function to get back to $LATEST.
 

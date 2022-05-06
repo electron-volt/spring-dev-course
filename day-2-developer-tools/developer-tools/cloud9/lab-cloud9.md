@@ -4,25 +4,47 @@
 
 Navigate to Cloud9 in the AWS console.&#x20;
 
-Click on **Create environment**
+Click on **Create environment.**
 
-Give it a name.
+![new environment creation](<../../../.gitbook/assets/image (92).png>)
 
-For Environment settings, choose **create a new no-ingress EC2 instance**
+Name your environment **yourname-cloud9.**
 
-Instance type: pick the free tier eligible instance
+Click **Next step.**&#x20;
 
-Platform: Amazon Linux 2
+![naming the environment ](<../../../.gitbook/assets/image (116).png>)
 
-Cost savings: have AWS terminate your instance after 30 minutes.&#x20;
+#### Environment settings&#x20;
 
-Choose **next** and **create environment**.
+In the dialogue that appears, select the following:
+
+Environment type: **New no-ingress EC2 instance**&#x20;
+
+Instance type: **t2.micro** (or whatever is free-tier eligible in the region you are in)&#x20;
+
+Platform: **Amazon Linux 2.**&#x20;
+
+![environment settings](<../../../.gitbook/assets/image (28).png>)
+
+Leave all other settings as they are.&#x20;
+
+Choose **next step.**
+
+You will see a Review page.&#x20;
+
+Click **create environment**.
+
+AWS begins to create the environment:
+
+![it may take a while](<../../../.gitbook/assets/image (201).png>)
 
 ## Basic tour
 
 Once your environment is ready, we will take it for a little test drive.&#x20;
 
-In the terminal window on the bottom of the screen, type in&#x20;
+There is a terminal window on the bottom of the screen.
+
+Type in&#x20;
 
 ```
 npm install readline-sync
@@ -34,7 +56,9 @@ like so:
 
 ### New file
 
-Make a new file. Paste this in:
+Once you get your prompt back, make a new file called **hello-cloud9.js**
+
+Paste this in:
 
 {% code title="hello-cloud9.js" %}
 ```javascript
@@ -59,13 +83,17 @@ console.log("Goodbye!");
 ```
 {% endcode %}
 
-I know, super interesting code. Also bad things happen if the input is NaN. Still: Save the file as hello-cloud9.js.
+I know, super interesting code. Also bad things happen if the input is NaN.&#x20;
 
 ### Run the program&#x20;
 
-There is a button to Run your program, click it:
+You can find your files by clicking on the folder icon on the left side panel:
 
-![run ](<../../../.gitbook/assets/image (7).png>)
+![](<../../../.gitbook/assets/image (377).png>)
+
+Open the file **hello-cloud9.js**
+
+There is a button to Run your program. **Click it.**&#x20;
 
 ### Debug
 
@@ -75,13 +103,17 @@ Also notice the little i that says we are missing a semicolon on line 10?&#x20;
 
 ![](<../../../.gitbook/assets/image (261).png>)
 
-On the right hand side panel, you'll see a bug icon - click it to open the debugger.&#x20;
+On the right hand side panel, you'll see a bug icon - click it to open the debugger.
+
+&#x20;
+
+![](<../../../.gitbook/assets/image (462).png>)
 
 #### Watch expression&#x20;
 
 In the debug window, under Watch expressions type "input":
 
-![watch expression: input](<../../../.gitbook/assets/image (462).png>)
+![watch expression: input](<../../../.gitbook/assets/image (462) (1).png>)
 
 Next:
 

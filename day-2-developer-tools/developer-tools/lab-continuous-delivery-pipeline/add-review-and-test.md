@@ -50,7 +50,7 @@ Back in CodePipeline, press the white Review button. A dialogue opens:
 
 
 
-![Review](<../../../.gitbook/assets/image (28).png>)
+![Review](<../../../.gitbook/assets/image (28) (1).png>)
 
 Press Approve. The wheels are turning:
 

@@ -154,7 +154,7 @@ Let's go back to the familiar **Actions** button and under API actions choose **
 * give your stage the name **beta**
 * **deploy**.&#x20;
 
-![Deploy to new stage beta](<../../.gitbook/assets/image (201).png>)
+![Deploy to new stage beta](<../../.gitbook/assets/image (201) (1).png>)
 
 ### Test the API&#x20;
 

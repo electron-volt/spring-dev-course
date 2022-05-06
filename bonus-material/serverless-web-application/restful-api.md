@@ -48,7 +48,7 @@ Go back to API Gateway, the authorizer and click Test.&#x20;
 
 Paste in the token:
 
-![test the authorizer.](<../../.gitbook/assets/image (116).png>)
+![test the authorizer.](<../../.gitbook/assets/image (116) (1).png>)
 
 ## Create new resource and method
 
