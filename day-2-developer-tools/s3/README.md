@@ -18,7 +18,7 @@ In plain English, think of objects like "files".&#x20;
 
 A bucket is a container for objects stored in Amazon S3. Kind of like a folder in Windows is a container for the files in the folder.&#x20;
 
-Buckets are created in a certain AWS region, but the name of the bucket has to be globally unique (because it has to be a valid DNS name).&#x20;
+Buckets are created in a certain AWS region, but the name of the bucket has to be **globally unique** (because it has to be a valid DNS name).&#x20;
 
 ### Key
 

@@ -8,7 +8,7 @@ First we want to create a new bucket that will be open to the public.&#x20;
 
 1. Create bucket
 2. Give it a unique name
-3. Uncheck "Block all public access"
+3. **Uncheck** "Block all public access"
 4. Leave all "Block..."  checkboxes unchecked
 5. Check the box next to "I acknowledge that the current settings might result in this bucket and the objects within becoming public."
 6. Create bucket.

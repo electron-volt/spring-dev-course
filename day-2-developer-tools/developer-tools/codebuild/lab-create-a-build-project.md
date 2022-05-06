@@ -45,7 +45,7 @@ Under Code, choose Download ZIP.
 
 You should have the ZIP file with the following contents (you don't need to unzip it):
 
-![ZIP contents](<../../../.gitbook/assets/image (463).png>)
+![ZIP contents](<../../../.gitbook/assets/image (463) (1).png>)
 
 ### Buildspec.yml
 

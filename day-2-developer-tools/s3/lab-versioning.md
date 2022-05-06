@@ -15,17 +15,24 @@ You have two options for versioning:
 * suspend&#x20;
 * enable
 
-We want to select "enable" and Save changes.&#x20;
+We want to select "**enable**" and **Save changes.**&#x20;
 
 ## Upload file
 
-Make a text file in an editor. It can say "This is version 1". Call it version1.txt.
+#### Create and upload version 1
 
-Upload the file to your bucket.&#x20;
+* Make a text file in an editor.&#x20;
+* It can say "This is version 1".&#x20;
+* Save it as version1.txt
+* Upload the file version1.txt to your bucket.&#x20;
 
-Then in the editor, change the text to say "This is version 2". Save changes and upload again.&#x20;
+#### Create and upload version 2
 
-Your bucket should now only have one object: version1.txt.&#x20;
+Then in the text editor, change the text of file version1.txt to say "This is version 2".&#x20;
+
+Save changes and upload again.&#x20;
+
+Your bucket should now only have one object: **version1.txt.**&#x20;
 
 Click on the name of the object, then click the Versions tab.
 
@@ -49,12 +56,16 @@ There you have it, S3 versioning. Versioning itself is very simple. Where things
 
 What if you delete the replica from the other bucket, does the original get destroyed?&#x20;
 
-For those labs we'd need replication. If we have time, we can do same-region same-account replication too in this lab.&#x20;
+For those labs we'd need replication.&#x20;
+
+If we did a lab where we set up cross-account or cross-region replication along with different encryption keys in different regions and versioning enabled, you would be begging for these simple labs to return...&#x20;
 
 ## Clean up&#x20;
 
-Go ahead and delete version1.txt.&#x20;
+Let's attempt to delete the contents of a bucket that has versioning enabled.&#x20;
 
-The bucket appears empty now as it has no objects in it. However when you go to delete it, AWS say the bucket is not empty: that is because of versioning.&#x20;
+Go ahead and delete version1.txt from your bucket.
+
+The bucket appears empty now as it has no objects in it. However when you go to delete the bucket, AWS say the bucket is not empty: that is because of versioning.&#x20;
 
 You can use the Empty button to first force the bucket to empty, then delete the bucket.&#x20;
