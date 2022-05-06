@@ -1,27 +1,8 @@
 # LAB: Create bucket
 
-Navigate to the S3 console. You might find to your surprise that your account has two S3 buckets:
-
-![Two S3 buckets](<../../.gitbook/assets/image (312).png>)
-
-These buckets were created when we uploaded our CloudFormation templates. AWS needs somewhere to put them, so it has created a bucket for each template. CloudFormation does not delete these buckets when the stack is deleted to prevent accidental deletion of information.&#x20;
-
-We can delete these buckets though since we will not be needing the templates anymore.&#x20;
-
-#### Deleting a bucket
-
-First empty the bucket. Two ways:
-
-* in the Buckets list, select the bucket you want to empty and click Empty OR
-* click the name of the bucket to view the contents. Check the box above the list of objects to select them all, then click Delete.&#x20;
-
-You will have to confirm that you really want to delete all the objects.&#x20;
-
-An empty bucket can be deleted from the Buckets list by selecting it and clicking Delete. Again you will be asked to confirm this (I guess people used to accidentally delete things and got mad at AWS..)&#x20;
-
 ## Create a bucket&#x20;
 
-Now that our list of buckets is empty, we can start from a blank slate and create our own bucket.&#x20;
+Navigate to the S3 console.
 
 ### In the console
 

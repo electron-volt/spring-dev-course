@@ -7,9 +7,9 @@ We are going to have CodeBuild build some Java code for us and produce an artifa
 Here is what happened:
 
 * get source code from GitHub as ZIP&#x20;
-* put the ZIP in S3 - that didn't work 😨
-* put the code in CodeCommit - that worked
-* go back to S3, upload files unzipped - that worked as well
+* put the code into CodeCommit&#x20;
+* create a build project in CodeBuild
+* trigger the build
 
 ## Preparation
 
