@@ -18,14 +18,6 @@ Cost savings: have AWS terminate your instance after 30 minutes.&#x20;
 
 Choose **next** and **create environment**.
 
-### Systems Manager Session Manager
-
-We have not discussed SMSM yet, but if you plan to work with EC2 instances in the future, this is a very useful option. It allows you to access your EC2 instance from a browser, no SSH needed.&#x20;
-
-You can read up on it here:&#x20;
-
-[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/session-manager.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/session-manager.html)
-
 ## Basic tour
 
 Once your environment is ready, we will take it for a little test drive.&#x20;

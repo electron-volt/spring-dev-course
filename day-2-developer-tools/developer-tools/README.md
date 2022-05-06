@@ -43,7 +43,3 @@ Basically like AWS CLI, except CloudShell is browser-based.&#x20;
 CLI-related: a new feature, auto-prompt for AWS CLI! [https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-prompting.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-prompting.html)
 
 Also see aws-shell if you are interested: [https://github.com/awslabs/aws-shell](https://github.com/awslabs/aws-shell)
-
-## Bonus
-
-There is a lab about **CodeGuru** in the bonus section. This is a new service and you can expect it to start showing up in the exam soon.&#x20;
