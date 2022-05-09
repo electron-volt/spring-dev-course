@@ -187,7 +187,7 @@ Once your instances have launched, you can access their public IP's via your bro
 
 &#x20;
 
-![Web-c ](<../../.gitbook/assets/image (104).png>)
+![Web-c ](<../../.gitbook/assets/image (104) (1).png>)
 
 ## Create target groups&#x20;
 

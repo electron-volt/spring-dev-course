@@ -6,19 +6,19 @@ The static website you deployed in the first module already has a page configure
 
 ## Create new REST API&#x20;
 
-Navigate to API Gateway.&#x20;
+Navigate to **API Gateway.**&#x20;
 
-Click Create API.&#x20;
+Click **Create API.**&#x20;
 
-REST API (not private)
+**REST API (not private)**
 
-Protocol: REST
+Protocol: **REST**
 
-Create new API&#x20;
+**Create new API**&#x20;
 
-API Name: WildRydes
+API Name: **yourname-WildRydes**
 
-Endpoint type: edge optimized.
+Endpoint type: **edge optimized.**
 
 ## Create a Cognito user pools authorizer
 

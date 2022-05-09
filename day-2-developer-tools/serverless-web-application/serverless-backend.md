@@ -6,51 +6,53 @@ You'll implement a Lambda function that will be invoked each time a user request
 
 ## DynamoDB table
 
-Table name: Rides
+Table name: yourname-**Rides**
 
-Partition key: RideId (String)
+Partition key: **RideId** (String)
 
 other fields: use defaults.
 
-Create table.
+**Create table.**
+
+![](<../../.gitbook/assets/image (265).png>)
 
 You will need the ARN of the table in the next section. Click on the name of your table > overview > expand additional info.&#x20;
+
+![](<../../.gitbook/assets/image (384).png>)
 
 ## Lambda
 
 ### Execution role for Lambda
 
-Go to IAM > roles and create a role.&#x20;
+Go to **IAM > roles** and create a role.&#x20;
 
 AWS Service: Lambda
 
-In Permissions, search for AWSLambdaBasicExecutionRole. Select it, then click next.&#x20;
+In Permissions, search for **AWSLambdaBasicExecutionRole**. Select it, then click next.&#x20;
 
 Skip tags.
 
-Name: _WildRydesLambda._
+Name: yourname-_WildRydesLambda._
 
-Create role.
+**Create role.**
 
 The basic execution role gives Lambda the permission to write logs to CloudWatch. We also need DynamoDB permissions.&#x20;
 
-While still in IAM > roles, select the _WildRydesLambda_ role you just created.&#x20;
+While still in IAM > roles, select the yourname-_WildRydesLambda_ role you just created.&#x20;
 
-On the Permissions tab, click add inline policy (upper right)&#x20;
+On the Permissions tab, click **Add permissions > create inline policy.**
 
-![](<../../.gitbook/assets/image (77).png>)
+![](<../../.gitbook/assets/image (104).png>)
 
-Then for service, put DynamoDB
+Then for service, put **DynamoDB**
 
-For actions, use PutItem
+For actions, use **PutItem**
 
 In Resources, put in the ARN of your new DynamoDB table.
 
 Click review policy.&#x20;
 
-Name the policy DynamoDBWriteAccess. Create policy.&#x20;
-
-![Inline policy settings. ](<../../.gitbook/assets/image (374).png>)
+Name the policy **yourname-DynamoDBWriteAccess.** Create policy.&#x20;
 
 Now the role has these permissions:
 
@@ -60,11 +62,11 @@ Now the role has these permissions:
 
 Next we need to create a Lambda function.&#x20;
 
-Name: RequestUnicorn
+Name: **yourname-RequestUnicorn**
 
 Runtime: Node.js 14.x
 
-For role, use the WildRydesLambda
+For role, use the **yourname-WildRydesLambda**
 
 In function code, paste in the following:
 

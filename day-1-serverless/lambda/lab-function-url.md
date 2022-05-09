@@ -26,7 +26,7 @@ Once you have created the function URL, you can view it in the console:
 
 If you click on the URL, you will see the output of your function in your browser:
 
-![Lambda output in the browser](<../../.gitbook/assets/image (384).png>)
+![Lambda output in the browser](<../../.gitbook/assets/image (384) (1).png>)
 
 ### Unintentional edits
 
