@@ -1,6 +1,6 @@
 # LAB: Continuous delivery pipeline
 
-Let's combine everything we have learned about these developer tools and build something.
+Let's combine everything we have learned about these developer tools and build something a bit bigger:
 
 We are going to:
 

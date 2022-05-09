@@ -1,6 +1,9 @@
 # CodePipeline
 
-There is a LOT of theory about CodePipeline. The way I - a simpleton - conceptualise it is like this:
+If you like theory, then the AWS documentation for CodePipeline has everything you could ever want and more: [https://docs.aws.amazon.com/codepipeline/?id=docs\_gateway](https://docs.aws.amazon.com/codepipeline/?id=docs\_gateway)\
+
+
+However we are going to keep things very simple and reduce the complexity to this:
 
 ![Pipeline consists of stages.](<../../.gitbook/assets/image (308).png>)
 

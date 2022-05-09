@@ -22,6 +22,8 @@ AWS CodePipeline is a continuous delivery service you can use to model, visualiz
 
 CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, serverless Lambda functions, or Amazon ECS services.
 
+We will potentially encounter CodeDeploy later in the course when we look at containers, so we won't be doing a lab on CodeDeploy today.&#x20;
+
 ## CodeArtifact
 
 CodeArtifact is a fully managed artifact repository service that makes it easy for organizations to securely store and share software packages used for application development. You can use CodeArtifact with popular build tools and package managers such as NuGet, Maven, Gradle, npm, yarn, pip, and twine.

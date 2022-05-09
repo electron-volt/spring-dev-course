@@ -90,6 +90,6 @@ It may take a moment, but eventually your CodeArtifact repository will show the 
 Time to delete things:
 
 * In CodeArtifact > repositories, delete the repo you created yourname-repo and pypi-store.&#x20;
-* In CodeArtifat > domain, delete your domain.
+* In CodeArtifact > domain, delete your domain.
 
 Note: the domain can only be deleted once it has 0 repos in it.&#x20;
