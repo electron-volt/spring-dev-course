@@ -40,7 +40,7 @@ In AWS Cognito, go to your new user pool. In the overview you will find User poo
 
 Then go to tab App integration and scroll all the way down. You will find your Client ID there.&#x20;
 
-![](<../../.gitbook/assets/image (311).png>)
+![](<../../.gitbook/assets/image (311) (1).png>)
 
 ## Modify config.js
 

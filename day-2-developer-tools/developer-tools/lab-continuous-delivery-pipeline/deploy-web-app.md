@@ -26,7 +26,7 @@ The wizard is very easy to use.&#x20;
 
 We want these settings:
 
-* Name: **pipeline-lab**
+* Name: yourname-**pipeline-lab**
 * No tags
 * Platform **Node.js**&#x20;
   * use whatever branch and version AWS suggests

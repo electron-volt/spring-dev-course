@@ -8,33 +8,38 @@ We are going to use CodeBuild to build the source code previously stored in your
 
 ## Create a project in CodeBuild
 
-1. In a new browser tab open the AWS CodeBuild Console.
-2. Click the **orange "Create project" button**.
-3. In the "Project name" pick a name for your project. Mine is pipeline-example.
-4. Select **"GitHub"** from the "Source provider" dropdown menu.&#x20;
-5. Visually confirm that the **"Connect using OAuth" radio button** is selected.
-6. Click the **white "Connect to GitHub" button**. After clicking this button, a new browser tab will open asking you to give AWS CodeBuild access to your GitHub repo.
-7. Click the **green "Authorize aws-codesuite" button**.
-8. Type in your GitHub password.
-9. Click the **orange "Confirm" button**.
-10. Select "Repository in my GitHub account."
-11. Type **"aws-elastic-beanstalk-express-js-sample"** in the search field.
+In a new browser tab open the AWS CodeBuild Console.
 
-![choose repository](<../../../.gitbook/assets/image (334).png>)
+### Source
 
-13\. Visually confirm that **"Managed Image"** is selected.
+* Click the **orange "Create project" button**.
+* Project name: pipeline-project
+* Select **"GitHub"** from the "Source provider" dropdown menu.&#x20;
+* Visually confirm that the **"Connect using OAuth" radio button** is selected.
+* Click the **white "Connect to GitHub" button**. After clicking this button, a new browser tab will open asking you to give AWS CodeBuild access to your GitHub repo.
 
-14\. Select **"Amazon Linux 2"** from the "Operating system" dropdown menu.
+![connecting to GitHub](<../../../.gitbook/assets/image (255).png>)
 
-15\. Select **"Standard"** from the "Runtime(s)" dropdown menu.
+* Click the **green "Authorize aws-codesuite" button**.
+* Type in your GitHub password&#x20;
+  * this step is not necessary if you are already logged in to GitHub in your browser
+* Back in AWS CodeBuild, click the **orange "Confirm" button**.
+* Select "Repository in my GitHub account."
+* Type **"aws-elastic-beanstalk-express-js-sample"** in the search field.
 
-16\. Select **"aws/codebuild/amazonlinux2-x86\_64-standard:3.0"** from the "Image" dropdown menu.
+Leave the webhook section unchecked.&#x20;
 
-17\. Visually confirm that **"Always use the latest image for this runtime version"** is selected for "Image version."
+### Environment
 
-18\. Visually confirm that **"Linux"** is selected for "Environment type."
+In the Environment section,&#x20;
 
-19\. Visually confirm that **"New service role"** is selected.
+* Make sure that **"Managed Image"** is selected.
+* Select **"Amazon Linux 2"** from the "Operating system" dropdown menu.
+* Select **"Standard"** from the "Runtime(s)" dropdown menu.
+* Select **"aws/codebuild/amazonlinux2-x86\_64-standard:3.0"** from the "Image" dropdown menu.
+* Visually confirm that **"Always use the latest image for this runtime version"** is selected for "Image version."
+* Visually confirm that **"Linux"** is selected for "Environment type."
+* Visually confirm that **"New service role"** is selected.
 
 ### Buildspec&#x20;
 
@@ -53,14 +58,26 @@ artifacts:
         - '**/*'
 ```
 
+It should look like this:
+
+![](<../../../.gitbook/assets/image (311).png>)
+
 Complete the creation with **Create build project**.
 
 ## Test the build
+
+You should be taken to a screen with an orange "Start build" button on the right hand upper corner.&#x20;
 
 Try building the project. We expect this level of success:
 
 ![](<../../../.gitbook/assets/image (283).png>)
 
 ## Where we're at
+
+We have our Git repository set up.&#x20;
+
+We have a web app running in Elastic Beanstalk.&#x20;
+
+We have created a build project that builds our GitHub repo source automatically.&#x20;
 
 ![](<../../../.gitbook/assets/image (138).png>)
