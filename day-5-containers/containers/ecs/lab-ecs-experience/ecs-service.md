@@ -176,7 +176,7 @@ Auto assign public IP: **DISABLED**.&#x20;
 
 When you get to load balancing, **pick the Application load balancer.** You will see this:
 
-![](<../../../../.gitbook/assets/image (197).png>)
+![](<../../../../.gitbook/assets/image (197) (1).png>)
 
 Click on Add to load balancer.&#x20;
 

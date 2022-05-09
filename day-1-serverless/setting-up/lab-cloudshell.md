@@ -8,7 +8,7 @@ Let's navigate to CloudShell. On the left hand side, on top of the screen you'll
 
 Once you've clicked on CloudShell, it will open a terminal inside the AWS console. Give it some time to boot up. Eventually you will arrive at a prompt:
 
-![CloudShell prompt](<../../.gitbook/assets/image (426).png>)
+![CloudShell prompt](<../../.gitbook/assets/image (426) (1).png>)
 
 It is a fully fledged Bash shell, as you can see when you play around with it a little:
 
