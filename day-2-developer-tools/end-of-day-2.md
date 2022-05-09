@@ -23,12 +23,6 @@ Go to Permissions tab&#x20;
 
 Find the bucket policy&#x20;
 
-Click "Edit"
-
-Find the code block inside {} that says ... "Deny" .... "Action": "s3:deleteBucket"&#x20;
-
-Remove the code block (and the , after it)&#x20;
-
-Save.&#x20;
+Delete the entire bucket policy..&#x20;
 
 Now you should be able to delete the bucket.&#x20;
