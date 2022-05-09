@@ -37,23 +37,25 @@ You will now see your pipeline with four stages: "Source," "Build," "Review," an
 
 ## Push a change to the repository
 
-Make changes to app.js in the GitHub repository.&#x20;
+In your terminal (local or CloudShell), open the file app.js.&#x20;
 
-It's enough to change the text on line 5. If you are curious, then more info about Express.js can be found here: [https://www.guru99.com/node-js-express.html](https://www.guru99.com/node-js-express.html).
+Change the text on line 5 again.&#x20;
+
+Use git add app.js, git commit -m "changed line 5" and git push to push your changes.&#x20;
+
+You will be asked for your GitHub username and personal access token.&#x20;
 
 Once the changes have been pushed to the repo, go back to AWS CodePipeline.&#x20;
 
 ## Approve the review
 
-I made a commit with message "changes to app.js" and pushed it to GitHub.&#x20;
+I made a commit with message "changed line 5" and pushed it to GitHub.&#x20;
+
+If you go look at Elastic Beanstalk, the web application will not show your most recent changes.&#x20;
 
 Here is what is happening over at CodePipeline:
 
-![Waiting for manual approval](<../../../.gitbook/assets/image (265).png>)
-
-The link 54503356 is pointing to GitHub, where there are more details about the commit. The numbers come from the commit ID:
-
-![Vieweing changes in Github](<../../../.gitbook/assets/image (466).png>)
+![waiting for manual approval](<../../../.gitbook/assets/image (412).png>)
 
 Back in CodePipeline, press the white Review button. A dialogue opens:
 
@@ -61,9 +63,13 @@ Back in CodePipeline, press the white Review button. A dialogue opens:
 
 ![Review](<../../../.gitbook/assets/image (28) (1).png>)
 
-Press Approve. The wheels are turning:
+You can type a comment like "All looks good!"&#x20;
+
+Then press Approve. The wheels are turning:
 
 ![Pipeline moves to the next stage](<../../../.gitbook/assets/image (154).png>)
+
+You should also see a green banner that says "Action Manual\_review was approved".
 
 Eventually the pipeline is complete.&#x20;
 
@@ -72,3 +78,5 @@ Eventually the pipeline is complete.&#x20;
 Go to Elastic Beanstalk and find the URL of your web app. Open it and marvel at the changes that have occurred:
 
 ![](<../../../.gitbook/assets/image (439).png>)
+
+Elastic Beanstalk should now reflect the most recent changes pushed to GitHub.&#x20;

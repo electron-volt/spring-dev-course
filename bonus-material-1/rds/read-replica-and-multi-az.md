@@ -11,7 +11,7 @@ To solve those problems, we can use Read replicas and/or Multi-AZ deployments.&#
 
 In a Multi-AZ DB instance deployment, Amazon RDS automatically provisions and maintains a synchronous standby replica in a different Availability Zone. The primary DB instance is synchronously replicated across Availability Zones to a standby replica to provide data redundancy and minimize latency spikes during system backups. Running a DB instance with high availability can enhance availability during planned system maintenance. It can also help protect your databases against DB instance failure and Availability Zone disruption.
 
-![all reads and writes go to the primary](<../../.gitbook/assets/image (412).png>)
+![all reads and writes go to the primary](<../../.gitbook/assets/image (412) (1).png>)
 
 If the primary instance fails, or is rebooted then the standby replica will be promoted to the primary.&#x20;
 
