@@ -134,7 +134,7 @@ Repeat the steps for these methods and paths:
 
 You should end up with the following:
 
-![routes ](<../.gitbook/assets/image (402).png>)
+![routes ](<../.gitbook/assets/image (402) (1).png>)
 
 ## Create the integration
 

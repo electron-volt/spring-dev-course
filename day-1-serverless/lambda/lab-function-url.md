@@ -22,7 +22,7 @@ For this Lambda function that does not do anything special, we can select NONE. 
 
 Once you have created the function URL, you can view it in the console:
 
-![new URL ](<../../.gitbook/assets/image (423).png>)
+![new URL ](<../../.gitbook/assets/image (423) (1).png>)
 
 If you click on the URL, you will see the output of your function in your browser:
 

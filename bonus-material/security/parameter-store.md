@@ -254,7 +254,7 @@ If we were comfortable with the whole world seeing our parameters, we wouldn't n
 
 Head over to Parameter store. Sure enough, there is already a parameter there, created by our stack:
 
-![](<../../.gitbook/assets/image (320).png>)
+![](<../../.gitbook/assets/image (320) (1).png>)
 
 ### Create new parameter
 

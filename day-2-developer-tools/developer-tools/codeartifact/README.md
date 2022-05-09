@@ -1,10 +1,12 @@
 # CodeArtifact
 
+CodeArtifact is a fully managed artifact repository service.
+
 ### Concepts
 
 #### Domain&#x20;
 
-Repositories are aggregated into a higher-level entity known as a _domain_. All package assets and metadata are stored in the domain, but they are consumed through repositories. The domain allows organizational policy to be applied across multiple repositories, such as which accounts can access repositories in the domain, and which public repositories can be used as sources of packages.
+Repositories are aggregated into a higher-level entity known as a _domain_. All package assets and metadata are stored in the domain, but they are consumed through repositories.&#x20;
 
 #### Repository
 
@@ -16,7 +18,7 @@ A package is a bundle of software and the metadata that is required to resolve d
 
 #### Upstream repository&#x20;
 
-One repository is _upstream_ of another when the package versions in it can be accessed from the repository endpoint of the downstream repository, effectively merging the contents of the two repositories from the point of view of a client.
+One repository is _upstream_ of another when the package versions in it can be accessed from the repository endpoint of the downstream repository.
 
 #### Asset
 

@@ -154,5 +154,5 @@ Let's delete the website bucket, because it really is now open to the entire wor
 
 You begin to appreciate that AWS is not. going. to. let. you. expose your bucket to the public unless you are absolutely sure that is what you want. Even then, they show you warnings:
 
-![](<../../.gitbook/assets/image (347).png>)
+![](<../../.gitbook/assets/image (347) (1).png>)
 

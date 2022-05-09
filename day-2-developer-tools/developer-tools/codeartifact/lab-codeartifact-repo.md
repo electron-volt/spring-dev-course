@@ -4,37 +4,49 @@
 
 In this lab we are going to create a CodeArtifact repository.
 
-This lab assumes that you have a package manager client like pip, twine, mvn or npm installed on your computer. If you don't have any and don't want to install one, then you can just read through the lab without doing the steps yourself.&#x20;
+This lab requires that you have the Python package installer pip installed, either locally on your machine or in CloudShell.&#x20;
 
-The instructions are written for Python, but use whatever you like.&#x20;
+## Install pip
+
+For this lab to work you will need a terminal with pip installed.&#x20;
+
+If you want to download pip locally, here are instructions:
+
+{% embed url="https://pypi.org/project/pip" %}
+pip
+{% endembed %}
+
+#### CloudShell
+
+If you are using CloudShell, run this command:
+
+```
+sudo yum install pip -y
+```
 
 ## Create the repository
 
 Navigate to CodeArtifact.&#x20;
 
-Click **create repository**.
+![every lab starts with an orange button it seems](<../../../.gitbook/assets/image (347).png>)
 
-Give it a suitable name like my-repo.
+* Click **create repository**.
+* Name the repo **yourname-repo**
+* Description can be left blank.&#x20;
+* For public upstream repositories, use **pypi-store**.
+* Click **next**.
 
-Description can be left blank.&#x20;
-
-For public upstream repositories, I am going to use pypi-store.
-
-Click **next**.
+![](<../../../.gitbook/assets/image (352).png>)
 
 ### Domain&#x20;
 
-Under Domain, for AWS account pick "this AWS account".&#x20;
+* Under Domain, for AWS account pick "**this AWS account"**.&#x20;
 
-We have to create a domain as we don't have one - and each repo belongs to a domain.&#x20;
+We have to create a domain as we don't have one yet - and each repo has to belong to a domain.&#x20;
 
-Give your domain a name like my-domain.&#x20;
+* name the domain **yourname-domain**&#x20;
 
-### Encryption&#x20;
-
-We have to use encryption. We will pick AWS managed key in KMS settings (more about KMS on day 5).&#x20;
-
-Click **next**.
+![domain settings](<../../../.gitbook/assets/image (423).png>)
 
 ### Review
 
@@ -42,40 +54,42 @@ Review the settings and then click **create repository.**
 
 ## Connection instructions
 
-When your repo has been created, you will be taken to this page:
-
-![my-repo](<../../../.gitbook/assets/image (343).png>)
+When your repo has been created, you will be taken to a summary page.&#x20;
 
 Click on **View connection instructions**.
 
-This dialogue opens up. Choose pip from the dropdown to reveal the CLI command.&#x20;
+This dialogue opens up. Choose **pip** from the dropdown to reveal the CLI command.&#x20;
 
-![](<../../../.gitbook/assets/image (376) (1).png>)
+![connection URL](<../../../.gitbook/assets/image (320).png>)
 
-Copy the CLI command and run it.&#x20;
+* Copy the CLI command and run it in your local terminal or in CloudShell.
 
 You will ideally see this response:
 
 ```
-Successfully configured pip to use AWS CodeArtifact repository https://eves-domain-123456789.d.codeartifact.eu-north-1.amazonaws.com/pypi/my-repo/ 
+Successfully configured pip to use AWS CodeArtifact repository https://repo-account.d.codeartifact.eu-north-1.amazonaws.com/pypi/my-repo/ 
 Login expires in 12 hours at 2022-01-17 05:24:54+02:00
 ```
 
 ### Install something
 
-While still in your terminal, try installing something. For example `pip install scipy.`&#x20;
+While still in your terminal, try installing something. For example
+
+```
+pip install scipy
+```
 
 It may take a moment, but eventually your CodeArtifact repository will show the newly installed package:
 
-![from here ](<../../../.gitbook/assets/image (48).png>)
+![from Cloudshell](<../../../.gitbook/assets/image (135).png>)
 
-![to here.](<../../../.gitbook/assets/image (329).png>)
+![to Artifact.](<../../../.gitbook/assets/image (329).png>)
 
 ## Clean up&#x20;
 
-Time to delete things again:
+Time to delete things:
 
-* the repo you created + the upstream repo
-* the domain&#x20;
+* In CodeArtifact > repositories, delete the repo you created yourname-repo and pypi-store.&#x20;
+* In CodeArtifat > domain, delete your domain.
 
-The domain can only be deleted once it has 0 repos in it.&#x20;
+Note: the domain can only be deleted once it has 0 repos in it.&#x20;

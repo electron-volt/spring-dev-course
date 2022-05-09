@@ -95,7 +95,7 @@ Once the index has been successfully created, let's go back to View items. We wa
 
 Running the same query for rottweiler:
 
-![it works as advertised](<../../.gitbook/assets/image (352).png>)
+![it works as advertised](<../../.gitbook/assets/image (352) (1).png>)
 
 ## Part 2: LSI
 
