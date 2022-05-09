@@ -2,21 +2,30 @@
 
 ## Elastic Beanstalk environment
 
-We return to Elastic Beanstalk. We will create a web application using Node.js.&#x20;
+In the AWS console, navigate to Elastic Beanstalk. We will create a web application using Node.js.
 
-Once you get to Elastic Beanstalk, the wizard is very easy to use.&#x20;
+Look for the orange "Create application" button:
+
+&#x20;
+
+![](<../../../.gitbook/assets/image (170).png>)
+
+The wizard is very easy to use.&#x20;
 
 We want these settings:
 
-* create a new environment
-* web server environment
-* give it a name. Mine is betterwork.
-* managed environment
-* Platform **Node.js** (latest version)
-* sample application
-* create environment.
+* Name: **pipeline-app**
+* No tags
+* Platform **Node.js**&#x20;
+  * use whatever branch and version AWS suggests
+* Application code: **sample application**
+* Click **configure more options.**
 
-![](<../../../.gitbook/assets/image (267).png>)
+For Configuration presets, Ensure that **"**Single instance _(Free Tier eligible)"_ is selected.
+
+* Click **create app.**&#x20;
+
+![environment is being prepared.](<../../../.gitbook/assets/image (12).png>)
 
 Wait for a few minutes for the environment to come up.&#x20;
 

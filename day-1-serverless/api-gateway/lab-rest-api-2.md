@@ -24,7 +24,7 @@ Permissions:
 2. Name: Yourname-GetStartedLambdaIntegrationRole
 3. Use simple microservices permissions
 
-![](<../../.gitbook/assets/image (12).png>)
+![](<../../.gitbook/assets/image (12) (1).png>)
 
 Code:
 
