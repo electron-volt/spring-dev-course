@@ -159,7 +159,7 @@ We're still in API gateway and the HTTP API.&#x20;
 
 Repeat steps for all routes. This is what it looks like when GET /items route has an integration:
 
-![route GET /items has an integration attached](<../.gitbook/assets/image (366).png>)
+![route GET /items has an integration attached](<../.gitbook/assets/image (366) (1).png>)
 
 ## Test the API&#x20;
 

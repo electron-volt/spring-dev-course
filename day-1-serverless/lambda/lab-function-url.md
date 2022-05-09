@@ -32,7 +32,7 @@ If you click on the URL, you will see the output of your function in your browse
 
 Since we created the URL for the $LATEST, I am able to change the function code, hit deploy and changes are immediately reflected in the browser as soon as I refresh the tab:
 
-![changes made to my-cli-lambda](<../../.gitbook/assets/image (167).png>)
+![changes made to my-cli-lambda](<../../.gitbook/assets/image (167) (1).png>)
 
 ![yikes](<../../.gitbook/assets/image (66).png>)
 

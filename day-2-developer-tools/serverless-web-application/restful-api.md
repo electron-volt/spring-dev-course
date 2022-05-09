@@ -26,23 +26,25 @@ In your new API, select Authorizers and Create New Authorizer.
 
 ![authorizer](<../../.gitbook/assets/image (23).png>)
 
-Name: WildRydes
+Name: **WildRydes**
 
-Type: Cognito
+Type: **Cognito**
 
 For user pool, pick your pool from the dropdown
 
-For token source, write Authorization.&#x20;
+For token source, write **Authorization**.&#x20;
 
 Leave validation empty.&#x20;
 
-Create.
+**Create**.
 
 ### Test the authorizer
 
 Go back to your WildRydes web app and sign in with your test user credentials.&#x20;
 
-You will see the token, copy it.&#x20;
+You will see a token, copy it.&#x20;
+
+![](<../../.gitbook/assets/image (55).png>)
 
 Go back to API Gateway, the authorizer and click Test.&#x20;
 
@@ -52,13 +54,16 @@ Paste in the token:
 
 ## Create new resource and method
 
-Create a new resource called /ride within your API (enable CORS).&#x20;
+Create a new resource called ride within your API (enable CORS).&#x20;
 
-Then create a POST method for that resource and configure it to use a Lambda proxy integration backed by the RequestUnicorn function.
+![](<../../.gitbook/assets/image (348).png>)
+
+* Then create a **POST** method for the ride resource&#x20;
+* configure it to use a **Lambda proxy integration** backed by the **RequestUnicorn** function.
 
 ![](<../../.gitbook/assets/image (168).png>)
 
-Hint: resources > Actions > create resource /ride > actions > create method > POST > hit checkmark.
+You will be asked to grant API Gateway permission to invoke your Lambda. This is OK.&#x20;
 
 ### Add authorizer
 
@@ -70,20 +75,22 @@ Click the pen icon next to Authorization. Select WildRydes and then click the ch
 
 ## Deploy your API&#x20;
 
-In your API, go to Actions > Deploy API.&#x20;
+In your API, go to **Actions > Deploy API.**&#x20;
 
-For stage, select new stage.&#x20;
+For stage, select **new stage**.&#x20;
 
-Name of the stage: prod.
+Name of the stage: **prod**.
 
-Then deploy the API.&#x20;
+Then **deploy** the API.&#x20;
 
-Take note of the invoke URL.
+Once your API is deployed, you will see the invoke URL. Copy it to your clipboard.&#x20;
 
 ## Update the website config
 
 Back in Cloud9, let's edit js/config.js again.&#x20;
 
-Now we have the invokeUrl as well, so add that value in.&#x20;
+For invokeURL, paste in the invoke URL of your API. Include the /prod at the end.&#x20;
+
+![](<../../.gitbook/assets/image (366).png>)
 
 Then push changes to repo.
