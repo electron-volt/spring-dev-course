@@ -94,7 +94,7 @@ You will then be prompted for a username and password.&#x20;
 * username: your GitHub username
 * password: the string that you copied after you generated the personal access token.&#x20;
 
-![](<../../../.gitbook/assets/image (419).png>)
+![](<../../../.gitbook/assets/image (419) (1).png>)
 
 ## Where we're at
 

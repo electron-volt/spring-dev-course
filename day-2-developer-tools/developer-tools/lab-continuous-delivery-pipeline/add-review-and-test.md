@@ -14,17 +14,26 @@ What we'll do:
 
 Go to CodePipeline and click on the pipeline we created.&#x20;
 
-1. Click the **white "Edit" button** near the top of the page.
-2. Click the **white "Add stage"** button between the "Build" and "Deploy" stages.
-3. In the "Stage name" field type **"Review."**
-4. Click the **orange "Add stage" button**.
-5. In the "Review" stage, click the **white "Add action group" button**.
-6. Under "Action name" type **"Manual\_Review."**
-7. From the "Action provider" select **"Manual approval."**
-8. Click the **orange "Done" button**.
-9. Click the **orange "Save" button** to confirm the changes. You will now see your pipeline with four stages: "Source," "Build," "Review," and "Deploy."
+* Click the **white "Edit" button** near the top of the page.
+* Click the **white "Add stage"** button between the "Build" and "Deploy" stages.
 
-![Adding a stage](<../../../.gitbook/assets/image (415).png>)
+![](<../../../.gitbook/assets/image (337).png>)
+
+* In the "Stage name" field type **"Review."**
+* In the "Review" stage, click the **white "Add action group" button**.
+* Under "Action name" type **"Manual\_Review."**
+* From the "Action provider" select **"Manual approval."**
+
+![](<../../../.gitbook/assets/image (243).png>)
+
+Ignore all the other fields like SNS topic, URL etc.&#x20;
+
+* Click the **orange "Done" button**.
+* Click the **orange "Save" button at the right top corner of the screen** to confirm the changes.&#x20;
+
+You will now see your pipeline with four stages: "Source," "Build," "Review," and "Deploy."
+
+![](<../../../.gitbook/assets/image (20).png>)
 
 ## Push a change to the repository
 

@@ -114,7 +114,7 @@ Next - while still in the Ireland region - go to CloudFormation.&#x20;
 
 Create a stack using the labtemplate.yml file. Note: as I write this, in the Ireland region it is **t2.micro** which is the free tier eligible instance type.&#x20;
 
-![Creating the stack](<../../.gitbook/assets/image (243).png>)
+![Creating the stack](<../../.gitbook/assets/image (243) (1).png>)
 
 Once the stack is in state CREATE COMPLETE, you can view the outputs:
 

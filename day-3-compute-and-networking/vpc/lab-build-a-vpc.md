@@ -6,7 +6,7 @@ We are going to build a VPC. It will have the following:
 * Two subnets: one private with CIDR block 10.0.1.0/24 and one public with CIDR block 10.0.2.0/24
 * An Internet gateway.
 
-![Our VPC](<../../.gitbook/assets/image (20).png>)
+![Our VPC](<../../.gitbook/assets/image (20) (1).png>)
 
 ## Create the VPC
 

@@ -8,11 +8,11 @@ If you navigate to EC2 > instances > launch instance, you may be greeted by the 
 
 The steps remain the same as ever, the default settings remain the same:
 
-![defaults for new instances](<../../.gitbook/assets/image (396).png>)
+![defaults for new instances](<../../.gitbook/assets/image (396) (1).png>)
 
 The default instance type is free tier eligible.&#x20;
 
 The functionality for key pairs has changed the most:
 
-![new functionality for key pairs](<../../.gitbook/assets/image (337).png>)
+![new functionality for key pairs](<../../.gitbook/assets/image (337) (1).png>)
 

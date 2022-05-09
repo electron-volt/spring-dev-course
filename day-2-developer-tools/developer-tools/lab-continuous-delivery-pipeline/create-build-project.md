@@ -13,7 +13,7 @@ In a new browser tab open the AWS CodeBuild Console.
 ### Source
 
 * Click the **orange "Create project" button**.
-* Project name: pipeline-project
+* Project name: yourname-pipeline-project
 * Select **"GitHub"** from the "Source provider" dropdown menu.&#x20;
 * Visually confirm that the **"Connect using OAuth" radio button** is selected.
 * Click the **white "Connect to GitHub" button**. After clicking this button, a new browser tab will open asking you to give AWS CodeBuild access to your GitHub repo.
