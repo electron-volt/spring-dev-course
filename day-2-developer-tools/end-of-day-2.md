@@ -15,7 +15,7 @@ Before you go though, let's make sure to clean up all the resources that we crea
 * CodePipeline pipelines
 * Elastic Beanstalk web applications.&#x20;
 
-## Unable to delete Elastic Beanstalk S3 bucket
+## Unable to delete Elastic Beanstalk S3 bucket?
 
 Go to the bucket
 
@@ -23,6 +23,6 @@ Go to Permissions tab&#x20;
 
 Find the bucket policy&#x20;
 
-Delete the entire bucket policy..&#x20;
+Delete the entire bucket policy.&#x20;
 
 Now you should be able to delete the bucket.&#x20;
