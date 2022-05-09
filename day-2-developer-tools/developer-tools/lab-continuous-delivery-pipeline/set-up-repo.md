@@ -1,34 +1,92 @@
 # Set up repo
 
-## Fork and clone
+## Setting up the source
 
-Sign in to GitHub. If you do not already use GitHub, you can create a free account. Be sure to also create a personal access token, instructions can be found here: [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+### Prepare your GitHub
 
-Once you have signed in to GitHub:
+* Sign in to GitHub.&#x20;
+  * If you do not already use GitHub, you can create a free account at github.com&#x20;
+* Once you have logged in to your account, click on your username at the top right corner.
+* Click **settings**&#x20;
 
-Go fork this repository: [https://github.com/aws-samples/aws-elastic-beanstalk-express-js-sample](https://github.com/aws-samples/aws-elastic-beanstalk-express-js-sample)
+![](<../../../.gitbook/assets/image (291).png>)
 
-Clone the repo you forked with git clone URL. Make sure it's _your_ repo you are cloning - the url should be&#x20;
+* On the left side panel, scroll all the way to the bottom
+* Click on **<> Developer settings.**&#x20;
+* Then from the left side panel, click **Personal access tokens.**&#x20;
+* Click **generate new token**&#x20;
+* Name: **aws labs**
+* Expiration: 30 days
+* Scope: **repo**
+
+![generating a new token](<../../../.gitbook/assets/image (332).png>)
+
+#### Copy your token
+
+When you create your token, you are shown a string. Make sure to copy it and store it somewhere safe, because you will not be able to view it again.&#x20;
+
+### Fork the repository&#x20;
+
+Once you have your access token,&#x20;
+
+* Go to this repository: [https://github.com/aws-samples/aws-elastic-beanstalk-express-js-sample](https://github.com/aws-samples/aws-elastic-beanstalk-express-js-sample)
+* Fork the repository&#x20;
+
+![forking](<../../../.gitbook/assets/image (126).png>)
+
+* For owner use your own GitHub
+* You can keep the same name for the repository
+
+![forking ](<../../../.gitbook/assets/image (435).png>)
+
+### Clone the repository
+
+Once you have forked the repository, you will be taken to this page:
+
+![your forked repo](<../../../.gitbook/assets/image (211).png>)
+
+* Click on the green **Code** button&#x20;
+* copy the HTTPS URL
+
+Make sure it's _your_ repo you are cloning - the url should be&#x20;
 
 [https://github.com/YOUR USER NAME NEEDS TO BE HERE/aws-elastic-beanstalk-express-js-sample.git](https://github.com/electron-volt/aws-elastic-beanstalk-express-js-sample.git)
 
+Next we want to clone the repository. You can use CloudShell or your local machine.&#x20;
+
+In the terminal, run&#x20;
+
+```
+git clone URL 
+```
+
+then change into the aws-elastic-beanstalk-express-js-sample directory.&#x20;
+
 ## First commit
 
-On your local machine: make a change in `app.js` on line 5 and then push your changes. Replace 'Hello World!' with any text you want.&#x20;
+On your local machine or CloudShell:&#x20;
 
-This text will eventually be shown to the world through Elastic Beanstalk.
+* open the file `app.js`&#x20;
+* on line 5 replace 'Hello World!' with any text you want.&#x20;
 
 ![Line 5 in app.js](<../../../.gitbook/assets/image (354).png>)
 
-Pushing was the usual git add app.js, git commit -m "changed one line", git push.&#x20;
+#### Push changes
 
-![this you?](<../../../.gitbook/assets/image (419).png>)
+Push your changes to your repo with&#x20;
 
-## Trust but verify
+```
+git add app.js
+git commit -m "changed one line"
+git push
+```
 
-Once you've pushed your changes, to check in GitHub that line 5 has indeed changed:
+You will be prompted for a username and password.&#x20;
 
-![](<../../../.gitbook/assets/image (244).png>)
+* username: your GitHub username
+* password: the string that you copied after you generated the personal access token.&#x20;
+
+![](<../../../.gitbook/assets/image (419).png>)
 
 ## Where we're at
 

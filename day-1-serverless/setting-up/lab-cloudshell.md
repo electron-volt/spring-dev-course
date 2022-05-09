@@ -12,7 +12,7 @@ Once you've clicked on CloudShell, it will open a terminal inside the AWS consol
 
 It is a fully fledged Bash shell, as you can see when you play around with it a little:
 
-![I am cloudshell-user](<../../.gitbook/assets/image (126).png>)
+![I am cloudshell-user](<../../.gitbook/assets/image (126) (1).png>)
 
 ## Customization
 

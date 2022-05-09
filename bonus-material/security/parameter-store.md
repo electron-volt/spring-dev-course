@@ -17,7 +17,7 @@ Note: In this lab, we want to work in the **us-east-1** region.&#x20;
 
 Here are the resources that the stack will create:
 
-![resources](<../../.gitbook/assets/image (332).png>)
+![resources](<../../.gitbook/assets/image (332) (1).png>)
 
 * A Lambda function&#x20;
 * A Parameter Store parameter

@@ -28,7 +28,7 @@ save_var STAGING_ALB_URL $( \
 curl $STAGING_ALB_URL/hello/<your name here>
 ```
 
-![it works](<../../.gitbook/assets/image (435).png>)
+![it works](<../../.gitbook/assets/image (435) (1).png>)
 
 ## Push a change
 

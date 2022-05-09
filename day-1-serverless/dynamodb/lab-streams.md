@@ -141,7 +141,7 @@ aws lambda create-event-source-mapping \
 --event-source-arn ADD ARN OF STREAM HERE
 ```
 
-![output](<../../.gitbook/assets/image (211).png>)
+![output](<../../.gitbook/assets/image (211) (1).png>)
 
 ### Make changes to the table
 

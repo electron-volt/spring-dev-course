@@ -59,7 +59,7 @@ At the top of the screen you should see this:
 
 Click on the name of your function to get back to $LATEST.
 
-![We get the deploy button back! ](<../../.gitbook/assets/image (291).png>)
+![We get the deploy button back! ](<../../.gitbook/assets/image (291) (1).png>)
 
 Edit the code to return "**This is the production version!"** and deploy your changes.&#x20;
 
