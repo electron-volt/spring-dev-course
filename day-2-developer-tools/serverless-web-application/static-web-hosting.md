@@ -6,21 +6,23 @@ We are going to use AWS Amplify to host the code we just pushed into CodeCommit.
 
 Navigate to AWS Amplify.&#x20;
 
-Click get started.&#x20;
+Click **get started.**&#x20;
 
-Choose Host your web app.&#x20;
+Under Host your web app, click **get started again.**&#x20;
 
 ![](<../../.gitbook/assets/image (206) (1).png>)
 
 In "From your existing code", choose CodeCommit
 
+![](<../../.gitbook/assets/image (154).png>)
+
 In "Add repository branch", pick the wildrydes-site repo and master branch.&#x20;
 
 ![what is a monorepo?](<../../.gitbook/assets/image (287).png>)
 
-Check the box for "Allow AWS Amplify to automatically deploy all files.."&#x20;
+Check the box for **Allow AWS Amplify to automatically deploy all files hosted in your project root directory.**
 
-Click Next, then Save and deploy.&#x20;
+Click **Next**, then **Save and deploy.**&#x20;
 
 Wait while Amplify creates the web app.&#x20;
 
@@ -32,7 +34,11 @@ When the deployment is done, click the https://master...amplifyapp.com link to v
 
 Let's see what happens if we want to make a change to our app.
 
-In the Cloud9 IDE, make a change to index.html: change the title of the site to \<title>Wild Rydes - Rydes of the future!\</title>
+In the Cloud9 IDE, make a change to **index.html:**&#x20;
+
+change the title of the site to \<title>Wild Rydes - Rydes of the future!\</title>
+
+![](<../../.gitbook/assets/image (299).png>)
 
 Then&#x20;
 

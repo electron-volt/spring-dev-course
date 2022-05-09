@@ -55,7 +55,3 @@ git push
 Here is what it looks like now in the repo:
 
 ![](<../../.gitbook/assets/image (292).png>)
-
-And the terminal:
-
-![](<../../.gitbook/assets/image (338).png>)

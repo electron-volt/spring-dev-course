@@ -118,7 +118,7 @@ Create a stack using the labtemplate.yml file. Note: as I write this, in the Ire
 
 Once the stack is in state CREATE COMPLETE, you can view the outputs:
 
-![So cool](<../../.gitbook/assets/image (379).png>)
+![So cool](<../../.gitbook/assets/image (379) (1).png>)
 
 ### Clean up&#x20;
 

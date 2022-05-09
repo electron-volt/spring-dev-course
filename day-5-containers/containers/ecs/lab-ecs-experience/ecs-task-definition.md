@@ -49,7 +49,7 @@ Click Add container.&#x20;
 
 Skip the rest. Click Add.
 
-![web container has been created](<../../../../.gitbook/assets/image (397).png>)
+![web container has been created](<../../../../.gitbook/assets/image (397) (1).png>)
 
 ### Scroll to create
 

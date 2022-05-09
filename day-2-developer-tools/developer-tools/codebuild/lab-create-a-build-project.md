@@ -184,7 +184,7 @@ Everything runs smoothly:
 
 My build project has successfully uploaded an artifact into the output bucket:
 
-![](<../../../.gitbook/assets/image (155).png>)
+![](<../../../.gitbook/assets/image (155) (1).png>)
 
 ### End result & clean up
 

@@ -67,7 +67,7 @@ You can type a comment like "All looks good!"&#x20;
 
 Then press Approve. The wheels are turning:
 
-![Pipeline moves to the next stage](<../../../.gitbook/assets/image (154).png>)
+![Pipeline moves to the next stage](<../../../.gitbook/assets/image (154) (1).png>)
 
 You should also see a green banner that says "Action Manual\_review was approved".
 

@@ -35,7 +35,7 @@ We will be working with the VPC that we created using the CLI in a previous lab.
 3. Hover over the - in the name column. Click on it.
 4. Name the VPC **alb-vpc.**
 
-![alb-vpc has been given a name](<../../.gitbook/assets/image (213).png>)
+![alb-vpc has been given a name](<../../.gitbook/assets/image (213) (1).png>)
 
 ### Name the route table
 
@@ -361,7 +361,7 @@ For either instance web-a and web-c,&#x20;
 2. Create a rule in the ALB's HTTP listener for that directory
 3. You can even play with different weights
 
-![Some features of the ALB](<../../.gitbook/assets/image (411).png>)
+![Some features of the ALB](<../../.gitbook/assets/image (411) (1).png>)
 
 You can test the weighted routing with cURL:
 

@@ -160,7 +160,7 @@ aws ecs create-service --service-name hello-server-prod --cli-input-json file://
 
 Service is up, but no tasks:
 
-![prod service](<../../.gitbook/assets/image (281).png>)
+![prod service](<../../.gitbook/assets/image (281) (1).png>)
 
 Let's test this new service.
 
