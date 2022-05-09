@@ -35,7 +35,7 @@ Once you have your access token,&#x20;
 ![forking](<../../../.gitbook/assets/image (126).png>)
 
 * For owner use your own GitHub
-* You can keep the same name for the repository
+* You can keep the name aws-elastic-beanstalk-express-js-sample for the repository
 
 ![forking ](<../../../.gitbook/assets/image (435).png>)
 
@@ -57,17 +57,18 @@ Next we want to clone the repository. You can use CloudShell or your local machi
 In the terminal, run&#x20;
 
 ```
-git clone URL 
+git clone <the URL you copied>
 ```
 
 then change into the aws-elastic-beanstalk-express-js-sample directory.&#x20;
 
 ## First commit
 
-On your local machine or CloudShell:&#x20;
+In the aws-elastic-beanstalk-express-js-sample directory
 
 * open the file `app.js`&#x20;
-* on line 5 replace 'Hello World!' with any text you want.&#x20;
+* on line 5 replace 'Hello World!' with any text you want
+* save changes
 
 ![Line 5 in app.js](<../../../.gitbook/assets/image (354).png>)
 
@@ -81,7 +82,14 @@ git commit -m "changed one line"
 git push
 ```
 
-You will be prompted for a username and password.&#x20;
+If you haven't used git before in this terminal, you will be asked to run&#x20;
+
+```
+git config --global user.name "yourname" 
+git config --global user.email "name@example.com"
+```
+
+You will then be prompted for a username and password.&#x20;
 
 * username: your GitHub username
 * password: the string that you copied after you generated the personal access token.&#x20;
