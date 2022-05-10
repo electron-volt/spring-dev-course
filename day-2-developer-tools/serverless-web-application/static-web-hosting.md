@@ -30,6 +30,13 @@ Wait while Amplify creates the web app.&#x20;
 
 When the deployment is done, click the https://master...amplifyapp.com link to view the site!&#x20;
 
+#### Problems with the deployment?&#x20;
+
+Do not modify the IAM role attached to your Amplify app. \
+If the first Amplify deployment does not work, then move on to the next step.&#x20;
+
+After you have pushed your changes to your CodeCommit repository, Amplify will trigger a new deployment and that should run.&#x20;
+
 ## Modify the site
 
 Let's see what happens if we want to make a change to our app.
