@@ -7,7 +7,7 @@ S3 can also be used to serve static resources over the internet. Let's make a si
 First we want to create a new bucket that will be open to the public.&#x20;
 
 1. Create bucket
-2. Give it a unique name like **Yourname-ddmmyyyy**
+2. Give it a unique name like **Yourname-homepage-ddmm**
 3. **Uncheck** "Block all public access"
 4. Leave all "Block..."  checkboxes unchecked
 5. Check the box next to "I acknowledge that the current settings might result in this bucket and the objects within becoming public."
@@ -50,6 +50,8 @@ You will need two HTML files in your bucket:
 The content of the files can be anything.&#x20;
 
 You are free to make your own HTML files or use the files below.&#x20;
+
+To those using the files below: If you want the button in index.html to work (it doesn't have to! It's just for fun!) then change the location.href on line 17 to the URL of your error.html.&#x20;
 
 Upload both documents to the bucket.&#x20;
 
