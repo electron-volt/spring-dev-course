@@ -180,7 +180,7 @@ Finally the mystery of the multiple health checks is resolved! Imagine what happ
 
 The ALB is now routing all requests made to its DNS name to the only working EC2 instance:
 
-![69a to the rescue! ](<../.gitbook/assets/image (53).png>)
+![69a to the rescue! ](<../.gitbook/assets/image (53) (1).png>)
 
 ### ASG
 

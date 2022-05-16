@@ -333,7 +333,7 @@ Check the CloudWatch logs. Use codebuild/hello-server as group name.
 
 Then click "return to CodePipeline". This is what you'll see:
 
-![build project has been created](<../../.gitbook/assets/image (405).png>)
+![build project has been created](<../../.gitbook/assets/image (405) (1).png>)
 
 Then click next.&#x20;
 

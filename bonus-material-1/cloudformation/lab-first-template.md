@@ -52,7 +52,7 @@ In the CloudFormation console, you see all the events of your stack creation:
 
 You can go to EC2 > instances to verify that an instance has been created:
 
-![Instance is up and running](<../../.gitbook/assets/image (273).png>)
+![Instance is up and running](<../../.gitbook/assets/image (273) (1).png>)
 
 Back in the CloudFormation console, click the tab Resources:
 

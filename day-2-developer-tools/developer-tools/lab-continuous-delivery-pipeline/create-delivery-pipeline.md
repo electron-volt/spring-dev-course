@@ -77,7 +77,7 @@ It should execute successfully:
 
 Now let's go to Elastic Beanstalk and see what our app looks like now.&#x20;
 
-![](<../../../.gitbook/assets/image (203).png>)
+![](<../../../.gitbook/assets/image (203) (1).png>)
 
 You should see a white background and whatever text you used to modify the line 5 of app.js in our first commit to our repo.&#x20;
 

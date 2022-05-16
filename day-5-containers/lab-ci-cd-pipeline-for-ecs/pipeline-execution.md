@@ -6,7 +6,7 @@ My first execution failed because Pipeline didn't have the necessary permissions
 
 After a successful execution, the deploy stage looks like this:
 
-![success](<../../.gitbook/assets/image (385).png>)
+![success](<../../.gitbook/assets/image (385) (1).png>)
 
 Click on the Details link.&#x20;
 

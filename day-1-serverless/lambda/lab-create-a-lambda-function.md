@@ -96,7 +96,7 @@ Wait, the execution results still show the old text!&#x20;
 
 Now the execution results show your chosen text instead of the default.&#x20;
 
-![test results after deploy](<../../.gitbook/assets/image (130).png>)
+![test results after deploy](<../../.gitbook/assets/image (130) (1).png>)
 
 ### Monitor the function
 

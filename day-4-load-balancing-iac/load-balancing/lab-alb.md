@@ -79,7 +79,7 @@ Our job is then to create another subnet in a different AZ and make it public.
    3. CIDR block: 10.1.3.0/24
 6. Create subnet.
 
-![two subnets in the alb-vpc](<../../.gitbook/assets/image (322).png>)
+![two subnets in the alb-vpc](<../../.gitbook/assets/image (322) (1).png>)
 
 #### Make the new subnet public
 
@@ -332,7 +332,7 @@ Click Save.&#x20;
 
 In your browser, go to long-dns-name-of-alb/orders&#x20;
 
-![It worked!](<../../.gitbook/assets/image (134).png>)
+![It worked!](<../../.gitbook/assets/image (134) (1).png>)
 
 ### Edit the default action of the ALB - optional
 

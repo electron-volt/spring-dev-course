@@ -63,7 +63,7 @@ Click create bucket.
 
 In the dialogue there is a section called Default encryption. When you click the radio button for Enable, you see this:
 
-![](<../../../.gitbook/assets/image (180).png>)
+![](<../../../.gitbook/assets/image (180) (1).png>)
 
 ## Clean up&#x20;
 

@@ -14,6 +14,13 @@ When you scale up, you change the instance type to a more powerful one.&#x20;
 
 When you scale out, you create more instances of the same size.
 
+#### Horizontal and vertical scaling
+
+You may also encounter the terms horizontal and vertical scaling. They mean the same thing:
+
+* horizontal scaling is scaling out
+* vertical scaling is scaling up.&#x20;
+
 ## Auto-scaling
 
 With AWS Auto-scaling, you can have AWS automatically scale your instances out and in as needed. Your applications will always have just as much or as little computing power as is needed.&#x20;
@@ -22,7 +29,7 @@ With AWS Auto-scaling, you can have AWS automatically scale your instances out a
 
 #### Groups
 
-Your EC2 instances are organized into _groups_ so that they can be treated as a logical unit for the purposes of scaling and management. When you create a group, you can specify its minimum, maximum, and, desired number of EC2 instances.
+Your EC2 instances are organized into _groups_ so that they can be treated as a logical unit for the purposes of scaling and management. When you create a group, you can specify its minimum, maximum, and desired number of EC2 instances.
 
 #### Configuration templates
 
