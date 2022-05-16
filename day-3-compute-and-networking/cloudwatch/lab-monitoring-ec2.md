@@ -138,13 +138,13 @@ I end up with a number that tells me what the CPUCreditUsage of my new EC2 insta
 Try creating a widget that shows the CPU utilization of the EC2 instance.&#x20;
 
 1. Click Create widget
-2. Pick "Line"&#x20;
+2. Pick "Stacked area"&#x20;
 3. EC2, per-instance metrics, CPUUtilization
 4. Create widget
 
-Once you've created the widgets, click Save dashboard.&#x20;
+![](<../../.gitbook/assets/image (263).png>)
 
-![Our modest EC2 dashboard](<../../.gitbook/assets/image (295).png>)
+Once you've created the widgets, click Save dashboard.&#x20;
 
 ## Alarms
 
@@ -229,10 +229,8 @@ This installs the stress tool on the instance [https://linux.die.net/man/1/stres
 Let's start to consume CPU with this command
 
 ```
-sudo stress --cpu 8
+sudo stress --cpu 16
 ```
-
-![](<../../.gitbook/assets/image (287).png>)
 
 ### Monitor graphs in CloudWatch&#x20;
 

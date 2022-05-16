@@ -238,7 +238,7 @@ Click on the **TEST**.
 
 You should see this:
 
-![test result with our values](<../../.gitbook/assets/image (263).png>)
+![test result with our values](<../../.gitbook/assets/image (263) (1).png>)
 
 The output should contain these lines, among others:
 
