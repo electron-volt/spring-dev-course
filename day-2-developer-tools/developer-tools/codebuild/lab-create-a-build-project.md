@@ -114,7 +114,7 @@ For S3 object key, use
 codebuild-example-main/
 ```
 
-![source settings](<../../../.gitbook/assets/image (137).png>)
+![source settings](<../../../.gitbook/assets/image (137) (1).png>)
 
 ### Environment
 

@@ -106,7 +106,7 @@ Look for the tab HTTPS (GRC):
 
 Scroll down until you see Step 3 (please ignore steps 1 and 2):
 
-![clone URL](<../../../.gitbook/assets/image (276).png>)
+![clone URL](<../../../.gitbook/assets/image (276) (1).png>)
 
 **Copy** this string to your clipboard.&#x20;
 

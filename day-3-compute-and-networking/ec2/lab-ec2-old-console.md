@@ -1,4 +1,4 @@
-# LAB: First EC2 instance
+# LAB: EC2 - Old console
 
 ## Creating our first EC2 instance
 
@@ -31,7 +31,17 @@ Once you've had a look, click the grey Configure Instance details button.&#x20;
 
 ### Configure instance details
 
-Scroll all the way down to Advanced details. Expand.&#x20;
+#### Select default VPC
+
+We want to launch our instance in our default VPC. Make sure it is selected in **Network**:
+
+![Network settings ](<../../.gitbook/assets/image (137).png>)
+
+Leave all other settings as they are.
+
+Scroll all the way down to **Advanced details:**
+
+![User data in additional settings](<../../.gitbook/assets/image (276).png>)
 
 Leave all other settings as they are, but in the text area **User data** paste the following:
 
@@ -45,7 +55,7 @@ cd /var/www/html
 echo "This is a test page running on my first EC2 instance." > index.html
 ```
 
-We could of course launch our instance, SSH into it and then run the above commands. However we are able to achieve the same end result - a web server that displays our message - with this user data script.&#x20;
+This script turns our instance into a web server that prints a simple message (on line 7).
 
 Then hit **Next: Add storage.**
 
@@ -131,7 +141,7 @@ If we want to be able to SSH into our instance, we need to create a key pair. Wh
 
 1. Select "create a new key pair"
 2. Key pair type is RSA
-3. Give it the name "day2labs"
+3. Give it the name "yourname-keys"
 4. Download key pair.&#x20;
 5. Launch instance.&#x20;
 
@@ -141,11 +151,30 @@ Your EC2 instance is ready to be SSH'd into when you see this:
 
 ![EC2 instance is running](<../../.gitbook/assets/image (341).png>)
 
-You can give the instance a descriptive name, like Lab-EC2. Click on the blue instance id to view more information about the instance.&#x20;
+#### Name the instance
+
+Click on the - in the Name column.
+
+Name your instance **yourname-EC2.**&#x20;
+
+#### Details
+
+Click on the blue instance id to view more information about the instance.&#x20;
 
 Once you find the **public IPv4 address** of your instance, open it in your browser. You should see:
 
 ![It works!](<../../.gitbook/assets/image (113) (1).png>)
+
+### End result
+
+If you want, you can SSH into the instance and change the text that the web server displays. Instructions are below.&#x20;
+
+If you would rather move on to the next lab, then first stop your instance. If you are in the Instances view, select the checkbox next to your instance.&#x20;
+
+* Click the Instance state button (top right)
+* Click stop instance.
+
+## Optional - SSH into the instance
 
 Now let's SSH into our instance and maybe change the text to something else.&#x20;
 
@@ -177,65 +206,6 @@ By changing the text in /var/www/html/index.html, you can change what your web s
 
 Maybe do a little \<marquee> to make it feel like it's 1998 again.&#x20;
 
-## A word about IP addresses
+## The end
 
-There are three different kinds of IP addresses that an EC2 instance can have:
-
-#### Private IP&#x20;
-
-Every instance has a private IP address.&#x20;
-
-#### Dynamic public IP&#x20;
-
-This is what we used to SSH into the instance.&#x20;
-
-#### Static public IP
-
-These are called Elastic IP's or EIP's in AWS. More about these later.&#x20;
-
-For now let's look at private and dynamic public IP's and how they behave if the instance is stopped and then started or rebooted.
-
-### Reboot
-
-Let's try rebooting our instance. Go to the EC2 console in AWS.
-
-#### IP addresses before reboot
-
-First make note of what the private and public IP's of your instance are. Mine were
-
-![IP's before reboot](<../../.gitbook/assets/image (123).png>)
-
-Click instance state > reboot.
-
-![Reboot instance](<../../.gitbook/assets/image (50).png>)
-
-You will be asked to confirm this.&#x20;
-
-Once your instance has successully rebooted, check the IP's again:
-
-&#x20;
-
-![IP's after reboot.](<../../.gitbook/assets/image (198).png>)
-
-Looks like both have stayed the same.&#x20;
-
-### Stop and start
-
-Let's now try stopping our instance and then restarting it. The IP's are still the same as after the reboot.&#x20;
-
-Go to instance state > stop instance. Confirm.&#x20;
-
-Once your instance is in state "Stopped", go back to instance state > start instance.&#x20;
-
-Click the refresh symbol next to Connect if the screen doesn't refresh automatically. What has happened to the IP's?&#x20;
-
-![IP's after stop and start. ](<../../.gitbook/assets/image (226).png>)
-
-Looks like our dynamic public IP has changed. The private one stays the same.&#x20;
-
-If we wanted a public IP address that can remain unchanged even when instances are stopped and restarted, we would need an elastic IP.&#x20;
-
-#### The end
-
-We will not be needing this instance for now, so we can stop it (instance state > stop instance > confirm) and go create another instance via the CLI.&#x20;
-
+We will not be needing this instance for now, so we can stop it (instance state > stop instance > confirm) and go on to create another instance via the CLI.&#x20;

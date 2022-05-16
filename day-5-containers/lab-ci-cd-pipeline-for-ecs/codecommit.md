@@ -71,7 +71,7 @@ git push -u origin master
 
 You can check it out in the console:
 
-![repo in console](<../../.gitbook/assets/image (454).png>)
+![repo in console](<../../.gitbook/assets/image (454) (1).png>)
 
 ## Create and merge a branch
 

@@ -102,7 +102,7 @@ You can use a fake address like **test@foo.bar.**&#x20;
 
 Back in the Cognito console, we see our test user:
 
-![](<../../.gitbook/assets/image (231).png>)
+![](<../../.gitbook/assets/image (231) (1).png>)
 
 Click the user name, then from actions select confirm account.
 
