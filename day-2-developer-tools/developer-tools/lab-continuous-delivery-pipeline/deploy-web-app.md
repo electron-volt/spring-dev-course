@@ -37,7 +37,7 @@ For Configuration presets, Ensure that **"**Single instance _(Free Tier eligible
 
 * Click **create app.**&#x20;
 
-![environment is being prepared.](<../../../.gitbook/assets/image (12).png>)
+![environment is being prepared.](<../../../.gitbook/assets/image (12) (1).png>)
 
 Wait for a few minutes for the environment to come up.&#x20;
 

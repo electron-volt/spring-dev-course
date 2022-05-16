@@ -2,51 +2,112 @@
 
 We will do the exact same thing as in the last lab, but this time using the CLI. We will have:
 
-* A VPC with CIDR block 10.1.0.0/16
-* Two subnets: one private with CIDR block 10.1.1.0/24 and one public with CIDR block 10.1.2.0/24
-* An Internet gateway.
+* A VPC with CIDR block **10.1.0.0/16**
+* Two subnets:&#x20;
+  * one _private_ with CIDR block **10.1.1.0/24**&#x20;
+  * one _public_ with CIDR block **10.1.2.0/24**
+* An Internet gateway
+* two route tables.&#x20;
+
+#### Windows users
+
+These commands are designed for a bash shell. If you are using a Windows machine, please use
+
+* Git Bash or
+* AWS CloudShell.
+
+If you really want to use the Windows command line, then the AWS commands will work as-is but setting the shell variables will not work.&#x20;
 
 ## Create the VPC
 
-`aws ec2 create-vpc --cidr-block 10.1.0.0/16 --query Vpc.VpcId --output text`
+```
+VPC=$(aws ec2 create-vpc --cidr-block 10.1.0.0/16 --query Vpc.VpcId --output text)
+```
 
-This command returns your VPC ID. You'll need it in the next step.&#x20;
+Now there is a shell variable VPC that has the VPC ID. To see the value of this variable, run
+
+```
+echo $VPC
+```
+
+Later in commands where we need to reference the VPC ID, we will use the variable $VPC.
 
 ## Create the subnets
 
-`aws ec2 create-subnet --vpc-id <vpc id> --cidr-block 10.1.1.0/24`
+To create our first subnet, run this command:
 
-`aws ec2 create-subnet --vpc-id <vpc id> --cidr-block 10.1.2.0/24`
+```
+aws ec2 create-subnet --vpc-id $VPC --cidr-block 10.1.1.0/24
+```
 
-The output of these commands will include information such as the subnet ID. Make note of the subnet ID of the latter subnet with CIDR 10.1.2.0/24, as we will need it later.&#x20;
+To create the second subnet, run this command:
+
+```
+aws ec2 create-subnet --vpc-id $VPC --cidr-block 10.1.2.0/24
+```
+
+The output of these commands will include information such as the subnet ID. Copy the subnet ID of the latter subnet with CIDR 10.1.2.0/24
+
+![output](<../../.gitbook/assets/image (12).png>)
+
+Assign this value to a shell variable&#x20;
+
+```
+SUBNET2='your subnet id'
+echo $SUBNET2
+```
+
+Like this:
+
+![](<../../.gitbook/assets/image (334).png>)
 
 ## Create the internet gateway
 
-`aws ec2 create-internet-gateway --query InternetGateway.InternetGatewayId --output text`
+```
+IGW=$(aws ec2 create-internet-gateway --query InternetGateway.InternetGatewayId --output text)
+```
 
-This command returns the ID of the IGW.
+This command returns the ID of the IGW, which is now stored as shell variable $IGW.
 
-Attach the IGW to your new VPC:
+Attach the IGW to your new VPC (there is no output):
 
-`aws ec2 attach-internet-gateway --vpc-id <vpc id> --internet-gateway-id <igw id>`&#x20;
+```
+aws ec2 attach-internet-gateway --vpc-id $VPC --internet-gateway-id $IGW 
+```
 
 ## Create route tables
 
-We will create the route table that we want to use with the public subnet, so the route table with a route to the IGW. The private subnet is implicitly associated with the main route table of the new VPC. Here is how we create a new route table:
+The private subnet - the first one we created - is implicitly associated with the main route table of the new VPC.
 
-`aws ec2 create-route-table --vpc-id <vpc id> --query RouteTable.RouteTableId --output text`
+We will create the route table that we want to use with the public subnet, with subnet id $SUBNET2.
 
-This command returns the id of the route table.&#x20;
+#### Create route table
+
+&#x20;Here is how we create a new route table:
+
+```
+RT=$(aws ec2 create-route-table --vpc-id $VPC --query RouteTable.RouteTableId --output text)
+```
+
+Shell variable $RT now has the route table ID of this route table.&#x20;
+
+#### Add route to route table
 
 Next we want to add a route to the IGW into this route table:
 
-aws ec2 create-route --route-table-id \<rt id> --destination-cidr-block 0.0.0.0/0 --gateway-id \<igw id>
+```
+aws ec2 create-route --route-table-id $RT --destination-cidr-block 0.0.0.0/0 --gateway-id $IGW
+```
 
 If it succeeded, the command will return `{"Return": true}.`
 
+#### Associate route table with second subnet
+
 Now we want to associate the subnet with CIDR 10.1.2.0/24 with this new route table:
 
-`aws ec2 associate-route-table --subnet-id <subnet id> --route-table-id <route table id>`
+```
+aws ec2 associate-route-table --subnet-id $SUBNET2 --route-table-id $RT
+```
 
 If it succeeded, it will return information like association id and state.
 
