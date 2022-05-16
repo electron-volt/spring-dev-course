@@ -96,7 +96,8 @@ Shell variable $RT now has the route table ID of this route table.&#x20;
 Next we want to add a route to the IGW into this route table:
 
 ```
-aws ec2 create-route --route-table-id $RT --destination-cidr-block 0.0.0.0/0 --gateway-id $IGW
+aws ec2 create-route --route-table-id $RT \
+--destination-cidr-block 0.0.0.0/0 --gateway-id $IGW
 ```
 
 If it succeeded, the command will return `{"Return": true}.`
