@@ -18,7 +18,7 @@ If you have built custom VPC's in the Ireland region, please make sure that ther
 
 If networking and CIDR blocks are not completely familiar, then it is best to delete all custom VPC's in the Ireland region first. This way you should only have one VPC in Ireland at the start of this lab:
 
-![default VPC in Ireland](<../../../../.gitbook/assets/image (258).png>)
+![default VPC in Ireland](<../../../../.gitbook/assets/image (258) (1).png>)
 
 The default VPC will have CIDR 172.31.0.0/16.
 

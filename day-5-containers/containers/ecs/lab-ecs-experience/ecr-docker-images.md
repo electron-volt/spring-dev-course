@@ -134,5 +134,5 @@ If you now go into the ECR dogs repo, what do you see? \
 
 Repeat the same steps for cats.&#x20;
 
-![End result.](<../../../../.gitbook/assets/image (220).png>)
+![End result.](<../../../../.gitbook/assets/image (220) (1).png>)
 

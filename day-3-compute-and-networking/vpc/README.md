@@ -1,6 +1,6 @@
 # VPC
 
-Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined. This virtual network closely resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
+Amazon Virtual Private Cloud (VPC) is a virtual network in the cloud.&#x20;
 
 ## Key concepts&#x20;
 
@@ -9,21 +9,33 @@ Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources in
 * **Route table** — A set of rules, called routes, that are used to determine where network traffic is directed.&#x20;
 * **Internet gateway** — A gateway that you attach to your VPC to enable communication between resources in your VPC and the internet.
 
-What we mean by public subnet is really, a subnet that has a route to the IGW in its route table. Similarly a private subnet is a subnet that does not have a route to the IGW in its route table.&#x20;
+What we mean by public subnet is really: a subnet that has a route to the IGW in its route table. Similarly a private subnet is a subnet that does not have a route to the IGW in its route table.&#x20;
+
+![example VPC](<../../.gitbook/assets/image (108).png>)
+
+In this example we have a VPC with an internet gateway. There is a private subnet and a public subnet. The public subnet's route table has a route to the internet (destination 0.0.0.0/0 has target igw).&#x20;
 
 ## Default VPC
 
-So how is it we have been able to launch EC2 instances complete with public and private IP addresses without knowing (or at least doing) anything about our network? This is because every AWS account comes with a default VPC that is ready to use. This makes it possible for new users to get started with for example EC2 instances without having to do any configuration.&#x20;
+If you are using a personal AWS account, then each region will have a default VPC that is created automatically.&#x20;
+
+If your AWS account is centrally managed by an AWS organization, then the default VPC may be replaced with your organization's VPC.&#x20;
 
 The default VPC has:
 
 * an internet gateway &#x20;
 * a VPC with size /16 IPv4 CIDR block 172.31.0.0/16
-* size /20 default subnets in each AZ&#x20;
+* size /20 default subnets in each AZ.
 
-and the necessary route tables and such to get the thing working.&#x20;
+All the subnets in the default VPC are public.&#x20;
 
-Something to note about the default VPC: EC2 instances launched into subnets in the default VPC automatically get public IP addresses and public DNS names. If you create your own VPC and subnets, then new instances do not automatically receive public IP's. You would have to change a setting called **Enable auto-assign public IPv4 address** for these subnets.&#x20;
+### Why a default VPC?&#x20;
 
-Next we will walk through setting up our own VPC step by step.&#x20;
+New AWS accounts come out-of-the-box with this default VPC so that customers who are interested in creating web applications or hosting static web content in their account can immediately get started with their deployments.&#x20;
+
+They do not need to know anything about networking, internet gateways, CIDR blocks, public IP assignment settings in subnets, route tables or NACL's.&#x20;
+
+We are not that lucky - we have to get our hands dirty and spend some time understanding all this complex networking stuff!&#x20;
+
+To help us do that, let's first take a closer look at the default VPC.&#x20;
 

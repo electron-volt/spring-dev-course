@@ -66,5 +66,5 @@ Status changes to DELETE IN PROGRESS.
 
 The Events tab shows the short-lived life of our instance and stack:
 
-![Events tab in CF console.](<../../.gitbook/assets/image (185).png>)
+![Events tab in CF console.](<../../.gitbook/assets/image (185) (1).png>)
 

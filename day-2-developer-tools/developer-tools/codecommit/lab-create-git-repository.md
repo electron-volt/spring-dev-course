@@ -155,7 +155,7 @@ Then **git commit** with a message:
 git commit -m "Added two text files."
 ```
 
-![example](<../../../.gitbook/assets/image (108).png>)
+![example](<../../../.gitbook/assets/image (108) (1).png>)
 
 ## Push&#x20;
 

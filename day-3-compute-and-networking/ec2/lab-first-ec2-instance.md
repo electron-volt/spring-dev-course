@@ -145,7 +145,7 @@ You can give the instance a descriptive name, like Lab-EC2. Click on the blue in
 
 Once you find the **public IPv4 address** of your instance, open it in your browser. You should see:
 
-![It works!](<../../.gitbook/assets/image (113).png>)
+![It works!](<../../.gitbook/assets/image (113) (1).png>)
 
 Now let's SSH into our instance and maybe change the text to something else.&#x20;
 

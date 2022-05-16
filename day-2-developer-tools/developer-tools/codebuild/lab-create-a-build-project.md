@@ -92,7 +92,7 @@ You should have the following structure in your input bucket:
 
 ![Top level has one folder](<../../../.gitbook/assets/image (52).png>)
 
-![files in a folder](<../../../.gitbook/assets/image (310).png>)
+![files in a folder](<../../../.gitbook/assets/image (310) (1).png>)
 
 ## Create the build
 
