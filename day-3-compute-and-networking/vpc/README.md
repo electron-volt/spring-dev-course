@@ -25,9 +25,12 @@ The default VPC has:
 
 * an internet gateway &#x20;
 * a VPC with size /16 IPv4 CIDR block 172.31.0.0/16
+* a main route table with a route to the internet gateway
 * size /20 default subnets in each AZ.
 
 All the subnets in the default VPC are public.&#x20;
+
+![default VPC](<../../.gitbook/assets/image (158).png>)
 
 ### Why a default VPC?&#x20;
 

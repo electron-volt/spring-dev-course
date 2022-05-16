@@ -56,7 +56,7 @@ Above the source code there is a button that says Test. Press it.
 
 Now if you press **Test** again, another tab appears in the source code editor: execution results.
 
-![execution results](<../../.gitbook/assets/image (158).png>)
+![execution results](<../../.gitbook/assets/image (158) (1).png>)
 
 If you click open the execution results tab in the code source, you can see the output:
 
