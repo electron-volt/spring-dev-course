@@ -107,7 +107,7 @@ Listener is HTTP : 80.&#x20;
 
 Use the **asg-tg** for default action.&#x20;
 
-![Default action](<../.gitbook/assets/image (230).png>)
+![Default action](<../.gitbook/assets/image (230) (1).png>)
 
 Here is what you should have:
 

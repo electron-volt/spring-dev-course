@@ -222,7 +222,7 @@ This feels redundant since we have an alarm set precisely so we don't have to si
 3. Expand the CPUUtilization graph&#x20;
 4. You can get it to auto-update:
 
-![Set the graph to refresh ](<../../.gitbook/assets/image (391).png>)
+![Set the graph to refresh ](<../../.gitbook/assets/image (391) (1).png>)
 
 It will take a little while for the CPU to start increasing. Eventually we do see an alarm:
 

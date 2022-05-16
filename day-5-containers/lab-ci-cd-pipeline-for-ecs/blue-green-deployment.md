@@ -65,7 +65,7 @@ What it does it creates two target groups in the production VPC created by the C
 
 Here are all our target groups now:
 
-![target groups](<../../.gitbook/assets/image (290).png>)
+![target groups](<../../.gitbook/assets/image (290) (1).png>)
 
 ### Listener
 
@@ -219,7 +219,7 @@ The line has been changed now:
 
 Notice also the contents of the appspec.yaml file:
 
-![appspec.yaml in all its glory](<../../.gitbook/assets/image (301).png>)
+![appspec.yaml in all its glory](<../../.gitbook/assets/image (301) (1).png>)
 
 #### Add files to git commit
 

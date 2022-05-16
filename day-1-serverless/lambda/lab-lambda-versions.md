@@ -45,7 +45,7 @@ You should see a green banner that says "Successfully created version 1 for func
 
 If you now go back to the Code tab, you'll see you are not able to edit the code of this version: it is fixed. Once a version of your code has been published, it is immutable. If you want to make changes, you have to make changes to $LATEST and then publish a new version.&#x20;
 
-![Cannot edit a published version. ](<../../.gitbook/assets/image (171).png>)
+![Cannot edit a published version. ](<../../.gitbook/assets/image (171) (1).png>)
 
 ## Version prod
 

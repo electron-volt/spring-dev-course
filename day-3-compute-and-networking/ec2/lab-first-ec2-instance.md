@@ -1,5 +1,7 @@
 # LAB: EC2 - Old console
 
+These instructions are for the old EC2 console experience. Skip this if you used the new console.&#x20;
+
 ## Creating our first EC2 instance
 
 We will create our first ever EC2 instance! We will be using exclusively Linux instances, sorry Bill G.&#x20;
@@ -164,15 +166,6 @@ Click on the blue instance id to view more information about the instance.&#x20;
 Once you find the **public IPv4 address** of your instance, open it in your browser. You should see:
 
 ![It works!](<../../.gitbook/assets/image (113) (1).png>)
-
-### End result
-
-If you want, you can SSH into the instance and change the text that the web server displays. Instructions are below.&#x20;
-
-If you would rather move on to the next lab, then first stop your instance. If you are in the Instances view, select the checkbox next to your instance.&#x20;
-
-* Click the Instance state button (top right)
-* Click stop instance.
 
 ## Optional - SSH into the instance
 

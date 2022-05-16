@@ -10,7 +10,7 @@ Every instance has a private IP address.&#x20;
 
 #### Dynamic public IP&#x20;
 
-This is what we used to SSH into the instance.&#x20;
+This is what we used to SSH into the instance. Not all instances have a public IP.&#x20;
 
 #### Static public IP
 
@@ -24,27 +24,25 @@ Let's try rebooting our instance. Go to the EC2 console in AWS.
 
 #### IP addresses before reboot
 
-First make note of what the private and public IP's of your instance are. Mine were
+First make note of what the private and public IP's of your instance are.&#x20;
+
+Mine were
 
 ![IP's initially ](<../../.gitbook/assets/image (454).png>)
 
-
+Then reboot the instance:
 
 ![reboot](<../../.gitbook/assets/image (207).png>)
 
-fo
+Then check what happens to the IP addresses:
 
 ![IP's after reboot ](<../../.gitbook/assets/image (7).png>)
 
-
-
-
-
-asdfg
+IP addresses have remained the same.&#x20;
 
 ### Stop and start
 
-Let's now try stopping our instance and then restarting it. The IP's are still the same as after the reboot.&#x20;
+Let's now try stopping our instance and then restarting it.&#x20;
 
 Go to instance state > stop instance. Confirm.&#x20;
 
@@ -58,7 +56,9 @@ Looks like our dynamic public IP has changed. The private one stays the same.&#x
 
 If we wanted a public IP address that can remain unchanged even when instances are stopped and restarted, we would need an elastic IP.&#x20;
 
-#### The end
+## Stop instance
 
+We can now stop this instance as we will not need it at the moment.&#x20;
 
+Once you have stopped your instance, please move on to the next lab.&#x20;
 

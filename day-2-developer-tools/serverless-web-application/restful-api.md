@@ -71,7 +71,7 @@ Click the Method request card.&#x20;
 
 Click the pen icon next to Authorization. Select WildRydes and then click the checkmark.
 
-![authorization](<../../.gitbook/assets/image (252).png>)
+![authorization](<../../.gitbook/assets/image (252) (1).png>)
 
 ## Deploy your API&#x20;
 

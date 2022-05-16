@@ -326,7 +326,7 @@ Click Save.&#x20;
 
 &#x20;
 
-![Path-based routing for /orders](<../../.gitbook/assets/image (143).png>)
+![Path-based routing for /orders](<../../.gitbook/assets/image (143) (1).png>)
 
 ### Test the path-based routing rule
 

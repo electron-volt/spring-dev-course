@@ -99,7 +99,7 @@ We pick Fargate for this
 
 Call it dogsdef and pick Linux as OS.
 
-![](<../../../../.gitbook/assets/image (289).png>)
+![](<../../../../.gitbook/assets/image (289) (1).png>)
 
 ### Task execution role
 

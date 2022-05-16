@@ -20,7 +20,7 @@ The GUI has been recently changed, but you should be able to find an orange butt
 
 &#x20;
 
-![GUI in January 2022](<../../.gitbook/assets/image (193).png>)
+![GUI in January 2022](<../../.gitbook/assets/image (193) (1).png>)
 
 We are going to create a sample application using Python.
 
@@ -49,7 +49,7 @@ Application code: sample application.&#x20;
 
 Create environment.&#x20;
 
-![Output from Elbe](<../../.gitbook/assets/image (262).png>)
+![Output from Elbe](<../../.gitbook/assets/image (262) (1).png>)
 
 Once the environment is up and running, you should see this:
 
