@@ -30,7 +30,7 @@ In most regions the free tier eligible instance type is t2.micro. In some newer 
 
 The free tier eligible instance type will most likely already be selected.&#x20;
 
-![free!](<../../.gitbook/assets/image (450).png>)
+![free!](<../../.gitbook/assets/image (450) (1).png>)
 
 ### Key pair
 

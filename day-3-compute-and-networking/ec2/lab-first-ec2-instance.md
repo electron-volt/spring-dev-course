@@ -189,7 +189,7 @@ Once you are in, run this command:
 
 This updates packages on the system**.**
 
-![if you know you know](<../../.gitbook/assets/image (238).png>)
+![if you know you know](<../../.gitbook/assets/image (238) (1).png>)
 
 ### Customize your own instance!
 

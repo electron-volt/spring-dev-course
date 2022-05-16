@@ -150,37 +150,63 @@ Once you've created the widgets, click Save dashboard.&#x20;
 
 What if we wanted to get notified if our EC2 instance's CPU utilization suddenly spiked or say, went above 60%? This is where alarms come in.
 
+### Create alarm
+
 Let's create an alarm that notifies us when CPU utilization goes above a certain threshold.&#x20;
 
-1. In CloudWatch, from the left side panel click Alarms
-2. You might see some auto-scaling alarms from our DynamoDB tables. Ignore them. You can hide them with the checkbox Hide Auto Scaling alarms.&#x20;
-3. Click Create alarm
-4. Click select metric
-5. The usual EC2, per-instance metrics, CPUUtilization
-6. Select metric
-7. Next we configure the alarm. See what happens to the graph on your screen if you try different values for period. If you try to select something less than 1 minute, you get an error message saying the AWS/ namespaces only support periods greater than 60 seconds. Pick 1 minute for period.&#x20;
-8. Under Conditions
-   1. Threshold type: static
-   2. Greater/equal
-   3. than.... 60 (this will be a percentage)
-   4. Click next
-9. Under Notifications (we will discuss SNS later. For now just roll with it)
-   1. Alarm state trigger: in alarm&#x20;
-   2. Select an SNS topic: Create new topic
-   3. Topic name: ec2-cpu-above-60
-   4. Email endpoint: enter a valid email&#x20;
-   5. Click Create topic
-10. You'll notice we could have the alarm automatically stop, reboot or even terminate our EC2. We don't want that so click Remove.&#x20;
-11. Click Next
-12. Alarm name: ec2-cpu-above-60
-13. Preview and create
-14. Create alarm.
+* In CloudWatch, from the left side panel click **Alarms**
+* Click **Create alarm**
+* Click **select metric**
+* In the Browse tab, scroll down to EC2 and click on it&#x20;
+* Choose **Per-instance metrics**
+* Find the instance **yourname-monitoring**, then the Metric **CPUUtilization**
+* Check the checkbox on that row
+* Click **Select metric.**&#x20;
 
-When you review the alarm you just created, you will see this:
+![](<../../.gitbook/assets/image (111).png>)
 
-![Warning](<../../.gitbook/assets/image (94).png>)
+### Specify metric and conditions
 
-Go to your email inbox and look for email from AWS Notifications. In the email, click confirm subscription.&#x20;
+On the next page, keep Metric name and InstanceID as they are.&#x20;
+
+Statistic should be **average** and period **1 minute**.&#x20;
+
+![](<../../.gitbook/assets/image (238).png>)
+
+Under Conditions
+
+* Threshold type: static
+* Greater/equal
+* than.... 60 (this will be a percentage)
+* Click next
+
+![](<../../.gitbook/assets/image (450).png>)
+
+### Notification
+
+Under Notifications (we will discuss SNS later. For now just roll with it)
+
+* Alarm state trigger: in alarm&#x20;
+* Select an SNS topic: Create new topic
+* Topic name: **yourname-ec2-cpu-above-60**
+* Email endpoint: enter a valid email you have access to
+  * work email is fine
+* Click **Create topic**
+
+Skip the other fields and click **Next**.
+
+For the alarm:
+
+* Alarm name: **yourname-ec2-cpu-above-60**
+* **Next**
+
+You can see a preview.&#x20;
+
+* **Create alarm.**
+
+#### Confirm subscription
+
+Go to your email inbox and look for email from AWS Notifications. In the email, click **confirm subscription.**&#x20;
 
 We will now receive email alerts if the CPU utilization of our EC2 instance is 60% or greater.&#x20;
 
@@ -188,15 +214,9 @@ We will now receive email alerts if the CPU utilization of our EC2 instance is 6
 
 We will use a tool called stress to generate some CPU load.
 
-### SSH into the instance
-
-You can find the public IP of your instance from the EC2 console. To SSH into the instance, navigate to the directory where the cli-keys.pem keys are and run this command:
-
-`ssh -i cli-keys.pem ec2-user@<your public IP>`&#x20;
-
 ### Install the stress tool&#x20;
 
-Run these commands
+In your EC2 instance, run these commands
 
 ```
 sudo amazon-linux-extras install epel -y
@@ -208,7 +228,11 @@ This installs the stress tool on the instance [https://linux.die.net/man/1/stres
 
 Let's start to consume CPU with this command
 
-`sudo stress --cpu 8`
+```
+sudo stress --cpu 8
+```
+
+![](<../../.gitbook/assets/image (287).png>)
 
 ### Monitor graphs in CloudWatch&#x20;
 
@@ -236,7 +260,11 @@ Go to the EC2 instance and type Ctrl+C to stop the stress tool.&#x20;
 Go ahead and&#x20;
 
 * terminate the EC2 instance&#x20;
-* delete the CW alarm
-* delete the my-ec2 dashboard
+* delete the CloudWatch alarm
+* delete the dashboard
 
-To delete the SNS topic, navigate to SNS or simple notification service. Click topics, select the topic we created and delete. There is also a subscription to delete.&#x20;
+To delete the SNS topic, navigate to SNS.
+
+Click topics, select the topic we created and delete.&#x20;
+
+There is also a subscription to delete.&#x20;

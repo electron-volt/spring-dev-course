@@ -153,7 +153,7 @@ Create auto scaling group.&#x20;
 
 Here is where we are now:
 
-![ASG is getting ready](<../.gitbook/assets/image (111) (1).png>)
+![ASG is getting ready](<../.gitbook/assets/image (111) (1) (1).png>)
 
 ## Monitor
 

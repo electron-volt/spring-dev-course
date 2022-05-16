@@ -18,7 +18,7 @@ In "From your existing code", choose CodeCommit
 
 In "Add repository branch", pick the wildrydes-site repo and master branch.&#x20;
 
-![what is a monorepo?](<../../.gitbook/assets/image (287).png>)
+![what is a monorepo?](<../../.gitbook/assets/image (287) (1).png>)
 
 Check the box for **Allow AWS Amplify to automatically deploy all files hosted in your project root directory.**
 
