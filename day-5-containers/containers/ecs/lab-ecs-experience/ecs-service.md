@@ -66,7 +66,7 @@ There apparently is an emoji for _everything_ else tho: ❖ ❦ ␖ ␆
 
 Then create load balancer.&#x20;
 
-![pretty much sums it up](<../../../../.gitbook/assets/image (309).png>)
+![pretty much sums it up](<../../../../.gitbook/assets/image (309) (1).png>)
 
 ## Deploy service "web"
 

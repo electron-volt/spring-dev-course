@@ -10,7 +10,7 @@ You can choose between this
 
 and this:
 
-![New ECS experience - not in this part of the lab ](<../../../../.gitbook/assets/image (142).png>)
+![New ECS experience - not in this part of the lab ](<../../../../.gitbook/assets/image (142) (1).png>)
 
 For the task definitions, we want to use the **OLD** GUI.&#x20;
 

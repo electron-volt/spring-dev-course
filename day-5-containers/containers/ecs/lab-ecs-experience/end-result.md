@@ -8,5 +8,5 @@ Then open that DNS name in your browser.
 
 You know which one the crazy dog lady clicks on, right?&#x20;
 
-![](<../../../../.gitbook/assets/image (35).png>)![](<../../../../.gitbook/assets/image (150).png>)
+![](<../../../../.gitbook/assets/image (35).png>)![](<../../../../.gitbook/assets/image (150) (1).png>)
 

@@ -141,7 +141,7 @@ To get rid of the debugger, go back to the right side panel, click on the bug an
 
 At the top left hand corner, click the cloud icon and choose Go to your dashboard.
 
-![](<../../../.gitbook/assets/image (271).png>)
+![](<../../../.gitbook/assets/image (271) (1).png>)
 
 Then click the Delete button. This terminates the Cloud9 environment.&#x20;
 
