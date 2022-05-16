@@ -2,7 +2,7 @@
 
 We got a big one here! We want to build the following;
 
-![Graphics this good - you know I didn't make this myself](<../.gitbook/assets/image (137) (1).png>)
+![Graphics this good - you know I didn't make this myself](<../../.gitbook/assets/image (137) (1).png>)
 
 We are going to create
 
@@ -30,7 +30,7 @@ Let's modify the test-template to include user data. This way all of our EC2 ins
 2. Go to launch templates (I again had to go to launch config, then click the banner to view templates)
 3. Modify the test-template
 
-![Modify template](<../.gitbook/assets/image (223).png>)
+![Modify template](<../../.gitbook/assets/image (223).png>)
 
 For Template version description, write "includes user data".&#x20;
 
@@ -57,7 +57,7 @@ In the user data:
 
 An example of what the result will look like: the instance is a webserver that is showing its instance id to the world. This will be useful later when we want to see in the browser which instance the ALB is directing traffic to.
 
-![result of our user data script](<../.gitbook/assets/image (452).png>)
+![result of our user data script](<../../.gitbook/assets/image (452).png>)
 
 Once you have pasted the user data, click Create launch template (orange button). So no changes other than adding user data.
 
@@ -65,7 +65,7 @@ Once you have pasted the user data, click Create launch template (orange button)
 
 You are able to select a version of the launch template as the default:
 
-![Set default version](<../.gitbook/assets/image (364).png>)
+![Set default version](<../../.gitbook/assets/image (364).png>)
 
 We want to use our new version with description "Includes user data" as default.&#x20;
 
@@ -107,11 +107,11 @@ Listener is HTTP : 80.&#x20;
 
 Use the **asg-tg** for default action.&#x20;
 
-![Default action](<../.gitbook/assets/image (230).png>)
+![Default action](<../../.gitbook/assets/image (230).png>)
 
 Here is what you should have:
 
-![summary](<../.gitbook/assets/image (177).png>)
+![summary](<../../.gitbook/assets/image (177).png>)
 
 Then "Create load balancer".&#x20;
 
@@ -153,17 +153,17 @@ Create auto scaling group.&#x20;
 
 Here is where we are now:
 
-![ASG is getting ready](<../.gitbook/assets/image (111).png>)
+![ASG is getting ready](<../../.gitbook/assets/image (111).png>)
 
 ## Monitor
 
 Find the DNS name of your ALB and open it in a browser:
 
-![ALB takes me to instance ...bdf](<../.gitbook/assets/image (351).png>)
+![ALB takes me to instance ...bdf](<../../.gitbook/assets/image (351).png>)
 
 That is indeed one of my EC2 instances:
 
-![Instances launched by ASG](<../.gitbook/assets/image (190).png>)
+![Instances launched by ASG](<../../.gitbook/assets/image (190).png>)
 
 ### Stopping the instance&#x20;
 
@@ -180,13 +180,13 @@ Finally the mystery of the multiple health checks is resolved! Imagine what happ
 
 The ALB is now routing all requests made to its DNS name to the only working EC2 instance:
 
-![69a to the rescue! ](<../.gitbook/assets/image (53).png>)
+![69a to the rescue! ](<../../.gitbook/assets/image (53).png>)
 
 ### ASG
 
 The ASG is also doing its part to keep us at two running instances:
 
-![RIP ...bdf](<../.gitbook/assets/image (247).png>)
+![RIP ...bdf](<../../.gitbook/assets/image (247).png>)
 
 
 
