@@ -1,4 +1,4 @@
-# LAB: Build a VPC with the CLI
+# LAB: Build a VPC (CLI)
 
 We will do the exact same thing as in the last lab, but this time using the CLI. We will have:
 

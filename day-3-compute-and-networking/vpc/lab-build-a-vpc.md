@@ -11,7 +11,7 @@ We are going to build a VPC. It will have the following:
 
 #### CIDR overlap
 
-If your AWS account already has non-default VPC's - that is, VPC's with CIDR block other than 172.31.0.0/16, then make sure that the CIDR blocks of those VPC's do not overlap with 10.0.0.0/16.
+If your AWS account already has non-default VPC's - that is, VPC's with CIDR block other than 172.31.0.0/16 - then make sure that the CIDR blocks of those VPC's **do not overlap** with 10.0.0.0/16.
 
 If you are not sure, please ask your instructor.&#x20;
 
@@ -100,21 +100,52 @@ Route tables are what determine where traffic in your VPC goes. The real differe
 
 ### Main route table&#x20;
 
-When we created our VPC, it also created the main route table that we named yourname-vpc-main-rt.
+When we created our VPC, it also created the main route table that we named **yourname-vpc-main-rt.**
 
 The two subnets that we created in this VPC are both implicitly associated with this route table. Ths ensures that the two subnets can communicate with each other.&#x20;
 
 Our main route table does not have a route to the IGW, so now both our subnets are private (despite the fact that one is called public).&#x20;
 
-![](<../../.gitbook/assets/image (224).png>)
+![our subnets use the main route table. ](<../../.gitbook/assets/image (224).png>)
 
-##
+### Public route table
 
+The private subnet yourname-private can keep using the main route table. However we need to create another route table for the yourname-public subnet, to give it internet access.&#x20;
 
+We just need to&#x20;
 
+* create a new route table
+* add a route to the IGW in it&#x20;
+* associate the route table with the yourname-public subnet.&#x20;
 
+#### Create route table
 
+* Navigate to **Route tables**
+* Click the **Create route table** button (top right corner)&#x20;
 
+![so easy ](<../../.gitbook/assets/image (207).png>)
+
+* name the route table **yourname-vpc-public-rt**
+* select **yourname-vpc**
+* click **Create route table.**&#x20;
+
+#### **Add route to IGW**
+
+The newly created route table still only has one route in it: the local one. We need to add a route to the IGW.&#x20;
+
+* In the **Routes** tab, click button **Edit routes.**
+* Click button **Add route**
+
+![adding route](<../../.gitbook/assets/image (243).png>)
+
+* For Destination choose **0.0.0.0/0**
+* For Target, pick **Internet Gateway**&#x20;
+* Pick the **yourname-vpc-igw**
+* Click **Save changes.**&#x20;
+
+Now the new route table has two routes:
+
+![new routes.](<../../.gitbook/assets/image (327).png>)
 
 ### End result
 

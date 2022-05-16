@@ -271,7 +271,7 @@ The value disappears from view as soon as you move your focus away from the text
 
 Click **create parameter**.&#x20;
 
-![parameter creation](<../../.gitbook/assets/image (327).png>)
+![parameter creation](<../../.gitbook/assets/image (327) (1).png>)
 
 ### Try to view Secure parameter
 

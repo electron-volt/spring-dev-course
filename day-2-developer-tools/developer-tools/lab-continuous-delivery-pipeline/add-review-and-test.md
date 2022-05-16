@@ -24,7 +24,7 @@ Go to CodePipeline and click on the pipeline we created.&#x20;
 * Under "Action name" type **"Manual\_Review."**
 * From the "Action provider" select **"Manual approval."**
 
-![](<../../../.gitbook/assets/image (243).png>)
+![](<../../../.gitbook/assets/image (243) (1).png>)
 
 Ignore all the other fields like SNS topic, URL etc.&#x20;
 
