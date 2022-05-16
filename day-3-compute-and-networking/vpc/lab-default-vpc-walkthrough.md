@@ -90,7 +90,7 @@ Let's now name the main route table.&#x20;
 ![route tables](<../../.gitbook/assets/image (271).png>)
 
 * Click on the - in the Name column&#x20;
-* Name the route table default-vpc-main-rt.
+* Name the route table **default-vpc-main-rt.**
 
 #### Subnet associations
 

@@ -129,11 +129,11 @@ Execution has stopped:
 
 In the Debugger window, there is now a blue arrow ("Play") which allows you to resume:
 
-![Blue arrow](<../../../.gitbook/assets/image (293).png>)
+![Blue arrow](<../../../.gitbook/assets/image (293) (1).png>)
 
 To stop the debugger, click the red square in the terminal window.
 
-![Red Square](<../../../.gitbook/assets/image (21).png>)
+![Red Square](<../../../.gitbook/assets/image (21) (1).png>)
 
 To get rid of the debugger, go back to the right side panel, click on the bug and remove "input" from Watch expressions.&#x20;
 

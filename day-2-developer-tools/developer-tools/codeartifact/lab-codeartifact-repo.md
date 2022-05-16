@@ -83,7 +83,7 @@ It may take a moment, but eventually your CodeArtifact repository will show the 
 
 ![from Cloudshell](<../../../.gitbook/assets/image (135).png>)
 
-![to Artifact.](<../../../.gitbook/assets/image (329).png>)
+![to Artifact.](<../../../.gitbook/assets/image (329) (1).png>)
 
 ## Clean up&#x20;
 
