@@ -2,13 +2,14 @@
 
 ## Clean up&#x20;
 
-We did clean up after our labs but it doesn't hurt to check before you go home.&#x20;
+Please make sure the following resources have been deleted:
 
-The only really expensive resource is the load balancer, so make sure you don't have any up and running.&#x20;
+* all running EC2 instances
+* the VPC's that you created
+* the auto scaling group.
 
 ## What have we learned today
 
 * to build our own VPC's
-* to launch EC2 instances on demand or automatically with ASG's
-* how to route requests to different instances with ALB
-* how to set up a self-healing and highly available web server with ALB+ASG.
+* create automatic monitoring and alerting for AWS resources
+* to launch EC2 instances on demand or automatically with auto-scaling.
