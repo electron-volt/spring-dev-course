@@ -4,58 +4,47 @@ CloudWatch concepts might seem quite abstract at first, so let's see them in act
 
 We are going to&#x20;
 
-* launch an EC2 instance in the my-vpc VPC
+* launch an EC2 instance in the default VPC
 * create a dashboard that shows metrics for this instance&#x20;
 * create an alarm that notifies us via email if the CPU utilization increases
-* generate load to cause the CPU to spike&#x20;
+* generate load to cause the CPU to spike.
 
-Note: CloudWatch just rolled out a new visual layout, so your views may look different from some of the screenshots.&#x20;
+#### Outdated screenshots?&#x20;
+
+CloudWatch just rolled out a new visual layout, so your views may look different from some of the screenshots.&#x20;
+
+#### Windows users
+
+Instructions are written from a Bash perspective.&#x20;
+
+We will need to SSH into the instance that we launch. When you are creating the EC2 instance, use a key pair that you can use with Putty.&#x20;
 
 ## Launch an EC2 instance
 
-Option: use the CLI.&#x20;
+* Go to the EC2 console and click **Launch instance**
+* Name it **yourname-monitoring**
+* Application and OS image: use the default Amazon Linux 2 AMI&#x20;
+* Instance type: free tier eligible
+* Key pair: use **yourname-keys**
+* In Network settings:
+  1. For network, choose **default vpc**
+  2. Subnet: no preference
+  3. Auto-assign public IP: **enable**
+* Security group:
+  * **allow SSH from your IP address.**&#x20;
+* Under **Additional details,**&#x20;
+  * &#x20;Detailed CloudWatch monitoring: **Enable**.&#x20;
 
-1. Go to the EC2 console and click Launch instance
-2. We will use the free tier eligible Amazon Linux AMI&#x20;
-3. For instance type we want whatever's free tier eligible
-4. In instance details:
-   1. For network, choose the VPC we created via the console **my-vpc**
-   2. Subnet: pick the public one&#x20;
-   3. Auto-assign public IP: enable
-   4. Scroll down to Monitoring and check in "Enable CloudWatch detailed monitoring"
-5. Click Review and Launch&#x20;
-6. We can use the cli-keys.pem key pair we created in a previous lab
-7. Launch&#x20;
+![](<../../.gitbook/assets/image (224).png>)
 
-Note: we have now enabled detailed monitoring for our EC2 instance. By default CloudWatch records data from EC2 with a 5-minute interval. You can optionally enable detailed monitoring that records data in 1-minute intervals, as we did. It costs extra (ballpark 2 euros per instance per month), but let's try it in this lab.
+* Click **Launch instance.**
 
-### Create a security group&#x20;
+Note: we have now enabled detailed monitoring for our EC2 instance.&#x20;
 
-Security groups are VPC-specific. We haven't created one for the **my-vpc** yet and we are not able to use the security groups we made earlier as they are in the default VPC, so we must create a new one.&#x20;
+* By default CloudWatch records data from EC2 with a 5-minute interval.&#x20;
+* You can optionally enable detailed monitoring that records data in 1-minute intervals, as we did.&#x20;
 
-1. In the EC2 console, go to Security groups
-2. Create Security group
-3. Security group name: ssh-sg
-4. Description: SSH access in my-vpc
-5. For VPC, pick my-vpc
-6. Under inbound rules
-   1. Add rule
-   2. Type: SSH
-   3. Source: My IP&#x20;
-   4. Description is optional
-7. Create security group&#x20;
-
-### Attach security group to instance
-
-1. Go to EC2 > Instances
-2. Click on the instance we just launched&#x20;
-3. Go to Actions > Security > change security groups
-4. Remove the default security group first (bottom of the screen)
-5. Then in Associated security groups, from the dropdown select the ssh-sg.
-6. Click Add security group&#x20;
-7. Click Save.
-
-When you change the security group of a running instance, the changes take effect immediately. The console might sometimes take time to update, so you might see in the console that the security group of your instance has no inbound rules or something strange like that. Just wait and refresh the page, it should show the changes correctly then.&#x20;
+Detailed monitoring costs extra, so it shouldn't be enabled for all instances.&#x20;
 
 We will leave the instance up and running and go to CloudWatch.&#x20;
 
@@ -67,17 +56,21 @@ Now let's go see what CloudWatch has to say about our running instance.&#x20;
 
 1. Navigate to CloudWatch&#x20;
 2. On the front page you will probably see CloudWatch: Overview
-3. Click Overview and select EC2
+3. Click Overview and select EC2.
 
-That should take you to CloudWatch: EC2. Scroll to the very bottom of the page, where you should see EC2 instances.
+If you are instead dropped in to the new console, go to Dashboards > Automatic dashboards > Ec2.
 
-![CloudWatch EC2 view](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (34).png>)
 
-#### Generate some activity
+## Generate some activity
 
-Let's go back to the terminal where you've SSH'd into the EC2 instance. Let's run the following command:
+Let's now SSH into our EC2 instance, which has hopefully launched.&#x20;
 
-`sudo yum update -y`
+Once you have SSH'd into your instance, run the following command:&#x20;
+
+```
+sudo yum update -y
+```
 
 Let's go take a look at some graphs in CloudWatch. You may have to refresh the view using the refresh symbol on the upper right hand corner:
 
@@ -88,6 +81,8 @@ As we can see from these graphs, we are getting information about network packet
 #### Maximize graphs
 
 If you hover over a graph, you can refresh it, maximize it or even download data as .csv (from the three dots).&#x20;
+
+In the new layout, you have to click the three dots, then select Enlarge.&#x20;
 
 ![Option to maximize graphs](<../../.gitbook/assets/image (282).png>)
 
@@ -102,7 +97,9 @@ Let's take a closer look at the metrics CloudWatch offers.&#x20;
 
 Then click on Per-Instance Metrics.&#x20;
 
-Find some metric names (for example NetworkIn and NetworkOut), click the triangle next to the name and choose "Add to graph".&#x20;
+Find some metric names (for example NetworkIn and NetworkOut), click the triangle next to the name and choose "Add to graph" / "Add to search".
+
+![new layout](<../../.gitbook/assets/image (357).png>)
 
 You can play around with different kinds of graphs (Line, pie, stacked) and time periods.&#x20;
 
@@ -110,7 +107,7 @@ You can play around with different kinds of graphs (Line, pie, stacked) and time
 
 You might notice that the EC2 instance metrics cover things like network, CPU... but no memory consumption?&#x20;
 
-We would need the Unified CloudWatch agent for that. Further reading:
+We would need the Unified CloudWatch agent for that. That is beyond the scope of the course. Further reading if you are interested:
 
 [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/metrics-collected-by-CloudWatch-agent.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/metrics-collected-by-CloudWatch-agent.html)
 

@@ -219,7 +219,7 @@ At the top of the screen you should see a blue arrow and text Method execution. 
 
 This takes you back to the screen with four boxes. The method execution view has a test option:
 
-![Test plus lightning bolt](<../../.gitbook/assets/image (357).png>)
+![Test plus lightning bolt](<../../.gitbook/assets/image (357) (1).png>)
 
 #### Create test event
 

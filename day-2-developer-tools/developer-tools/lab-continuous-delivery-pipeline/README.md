@@ -12,7 +12,7 @@ We are going to:
 
 Then whenever changes are made to the repo, we can review the changes and if we accept them, the changes will be deployed to our web application.&#x20;
 
-![Architecture](<../../../.gitbook/assets/image (34).png>)
+![Architecture](<../../../.gitbook/assets/image (34) (1).png>)
 
 
 

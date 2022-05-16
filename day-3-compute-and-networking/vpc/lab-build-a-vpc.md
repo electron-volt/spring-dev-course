@@ -106,7 +106,7 @@ The two subnets that we created in this VPC are both implicitly associated with 
 
 Our main route table does not have a route to the IGW, so now both our subnets are private (despite the fact that one is called public).&#x20;
 
-![our subnets use the main route table. ](<../../.gitbook/assets/image (224).png>)
+![our subnets use the main route table. ](<../../.gitbook/assets/image (224) (1).png>)
 
 ### Public route table
 
