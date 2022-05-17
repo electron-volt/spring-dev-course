@@ -147,6 +147,19 @@ Now the new route table has two routes:
 
 ![new routes.](<../../.gitbook/assets/image (327).png>)
 
+### Associate public route table with subnet
+
+Just one more thing to do: associate the public subnet with the public route table.&#x20;
+
+* Navigate to **Subnets**
+* Click on the subnet ID of the **yourname-public** subnet
+* Scroll down and select tab **Route table**
+* Click **Edit route table association**&#x20;
+
+&#x20;Pick the **yourname-vpc-public-rt** and click **Save**.
+
+![editing route table association](<../../.gitbook/assets/image (145).png>)
+
 ### End result
 
 We have now successfully created a VPC that has two subnets: one with internet access and one without.&#x20;
