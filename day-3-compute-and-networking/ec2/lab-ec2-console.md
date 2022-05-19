@@ -141,7 +141,7 @@ cd /var/www/html
 echo "This is a test page running on my first EC2 instance." > index.html
 ```
 
-![user data](<../../.gitbook/assets/image (143).png>)
+![user data](<../../.gitbook/assets/image (143) (1).png>)
 
 This script will run as our instance is created. It turns our instance into a web server that prints out the text on line 7.&#x20;
 

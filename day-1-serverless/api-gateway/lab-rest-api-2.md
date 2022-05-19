@@ -232,7 +232,7 @@ Click on the **TEST**.
 5. Request body is **{ "callerName":"Bruce" }**
 6. hit **Test**
 
-![Test values](<../../.gitbook/assets/image (330).png>)
+![Test values](<../../.gitbook/assets/image (330) (1).png>)
 
 #### Test results
 

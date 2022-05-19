@@ -10,6 +10,8 @@ description: All the different parts of a CF template.
 
 The `AWSTemplateFormatVersion` section (optional) identifies the capabilities of the template. The latest template format version is `2010-09-09` and is currently the only valid value.
 
+As we saw in the previous lab, our .yml file worked fine without this.&#x20;
+
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"
 ```
@@ -17,6 +19,8 @@ AWSTemplateFormatVersion: "2010-09-09"
 ### Description&#x20;
 
 The `Description` section (optional) enables you to include comments about your template.
+
+This is very useful. One day your account may have 50+ stacks and then you would really like to know what is doing what. &#x20;
 
 ```yaml
 Description: > 

@@ -1,21 +1,16 @@
-# Day 5
+# Bonus material
 
-## Schedule
+In this section you will find bonus material that you can study if you have extra time on your hands.&#x20;
 
-09:00-10:00 Application integration: SQS, SNS, Step functions&#x20;
+## Application integration&#x20;
 
-10:00-11:30 Security: KMS, CloudTrail, Parameter Store
+Includes SQS and SNS.&#x20;
 
-11:30-12:30 Lunch&#x20;
+## Security&#x20;
 
-12:30-13:30 Cognito
+Includes KMS, Parameter Store, encryption.
 
-13:30-16:00 Final lab: Serverless web application with authentication&#x20;
+## Database services
 
-### Agenda
+Overview of RDS, Aurora, DynamoDB, ElastiCache.&#x20;
 
-This day has been intentionally designed to be a little easier. If there is a lab that you did not have time to complete on day 4, there should be time for it this morning.&#x20;
-
-We will look at different ways to couple components together. Then we will look at ways of securing applications through authentication, authorization and encryption.&#x20;
-
-At the end of the day we build a web application that has in-built authentication included.&#x20;

@@ -32,7 +32,7 @@ You can proceed with the Cognito defaults for passwords or choose your own.&#x20
 
 We do not want MFA for this lab.&#x20;
 
-![](<../../.gitbook/assets/image (155) (1) (1).png>)
+![](<../../.gitbook/assets/image (155) (1) (1) (1).png>)
 
 #### Sign-in
 
@@ -42,7 +42,7 @@ We do not want MFA for this lab.&#x20;
 
 For email, **send email with Cognito.**&#x20;
 
-![](<../../.gitbook/assets/image (155).png>)
+![](<../../.gitbook/assets/image (155) (1).png>)
 
 #### User pool&#x20;
 

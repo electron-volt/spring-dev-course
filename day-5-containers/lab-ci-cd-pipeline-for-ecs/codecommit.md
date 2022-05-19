@@ -4,7 +4,7 @@
 
 In Cloud9, you can create a new terminal: click on the plus sign and select new terminal.&#x20;
 
-![new terminal in Cloud9 IDE](<../../.gitbook/assets/image (13).png>)
+![new terminal in Cloud9 IDE](<../../.gitbook/assets/image (13) (1).png>)
 
 ## Configure git&#x20;
 

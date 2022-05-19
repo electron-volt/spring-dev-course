@@ -4,13 +4,16 @@ description: Infrastructure as Code
 
 # ☁ CloudFormation
 
-* AWS CloudFormation is a service that helps you model and set up your AWS resources.&#x20;
+## Infrastructure as Code
+
+CloudFormation is AWS' Infrastructure as a Code solution.&#x20;
+
 * You create a template that describes all the AWS resources that you want and CloudFormation takes care of provisioning and configuring those resources for you.&#x20;
 * You don't need to individually create and configure AWS resources and figure out what's dependent on what; CloudFormation handles that.
 
 **You put the AWS resources you want into a .yml file and AWS does everything else for you.**
 
-So after all the clicking. All the instances we launched. The VPC's, the ASG's, the ALB's.. now you tell me&#x20;
+So after all the clicking. All the instances we launched. The VPC's, the ASG's, the Lambda's... and now you tell me&#x20;
 
 I COULD HAVE DONE IT ALL WITH A STINKING YML FILE?
 
