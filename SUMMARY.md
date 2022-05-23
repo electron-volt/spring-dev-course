@@ -99,6 +99,7 @@
     * [LAB: Another template](day-4-load-balancing-iac/cloudformation/lab-another-template.md)
     * [LAB: LAMP stack](day-4-load-balancing-iac/cloudformation/lab-lamp-stack.md)
     * [LAB: VPC with CloudFormation](day-4-load-balancing-iac/cloudformation/lab-vpc-with-cloudformation.md)
+    * [LAB: Change set](day-4-load-balancing-iac/cloudformation/lab-change-set.md)
   * [Load balancing](day-4-load-balancing-iac/load-balancing/README.md)
     * [ELB](day-4-load-balancing-iac/load-balancing/elb.md)
     * [LAB: ALB](day-4-load-balancing-iac/load-balancing/lab-alb.md)

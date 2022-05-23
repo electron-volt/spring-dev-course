@@ -24,7 +24,7 @@ In the ECS console, click Task Definitions > create new Task Definition.&#x20;
 
 Launch type compatibility: EC2
 
-![EC2 launch type](<../../../../.gitbook/assets/image (119).png>)
+![EC2 launch type](<../../../../.gitbook/assets/image (119) (1).png>)
 
 ### Task settings
 
