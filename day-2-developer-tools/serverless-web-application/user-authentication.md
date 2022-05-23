@@ -66,7 +66,7 @@ Then click **Create user pool.**&#x20;
 
 In AWS Cognito, go to your new user pool. In the overview you will find User pool ID.&#x20;
 
-![](<../../.gitbook/assets/image (397).png>)
+![](<../../.gitbook/assets/image (397) (1).png>)
 
 Then go to tab **App integration** and scroll all the way down. You will find your Client ID there.&#x20;
 

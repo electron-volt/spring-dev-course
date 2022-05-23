@@ -341,9 +341,29 @@ You can find your IP address or just use 0.0.0.0/0 for the last step.&#x20;
 
 The web server takes a while to get ready. The EC2 console will show the instance as running loooong before it is actually done.&#x20;
 
+Wait for 1-5 minutes. When the stack is ready, you should see this in the **Events** tab in CloudFormation:
+
+![Events](<../../.gitbook/assets/image (67).png>)
+
 ## Explore your LAMP stack&#x20;
 
 Once the web server is ready - that is, when the CloudFormation console shows that stack creation is complete - you can view your PHP front page.
+
+In the **CloudFormation** console, go to the **Outputs** tab.&#x20;
+
+![Outputs ](<../../.gitbook/assets/image (397).png>)
+
+You can open the URL in a new tab:
+
+![LAMP stack](<../../.gitbook/assets/image (184).png>)
+
+### SSH into the instance - can be skipped
+
+This part is optional.
+
+You can SSH into your instance and see that there really is a MySQL database running:
+
+![](<../../.gitbook/assets/image (338).png>)
 
 ### For fun
 

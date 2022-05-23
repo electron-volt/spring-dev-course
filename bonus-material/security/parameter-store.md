@@ -300,7 +300,7 @@ In the Lambda console, in the Monitor tab there is a button "View X-Ray logs". C
 
 In CloudWatch&#x20;
 
-![](<../../.gitbook/assets/image (184).png>)
+![](<../../.gitbook/assets/image (184) (1).png>)
 
 ## Clean up
 
