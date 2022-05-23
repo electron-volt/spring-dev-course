@@ -12,7 +12,7 @@ In both cases you should see an orange **Launch instances** button.&#x20;
 
 You will most likely see the new console experience, which looks like this:&#x20;
 
-![new console ](<../../.gitbook/assets/image (407).png>)
+![new console ](<../../.gitbook/assets/image (407) (1).png>)
 
 If instead you see a different console, then please switch over to the next lab called EC2 - Old console.&#x20;
 

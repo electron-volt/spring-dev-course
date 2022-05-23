@@ -37,7 +37,7 @@ A dialogue appears offering to give your version a description.&#x20;
 * Type "**version1**" for the description.&#x20;
 * Press **Publish**.&#x20;
 
-![version publishing ](<../../.gitbook/assets/image (407) (1) (1).png>)
+![version publishing ](<../../.gitbook/assets/image (407) (1) (1) (1).png>)
 
 You should see a green banner that says "Successfully created version 1 for function my-cli-lambda".
 
