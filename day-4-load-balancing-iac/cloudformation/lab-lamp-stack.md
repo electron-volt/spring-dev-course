@@ -12,9 +12,7 @@ at instance launch time.&#x20;
 
 ## Region&#x20;
 
-For the template to work as-is, please use region us-east-1.&#x20;
-
-If you are in a different region, change the AMI ID of the Amazon Linux 2 AMI on line 85.&#x20;
+For the template to work as-is, please use region **us-east-1.**&#x20;
 
 ## Keys
 
@@ -24,7 +22,7 @@ You can create a key pair in the EC2 console.&#x20;
 
 ## Default VPC
 
-The template assumes that your region has a default VPC.
+The template assumes that the region us-east-1 has a default VPC.
 
 If you do not have a default VPC, you can create one via the console or the CLI.&#x20;
 
@@ -37,7 +35,7 @@ Save the following on your machine as **lamp-template.json.**
 {
     "AWSTemplateFormatVersion" : "2010-09-09",
     
-    "Description" : "AWS CloudFormation Sample Template LAMP_Single_Instance: Create a LAMP stack using a single EC2 instance and a local MySQL database for storage.",
+    "Description" : "AWS CloudFormation Sample Template LAMP_Single_Instance: Create a LAMP stack using a single EC2 instance and a local MySQL database for storage. This template demonstrates using the AWS CloudFormation bootstrap scripts to install the packages and files necessary to deploy the Apache web server, PHP and MySQL at instance launch time. **WARNING** This template creates an Amazon EC2 instance. You will be billed for the AWS resources used if you create a stack from this template.",
     
     "Parameters" : {
         
@@ -118,7 +116,7 @@ Save the following on your machine as **lamp-template.json.**
       }
   ,
        "AWSRegionArch2AMI" : { 
-        "us-east-1"      : { "HVM64" : "ami-0022f774911c1d690" } 
+        "us-east-1"      : { "HVM64" : "ami-0080e4c5bc078760e" } 
       }
   
     },
