@@ -306,6 +306,6 @@ We could also have achieved the same result if we had clicked Update. However in
 
 Change sets are a more secure way of deploying changes to your pre-existing stacks.
 
-### NO Clean up&#x20;
+### Clean up&#x20;
 
-We can use the yourname-vpc in a future lab, so you do not need to delete the stack.&#x20;
+Go ahead and delete the stack.&#x20;

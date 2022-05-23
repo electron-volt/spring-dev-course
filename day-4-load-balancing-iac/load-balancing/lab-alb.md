@@ -9,7 +9,6 @@ We are going to create an internet facing application load balancer. The idea is
 This is quite a long lab, so let's talk it over first:
 
 * we will set up the VPC that we will be working with&#x20;
-* we will create another public subnet
 * we will launch two EC2 instances, in different subnets
 * we will create two target groups and put each EC2 instance in a different target group
 * we will create the ALB
@@ -17,83 +16,177 @@ This is quite a long lab, so let's talk it over first:
 
 We want to use path-based routing where requests go to different instances based on the path. &#x20;
 
-![ALB and path-based routing](<../../.gitbook/assets/image (16).png>)
+![an example of ALB and path-based routing](<../../.gitbook/assets/image (16).png>)
+
+## Region
+
+This lab was initially built in **eu-north-1.**&#x20;
+
+If you want to build it in another region, you will need to modify the Availability zones on lines 47 and 63 in the template that creates the VPC.&#x20;
 
 ## Prepare the VPC
 
-The internet facing ALB requires that we have at least two availability zones (e.g. 1a and 1b) and that both AZ's have at least 1 public subnet. To make working with these resources easier, let's give them names.
+Here is a CloudFormation template that will create our VPC.&#x20;
 
-### Name the VPC
+Save it locally.
 
-We will be working with the VPC that we created using the CLI in a previous lab.&#x20;
+Change yourname to your actual name.&#x20;
 
-1. Go to VPC > Your VPCs
-2. There should be three VPCs:&#x20;
-   1. the default VPC (CIDR starts with octet 172)
-   2. the my-vpc
-   3. a third one with CIDR block 10.1.0.0/16 - this is the one we want
-3. Hover over the - in the name column. Click on it.
-4. Name the VPC **alb-vpc.**
+Create the stack in eu-north-1.
 
-![alb-vpc has been given a name](<../../.gitbook/assets/image (213) (1).png>)
+```
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Deploys a VPC with an Internet gateway with two public subnets in different AZ's.",
+    "Resources": {
+        "VPC": {
+            "Type": "AWS::EC2::VPC",
+            "Properties": {
+                "CidrBlock": "10.1.0.0/16",
+                "EnableDnsHostnames": true,
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "yourname-alb-VPC"
+                    }
+                ]
+            }
+        },
+        "InternetGateway": {
+            "Type": "AWS::EC2::InternetGateway",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "yourname-IGW"
+                    }
+                ]
+            }
+        },
+        "AttachGateway": {
+            "Type": "AWS::EC2::VPCGatewayAttachment",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "InternetGatewayId": {
+                    "Ref": "InternetGateway"
+                }
+            }
+        },
+        "PublicSubnet1": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "CidrBlock": "10.1.2.0/24",
+		"AvailabilityZone": "eu-north-1a",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "yourname-alb-public-a"
+                    }
+                ]
+            }
+        },
+        "PublicSubnet2": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "CidrBlock": "10.1.3.0/24",
+		"AvailabilityZone": "eu-north-1c",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "yourname-alb-public-c"
+                    }
+                ]
+            }
+        },
+        "PublicRouteTable": {
+            "Type": "AWS::EC2::RouteTable",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "VPC"
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "yourname-alb-public-rt"
+                    }
+                ]
+            }
+        },
+        "PublicRoute": {
+            "Type": "AWS::EC2::Route",
+            "Properties": {
+                "RouteTableId": {
+                    "Ref": "PublicRouteTable"
+                },
+                "DestinationCidrBlock": "0.0.0.0/0",
+                "GatewayId": {
+                    "Ref": "InternetGateway"
+                }
+            }
+        },
+        "PublicSubnetRouteTableAssociation1": {
+            "Type": "AWS::EC2::SubnetRouteTableAssociation",
+            "Properties": {
+                "SubnetId": {
+                    "Ref": "PublicSubnet1"
+                },
+                "RouteTableId": {
+                    "Ref": "PublicRouteTable"
+                }
+            }
+        },
+        "PublicSubnetRouteTableAssociation2": {
+            "Type": "AWS::EC2::SubnetRouteTableAssociation",
+            "Properties": {
+                "SubnetId": {
+                    "Ref": "PublicSubnet2"
+                },
+                "RouteTableId": {
+                    "Ref": "PublicRouteTable"
+                }
+            }
+        }
+    },
+    "Outputs": {
+        "VPC": {
+            "Description": "VPC",
+            "Value": {
+                "Ref": "VPC"
+            }
+        },
+        "AZ1": {
+            "Description": "Availability Zone 1",
+            "Value": {
+                "Fn::GetAtt": [
+                    "PublicSubnet1",
+                    "AvailabilityZone"
+                ]
+            }
+        },
+        "AZ2": {
+            "Description": "Availability Zone 2",
+            "Value": {
+                "Fn::GetAtt": [
+                    "PublicSubnet2",
+                    "AvailabilityZone"
+                ]
+            }
+        }
+    }
+}
+```
 
-### Name the route table
+Here is a picture:
 
-Now let's find the route table associated with the 10.1.2.0/24 public subnet and name it alb-public-rt.&#x20;
-
-1. In the VPC service, click Route tables
-2. Find the route table in the **alb-vpc** that has an explicit subnet association (this will be the route table that has the route to IGW in it).&#x20;
-3. Name that route table **alb-public-rt.**
-
-### **Name the subnet**
-
-Once the route table has been named, we need to find out which AZ our public subnet is in.&#x20;
-
-1. In the VPC service, go to subnets
-2. Find the subnet that is in VPC **alb-vpc** and has CIDR 10.1.2.0/24
-3. Find out which AZ it is in (for example eu-north-1**a**)
-4. Then name the subnet **alb-public-a.**
-
-![alb-public-a subnet](<../../.gitbook/assets/image (52) (1).png>)
-
-### Create new subnet
-
-This **alb-vpc** VPC has two subnets that we created in a previous lab:
-
-* 10.1.1.0/24 (private)
-* 10.1.2.0/24 (public).&#x20;
-
-The catch is this: our internet-facing ALB will need two public subnets, in _different_ AZ's. The subnets above (in my lab anyway) are both in the same subnet. This is what AWS says about the create-subnet command:
-
-"If you create more than one subnet in your VPC, we do not necessarily select a different zone for each subnet."&#x20;
-
-Our job is then to create another subnet in a different AZ and make it public.
-
-1. Go to VPC
-2. Go to Subnets
-3. Click create subnet
-4. VPC ID: **alb-vpc**
-5. For subnet 1 of 1:
-   1. Subnet name: **alb-public-N** where N is not a (I will use c)&#x20;
-   2. From the AZ dropdown, pick the AZ that ends in c
-   3. CIDR block: 10.1.3.0/24
-6. Create subnet.
-
-![two subnets in the alb-vpc](<../../.gitbook/assets/image (322) (1).png>)
-
-#### Make the new subnet public
-
-One more step: we want to make the new subnet public.&#x20;
-
-1. Click on the subnet ID of the newly created subnet **alb-public-c**
-2. Scroll down and click Route table
-3. Click "edit route table association"
-4. In the route table ID dropdown, select the **alb-public-rt**
-5. Save.
-
-Here is what we have now (the diagram doesn't show the private 10.1.1.0/24 subnet in the VPC):
-
-![Our VPC and its public subnets](<../../.gitbook/assets/image (314).png>)
+![Example VPC and its public subnets](<../../.gitbook/assets/image (314).png>)
 
 #### Enable auto-assign public IP
 
