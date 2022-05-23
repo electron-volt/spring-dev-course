@@ -12,27 +12,42 @@ We are going to create
 
 These components together will ensure that we have a highly available web server that is up and running and reachable no matter what. Even if an entire AZ goes down, our web server will still be serving content.&#x20;
 
-### Default VPC
+### Region
 
-We will use the default VPC again and its default security group.&#x20;
+You can build this lab in just about any region. We can re-use a launch template we created on day 3, so if possible use the same region as on day 3 if you still have the launch template in your account.&#x20;
 
-Note: since we will use the same security group for all our EC2 instances and the ALB, those components will be able to communicate to one another.&#x20;
+### Default VPC and its security group - preparation
 
-We will also want to allow HTTP traffic at least from our own IP Address so that we are able to use our browser to access the instances.&#x20;
+We will use the default VPC and its default security group. If you are in a region that does not have a default VPC, **please create one.**&#x20;
+
+Note: since we will use the same security group for all our EC2 instances and the ALB, those components will be able to communicate to one another without adding any special rules.&#x20;
+
+We will also want to **add a rule to allow HTTP traffic** at least from our own IP Address so that we are able to use our browser to access the instances.&#x20;
 
 ## Modify launch template
 
 The key difference between launch configurations (legacy) and templates is that you can modify a template. With launch configurations, if you wanted to change something you had to build a new one from scratch.&#x20;
 
-Let's modify the test-template to include user data. This way all of our EC2 instances created by the ASG will be web servers.&#x20;
+On day 3 we created a launch template:
+
+{% embed url="https://eve-4.gitbook.io/may-2022-developer-associate/day-3-compute-and-networking/asg/lab-auto-scaling#create-a-launch-template" %}
+
+If you still have that template, you can use it in this lab.&#x20;
+
+If you do not have that template - or it is in a different region - then create a new one following the instructions from the day 3 lab.&#x20;
+
+### Working with the yourname-template
+
+Let's modify the template to include user data. This way all of our EC2 instances created by the ASG will be web servers.&#x20;
 
 1. Go to EC2
-2. Go to launch templates (I again had to go to launch config, then click the banner to view templates)
-3. Modify the test-template
-
-![Modify template](<../.gitbook/assets/image (223).png>)
+2. Go to launch templates&#x20;
+3. Select the radio button next to the yourname-template
+4. Go to Actions > Modify template (create new version)&#x20;
 
 For Template version description, write "includes user data".&#x20;
+
+Other settings stay the same. The security group should be the default security group of your default VPC.&#x20;
 
 Scroll all the way down to Advanced details. At the very bottom you find User data. Paste this in:
 
@@ -59,7 +74,7 @@ An example of what the result will look like: the instance is a webserver that i
 
 ![result of our user data script](<../.gitbook/assets/image (452).png>)
 
-Once you have pasted the user data, click Create launch template (orange button). So no changes other than adding user data.
+Once you have pasted the user data, click **Create launch template**. So no changes other than adding user data.
 
 ### Set default version
 
@@ -67,7 +82,7 @@ You are able to select a version of the launch template as the default:
 
 ![Set default version](<../.gitbook/assets/image (364).png>)
 
-We want to use our new version with description "Includes user data" as default.&#x20;
+We want to use our new version with description **"Includes user data" as default.**&#x20;
 
 ## Create the load balancer
 
@@ -79,7 +94,7 @@ Create a target group.&#x20;
 
 Target type: instance.
 
-Name it **asg-tg**.&#x20;
+Name it **yourname-asg-tg**.&#x20;
 
 Protocol HTTP, port 80.
 
@@ -93,7 +108,7 @@ It does not have to have any targets in it, so just leave it empty and hit Creat
 
 ### Create the ALB
 
-Name it **last-lab**
+Name it **yourname-asg-alb.**
 
 Scheme: internet-facing
 
@@ -105,88 +120,90 @@ Security group: use default sg for the default VPC.
 
 Listener is HTTP : 80.&#x20;
 
-Use the **asg-tg** for default action.&#x20;
+Use the yourname-**asg-tg** target group for default action.&#x20;
 
 ![Default action](<../.gitbook/assets/image (230) (1).png>)
 
 Here is what you should have:
 
-![summary](<../.gitbook/assets/image (177).png>)
+![](<../.gitbook/assets/image (294).png>)
 
-Then "Create load balancer".&#x20;
+Then click "**Create load balancer**".&#x20;
 
 ## ASG
 
 Now we will create our auto scaling group.&#x20;
 
-Name: **last-lab-asg**
+Name: **yourname-asg**
 
-Template: **test-template** with the default version
+Template: **yourname-template** with the default version
 
 Next.
 
-Use the default VPC and pick all subnets.&#x20;
+Use the **default VPC** and **pick all subnets.**&#x20;
 
 Instance type comes from the template, so no changes needed.&#x20;
 
 Next.&#x20;
 
-Load balancing: attach to an existing LB
+Load balancing: **attach to an existing LB**
 
-Choose from your LB tg's
-
-Pick the **asg-tg.**
+Choose from your load balancer target groups: the **yourname-asg-tg** for target group
 
 For health checks:
 
-EC2 is enabled by default. Also enable ELB health checks.&#x20;
+EC2 is enabled by default. Also **enable ELB health checks.**&#x20;
 
 Next.
 
-Group size: put 2 in all boxes.&#x20;
+Group size: **put 2 in all boxes.**&#x20;
 
-Scaling policies: none.&#x20;
+Scaling policies: **none**.&#x20;
 
 Now you can skip to review.
 
-Create auto scaling group.&#x20;
+**Create auto scaling group.**&#x20;
 
 Here is where we are now:
 
-![ASG is getting ready](<../.gitbook/assets/image (111) (1) (1).png>)
+![it's ramping up! ](<../.gitbook/assets/image (304).png>)
 
 ## Monitor
 
 Find the DNS name of your ALB and open it in a browser:
 
-![ALB takes me to instance ...bdf](<../.gitbook/assets/image (351).png>)
+![](<../.gitbook/assets/image (368).png>)
+
+The load balancer has randomly picked an instance that ends in ...567c and taken me there.&#x20;
 
 That is indeed one of my EC2 instances:
 
-![Instances launched by ASG](<../.gitbook/assets/image (190).png>)
+![instances launched by the auto scaling group. ](<../.gitbook/assets/image (454).png>)
 
 ### Stopping the instance&#x20;
 
-Now I am going to stop the instance ..bdf. What I expect to have happen is this:
+Now I am going to terminate the instance that ends in ..567c. What I expect to have happen is this:
 
-* the ASG realizes bdf is gone (EC2 health check)
-* the ALB also realizes bdf is gone (ELB health check)
-* ALB will begin to route traffic to my working instance ...69a
-* ASG will replace bdf with a new instance.
+* the Auto scaling group realizes 567c is gone (EC2 health check)
+* the load balancer also realizes 567c is gone (ELB health check)
+* ALB will begin to route traffic to my working instance ...20733
+* ASG will replace 567c with a new instance.
 
-Finally the mystery of the multiple health checks is resolved! Imagine what happened if we only had EC2 health checks. &#x20;
+Finally the mystery of the multiple health checks is resolved!&#x20;
+
+Imagine what happened if we only had EC2 health checks?&#x20;
 
 ### ALB
 
 The ALB is now routing all requests made to its DNS name to the only working EC2 instance:
 
-![69a to the rescue! ](<../.gitbook/assets/image (53) (1).png>)
+![](<../.gitbook/assets/image (207).png>)
 
 ### ASG
 
 The ASG is also doing its part to keep us at two running instances:
 
-![RIP ...bdf](<../.gitbook/assets/image (247).png>)
+![rest in peace ...567c](<../.gitbook/assets/image (107).png>)
 
 
 
@@ -206,7 +223,7 @@ You can easily see the use cases for this if you had something in production run
 
 Be sure to delete these:
 
-* the ALB
+* the ALB 💰
 * the ASG
 * launch template
 * target group

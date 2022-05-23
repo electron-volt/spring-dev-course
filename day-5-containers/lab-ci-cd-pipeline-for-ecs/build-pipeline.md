@@ -303,7 +303,7 @@ Check "Allow Pipeline to create a service role..." and accept the default name f
 
 ### Source stage
 
-![source stage](<../../.gitbook/assets/image (107).png>)
+![source stage](<../../.gitbook/assets/image (107) (1).png>)
 
 As source we use the master branch of our CodeCommit repo.&#x20;
 

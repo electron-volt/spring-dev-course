@@ -12,7 +12,7 @@ We will continue to use the my-cli-lambda for this lab. Make sure you are workin
 * On the left hand side panel, click **Function URL.**&#x20;
 * click **Create function URL**
 
-![function URL's](<../../.gitbook/assets/image (294).png>)
+![function URL's](<../../.gitbook/assets/image (294) (1).png>)
 
 A dialogue appears asking about authorization:
 

@@ -18,6 +18,10 @@ We want to use path-based routing where requests go to different instances based
 
 ![an example of ALB and path-based routing](<../../.gitbook/assets/image (16).png>)
 
+## Before you begin
+
+I recommend first reading through the instructions from start to finish before you start building the lab.&#x20;
+
 ## Region
 
 This lab was initially built in **eu-north-1.**&#x20;

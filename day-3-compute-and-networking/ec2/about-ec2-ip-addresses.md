@@ -28,11 +28,11 @@ First make note of what the private and public IP's of your instance are.&#x20;
 
 Mine were
 
-![IP's initially ](<../../.gitbook/assets/image (454).png>)
+![IP's initially ](<../../.gitbook/assets/image (454) (1).png>)
 
 Then reboot the instance:
 
-![reboot](<../../.gitbook/assets/image (207).png>)
+![reboot](<../../.gitbook/assets/image (207) (1).png>)
 
 Then check what happens to the IP addresses:
 

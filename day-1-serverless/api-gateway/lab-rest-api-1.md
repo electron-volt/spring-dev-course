@@ -186,6 +186,6 @@ So we have our invoke URL, the stage beta, the resource helloworld and query str
 
 We made an API with a Lambda backend. Since we did a proxy integration, we get the following:
 
-![proxy integration](<../../.gitbook/assets/image (304).png>)
+![proxy integration](<../../.gitbook/assets/image (304) (1).png>)
 
 With this type of integration whatever the Lambda returns is also returned to the client as-is. Next we will look at a non-proxy integration.&#x20;

@@ -101,7 +101,7 @@ This test event mimicks the eventual functionality of our API. That is it for th
 
 #### Create the method
 
-![Create method for city](<../../.gitbook/assets/image (368).png>)
+![Create method for city](<../../.gitbook/assets/image (368) (1).png>)
 
 1. With the new resource city highlighted, click **Actions** and **create method**
 2. For method choose **ANY**

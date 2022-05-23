@@ -123,7 +123,7 @@ We just need to&#x20;
 * Navigate to **Route tables**
 * Click the **Create route table** button (top right corner)&#x20;
 
-![so easy ](<../../.gitbook/assets/image (207) (1).png>)
+![so easy ](<../../.gitbook/assets/image (207) (1) (1).png>)
 
 * name the route table **yourname-vpc-public-rt**
 * select **yourname-vpc**
