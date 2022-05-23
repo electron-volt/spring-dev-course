@@ -136,7 +136,7 @@ Next we want to execute our state machine. Click **create new execution.**&#x20;
 
 This dialogue appears:
 
-![New execution](<../../../.gitbook/assets/image (225).png>)
+![New execution](<../../../.gitbook/assets/image (225) (1).png>)
 
 For input, use the following:
 

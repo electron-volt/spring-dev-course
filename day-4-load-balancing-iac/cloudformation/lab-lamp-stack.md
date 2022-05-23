@@ -357,14 +357,6 @@ You can open the URL in a new tab:
 
 ![LAMP stack](<../../.gitbook/assets/image (184).png>)
 
-### SSH into the instance - can be skipped
-
-This part is optional.
-
-You can SSH into your instance and see that there really is a MySQL database running:
-
-![](<../../.gitbook/assets/image (338).png>)
-
 ### For fun
 
 Estimate how long it would have taken for you to bring up a LAMP stack

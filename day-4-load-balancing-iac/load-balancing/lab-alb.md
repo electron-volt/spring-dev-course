@@ -1,5 +1,5 @@
 ---
-description: LBA, ABL, BAL, BLA
+description: LBA
 ---
 
 # LAB: ALB
@@ -287,15 +287,19 @@ End result:
 
 Instances have been launched. Here is what we have done:
 
-![Instances in their subnets](<../../.gitbook/assets/image (205).png>)
+![Instances in their subnets](<../../.gitbook/assets/image (205) (1).png>)
 
 #### Test that web servers work&#x20;
 
-Once your instances have launched, you can access their public IP's via your browser. They should return the following:
+Once your instances have launched, you can access their public IP's via your browser. Web-c should return the following:
 
 &#x20;
 
 ![Web-c ](<../../.gitbook/assets/image (104) (1).png>)
+
+and likewise for web-a, except with different text.&#x20;
+
+Note: you have to connect over HTTP, not HTTPS.
 
 ## Create target groups&#x20;
 
@@ -303,53 +307,71 @@ Next we want to create target groups that we are going to put our webservers in.
 
 In the EC2 service, you will find Load balancers on the left side panel.&#x20;
 
-1. Expand load balancers
-2. Click target groups
-3. Click create target group&#x20;
-4. Target type: instances&#x20;
-5. Target group name: **webserver-a**
-6. Protocol and port: HTTP, 80
-7. VPC: **alb-vpc**
-8. Protocol version: HTTP1
-9. Leave other settings as they are and click Next.&#x20;
-10. On the next page select your instance **web-a**&#x20;
-11. Ports for the selected instances: 80
-12. Click the "include as pending below"&#x20;
-13. Scroll down and click Save.
+* Expand load balancers
+* Click **target groups**
+* Click **create target group**&#x20;
+* Target type: **instances**&#x20;
+
+![](<../../.gitbook/assets/image (225).png>)
+
+* Target group name: yourname-**webserver-a**
+* Protocol and port: HTTP, 80
+* VPC: yourname-**alb-vpc**
+* Protocol version: HTTP1
+* Leave other settings as they are and click Next.&#x20;
+
+![](<../../.gitbook/assets/image (336).png>)
+
+* On the next page select your instance **web-a**&#x20;
+* Ports for the selected instances: 80
+* Click the "**include as pending below"**&#x20;
+* Scroll down and click **Create target group**.
 
 Your target group has now been created.&#x20;
 
-Repeat steps 1-13 to create another target group called **webserver-c**, using **web-c** as the instance. &#x20;
+### Second target group
+
+Repeat the steps above to create another target group called **webserver-c**, using **web-c** as the instance. &#x20;
 
 ## Create ALB
 
 Here is where we finally get to create our ALB.
 
-1. In the EC2 service, click Load balancers
-2. Create load balancer
-3. Pick ALB (read through the descriptions though, they are useful info)&#x20;
-4. After you click create, expand the How Application Load Balancers work: it's good reading
-5. For Load balancer name, use **webserver-alb**
-6. Scheme: internet-facing
-7. IP address type: IPv4
-8. Under network mapping:
-   1. VPC is **alb-vpc**
-   2. Mappings: expand both AZ's. Select the **alb-public-a** and **alb-public-c** subnets in their AZ's.
-9. When you get to Security groups, click the link "Create new security group"
-   1. This opens a new tab and a dialoge to create a new SG
-   2. Name: **alb-sg**
-   3. Description: SG for internet-facing ALB
-   4. VPC: select **alb-vpc**
-   5. Inbound rules: Add rule. Allow HTTP from Source Anywhere IPv4.&#x20;
-   6. Outbound rules: Add rule. Allow HTTP to Destination **webserver-sg** (the sec group of our instances)
-   7. Create the security group.&#x20;
-10. Go back to the tab where we are creating our ALB
-11. You may have to refresh the security group drop down for it to show the **alb-sg**
-12. If the default sg is already selected, remove it with the X&#x20;
-13. Select **alb-sg** as security group
-14. Under listeners and routing:
-    1. For Listener HTTP:80 the default action is to forward to Target group **webserver-a**
-15. Create load balancer.&#x20;
+* In the EC2 service, click **Load balancers**
+* **Create load balancer**
+* Pick **ALB**&#x20;
+* For Load balancer name, use  **yourname-webserver-alb**
+* Scheme: **internet-facing**
+* IP address type: **IPv4**
+* Under network mapping:
+  1. VPC is **alb-vpc**
+  2. Mappings: expand both AZ's. Select the **alb-public-a** and **alb-public-c** subnets in their AZ's.
+
+![first public subnet is selected](<../../.gitbook/assets/image (270).png>)
+
+* When you get to Security groups, click the link "**Create new security group"**
+  1. This opens a new tab and a dialogue to create a new SG
+  2. Name: yourname-**alb-sg**
+  3. Description: SG for internet-facing ALB
+  4. VPC: select **alb-vpc** (it may only show a VPC ID, but you can clear the text and a dropdown will appear.&#x20;
+  5. **Inbound** rules: Add rule. Allow HTTP from Source Anywhere IPv4.&#x20;
+  6. **Outbound** rules: Add rule. Allow HTTP to Destination **webserver-sg** (the sec group of our instances)
+  7. Create the security group.&#x20;
+
+![](<../../.gitbook/assets/image (185).png>)
+
+* Go back to the tab where we are creating our ALB
+* You may have to refresh the security group drop down for it to show the **alb-sg**
+* If the default sg is already selected, remove it with the X&#x20;
+* Select **alb-sg** as security group
+
+![](<../../.gitbook/assets/image (152).png>)
+
+* Under **listeners and routing:**
+  1. For Listener HTTP:80 the default action is to forward to Target group **webserver-a**
+* **Create load balancer.**&#x20;
+
+Phew!&#x20;
 
 It will take some time for your ALB to be fully operational.&#x20;
 
@@ -361,22 +383,28 @@ When we create an ALB, we have to have a target group for the default action. Th
 
 You will find the DNS name of your ALB in EC2 > Load balancers > click on the ID of your ALB.&#x20;
 
-Copy the DNS name and paste it into a browser.&#x20;
+![load balancer is provisioning. ](<../../.gitbook/assets/image (205).png>)
 
-![Well look who it is](<../../.gitbook/assets/image (453).png>)
+Once the state turns to Active, copy the DNS name and paste it into a browser.&#x20;
+
+![Well look who it is!](<../../.gitbook/assets/image (453).png>)
 
 ### Security side note&#x20;
 
-When we first tested our instances, we used their public IP addresses to access them over the internet. Now when we used the DNS name of our ALB, our request went through the load balancer and we reached the web-a instance without its public IP.&#x20;
+When we first tested our instances, we used their public IP addresses to access them over the internet. Now when we used the DNS name of our ALB, our request went through the load balancer and we reached the **web-a** instance without its public IP.&#x20;
 
 ## Edit security groups&#x20;
 
 Let's go edit the security group **webserver-sg**.&#x20;
 
-1. Remove the inbound rule that allows HTTP from your IP&#x20;
-2. Add an inbound rule that allows HTTP from the security group alb-sg
+1. **Remove** the inbound rule that allows HTTP from your IP&#x20;
+2. **Add** an inbound rule that allows HTTP from the security group **yourname-alb-sg**
 
-Then try to access the web-a instance with its public IP. The browser just hangs. You are able to use the DNS name of the ALB to access web-a though.&#x20;
+![](<../../.gitbook/assets/image (153).png>)
+
+Save changes.&#x20;
+
+Then try to access the **web-a** instance with its public IP. The browser just hangs. You are able to use the DNS name of the ALB to access web-a though.&#x20;
 
 This is an example of how you can force all requests to come through the load balancer. You could even have instances with no public IP's, even instances that are in private subnets and have no internet connectivity, but are able to receive requests from the load balancer. Our instances in this lab have to have public IP's because we will need to SSH into them.&#x20;
 
@@ -501,6 +529,10 @@ We are going to discuss health checks in detail later.
 ## Clean up
 
 🎯 ALB's cost money, so let's be sure to delete it when we are done.
+
+**That's right people**
+
+**delete the ALB.**&#x20;
 
 Terminate your EC2 instances.&#x20;
 

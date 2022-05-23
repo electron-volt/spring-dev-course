@@ -59,7 +59,7 @@ Here I have already named the subnets, using the same method as for the VPC. You
 
 You will see a summary of information under Details.&#x20;
 
-![subnet details](<../../.gitbook/assets/image (185).png>)
+![subnet details](<../../.gitbook/assets/image (185) (1).png>)
 
 On the details page you can see which Availability Zone the subnet is in.&#x20;
 

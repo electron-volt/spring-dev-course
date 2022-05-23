@@ -16,7 +16,7 @@ Change **yourname** to your actual name - the same one you used in **vpc-templat
 ```
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Deploys a VPC with an Internet gateway with three subnets: one public and two private.",
+    "Description": "Deploys a VPC with an Internet gateway with four subnets.",
     "Resources": {
         "VPC": {
             "Type": "AWS::EC2::VPC",

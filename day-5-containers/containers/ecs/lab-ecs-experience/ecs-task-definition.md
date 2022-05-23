@@ -93,7 +93,7 @@ You will need the URI of the dogs image from your dogs ECR repo.
 
 We pick Fargate for this
 
-![yeeees serverless](<../../../../.gitbook/assets/image (336) (1).png>)
+![yeeees serverless](<../../../../.gitbook/assets/image (336) (1) (1).png>)
 
 ### Task definition&#x20;
 
