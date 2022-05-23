@@ -97,6 +97,7 @@
     * [Template anatomy](day-4-load-balancing-iac/cloudformation/template-anatomy.md)
     * [SAM](day-4-load-balancing-iac/cloudformation/sam.md)
     * [LAB: Another template](day-4-load-balancing-iac/cloudformation/lab-another-template.md)
+    * [LAB: LAMP stack](day-4-load-balancing-iac/cloudformation/lab-lamp-stack.md)
   * [Load balancing](day-4-load-balancing-iac/load-balancing/README.md)
     * [ELB](day-4-load-balancing-iac/load-balancing/elb.md)
     * [LAB: ALB](day-4-load-balancing-iac/load-balancing/lab-alb.md)
