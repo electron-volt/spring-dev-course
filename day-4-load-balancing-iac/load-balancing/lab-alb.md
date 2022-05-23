@@ -22,7 +22,9 @@ We want to use path-based routing where requests go to different instances based
 
 This lab was initially built in **eu-north-1.**&#x20;
 
-If you want to build it in another region, you will need to modify the Availability zones on lines 47 and 63 in the template that creates the VPC.&#x20;
+If you want to build it in another region, you will need to modify the Availability zones on lines 47 and 63 in the template that creates the VPC.
+
+Note: eu-north-1 does not yet support CloudShell, but you can use Cloud9 to get a terminal in the browser. &#x20;
 
 ## Prepare the VPC
 
@@ -200,20 +202,50 @@ We want for EC2 instances that are launched in these subnets to get public IP ad
 
 Repeat for **alb-public-c.**
 
+## Keys
+
+Create a key pair in the eu-north-1 region.&#x20;
+
+Call them **yourname-swede-key.pem.**&#x20;
+
+Types: RSA and .pem.
+
+## Security group&#x20;
+
+Create a security group called yourname-webserver-sg.&#x20;
+
+Create it in the ALB vpc.&#x20;
+
+![](<../../.gitbook/assets/image (120).png>)
+
+### Inbound rules
+
+Allow SSH from your IP (either local or Cloud9)&#x20;
+
+Allow HTTP from anywhere.&#x20;
+
 ## Launch EC2 web servers
 
 We want to launch two EC2 web servers: one in each public subnet.&#x20;
 
 ### First instance&#x20;
 
-1. In the EC2 console, launch an instance.&#x20;
-2. AMI: Amazon Linux 2
-3. Instance type: whatever's free
-4. On instance details: Network is **alb-vpc**, subnet is **alb-public-a**
+These instructions assume the new console experience for EC2.&#x20;
 
-![Network settings for first instance](<../../.gitbook/assets/image (99).png>)
+Steps are the same for the old console, they just come in a different order.&#x20;
 
-5\. In user data at the bottom of the screen, paste the following:
+* In the EC2 console, launch an instance.&#x20;
+* Name: **yourname-web-a**
+* AMI: **Amazon Linux 2**
+* Instance type: **t3.micro** or whatever is free.&#x20;
+* key pair: **your swede key**
+* On instance details: Network is **alb-vpc**, subnet is **alb-public-a**
+
+![](<../../.gitbook/assets/image (451).png>)
+
+* Security group: your **webserver-sg**
+
+Under Advanced details, in user data at the bottom of the screen, paste the following:
 
 {% code title="User data " %}
 ```
@@ -227,24 +259,7 @@ systemctl enable httpd
 ```
 {% endcode %}
 
-6\. Skip storage, skip tags
-
-#### Security group&#x20;
-
-Once you get to Configure Security group:
-
-Create a new security group. Give it the name **webserver-sg**.&#x20;
-
-* Add a rule in the security group that allows SSH connections from your IP address.&#x20;
-* Add a rule that allows HTTP traffic from your IP address (port 80).&#x20;
-
-Then review and launch.&#x20;
-
-For key pairs, you can use cli-keys.pem.&#x20;
-
-#### Name the instance&#x20;
-
-Once the instance has been launched, give it a name: **web-a.**
+**Launch instance.**&#x20;
 
 ### Second instance
 
@@ -268,7 +283,7 @@ Name your instance **web-c**.&#x20;
 
 End result:
 
-![I wish I'd known you can choose your columns sooner.. ](<../../.gitbook/assets/image (68).png>)
+![](<../../.gitbook/assets/image (68).png>)
 
 Instances have been launched. Here is what we have done:
 

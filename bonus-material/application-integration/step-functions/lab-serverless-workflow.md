@@ -124,7 +124,7 @@ Before the modification:
 
 After the modification:
 
-![Output has results from EventBridge](<../../../.gitbook/assets/image (120).png>)
+![Output has results from EventBridge](<../../../.gitbook/assets/image (120) (1).png>)
 
 ## Clean up&#x20;
 

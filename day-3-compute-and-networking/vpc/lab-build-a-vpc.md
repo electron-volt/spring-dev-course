@@ -164,4 +164,4 @@ Just one more thing to do: associate the public subnet with the public route tab
 
 We have now successfully created a VPC that has two subnets: one with internet access and one without.&#x20;
 
-![Our VPC](<../../.gitbook/assets/image (451) (1).png>)
+![Our VPC](<../../.gitbook/assets/image (451) (1) (1).png>)

@@ -25,7 +25,7 @@ Then click **cancel** to exit without launching an instance.&#x20;
 
 Here is a screenshot from the eu-north-1 region:
 
-![eu-north-1 values](<../../.gitbook/assets/image (451).png>)
+![eu-north-1 values](<../../.gitbook/assets/image (451) (1).png>)
 
 #### Create template
 
