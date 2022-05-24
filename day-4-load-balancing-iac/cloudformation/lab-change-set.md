@@ -256,7 +256,7 @@ Change **yourname** to your actual name - the same one you used in **vpc-templat
             }
         }
     }
-}no
+}
 ```
 {% endcode %}
 
