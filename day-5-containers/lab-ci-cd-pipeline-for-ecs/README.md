@@ -21,6 +21,10 @@ If you are still in the same region where we built our previous labs:
 
 This lab is broken down into smaller sections, which are explained below.&#x20;
 
+### Users of shared accounts
+
+Ideally everyone would do this lab in a different region. There is so much code that to modify every snippet so that resources are named yourname-X is.. it's just... too error-prone.&#x20;
+
 ## Setting up
 
 We create our Cloud9 IDE and set up our environments using CloudFormation templates.

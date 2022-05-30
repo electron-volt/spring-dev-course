@@ -270,13 +270,13 @@ aws iam attach-role-policy \
 
 Let's go back to the AWS console now and navigate to CodeDeploy.
 
-Click Create application.&#x20;
+Click **Create application.**&#x20;
 
 Pick a name, like hello-server
 
 Compute platform: Amazon ECS
 
-Create application.&#x20;
+**Create application**.&#x20;
 
 ![easy](<../../.gitbook/assets/image (83).png>)
 
