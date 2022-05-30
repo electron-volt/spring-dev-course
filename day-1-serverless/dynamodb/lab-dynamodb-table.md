@@ -64,7 +64,7 @@ Let's click on the table Dogs to view more information. You will see an overview
 
 You should have something like this:
 
-![item in the Dogs table](<../../.gitbook/assets/image (212) (1).png>)
+![item in the Dogs table](<../../.gitbook/assets/image (212) (1) (1).png>)
 
 * [ ] Click "Create item".&#x20;
 

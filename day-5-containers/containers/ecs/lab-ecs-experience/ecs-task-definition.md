@@ -6,7 +6,7 @@ We are going to create three task definitions. Just like we had a Dockerfile tha
 
 You can choose between this
 
-![old ECS experience - use this](<../../../../.gitbook/assets/image (399).png>)
+![old ECS experience - use this](<../../../../.gitbook/assets/image (399) (1).png>)
 
 and this:
 

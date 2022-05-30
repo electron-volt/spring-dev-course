@@ -205,7 +205,7 @@ You will be asked to secure the integration. **Click "yes, secure this integrati
 
 It should look like this:
 
-![](<../../.gitbook/assets/image (446).png>)
+![](<../../.gitbook/assets/image (446) (1).png>)
 
 Nothing special happens when you click save. You may see the refresh symbol flash over the save button, but just rest assured that it has been saved.&#x20;
 

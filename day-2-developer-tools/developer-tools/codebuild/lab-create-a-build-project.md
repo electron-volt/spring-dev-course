@@ -100,7 +100,7 @@ Let's navigate to **CodeBuild.**&#x20;
 
 Your landing page may look different, but look for an orange "**Create project**" or "**Create Build project"** button.
 
-![](<../../../.gitbook/assets/image (98).png>)
+![](<../../../.gitbook/assets/image (98) (1).png>)
 
 Name the project **YOURNAME-cb-project.**
 

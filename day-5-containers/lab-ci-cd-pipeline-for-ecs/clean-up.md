@@ -1,6 +1,6 @@
 # Clean up
 
-## please delete:
+## Please delete:
 
 Cloud9 environment
 

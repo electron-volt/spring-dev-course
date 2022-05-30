@@ -197,7 +197,7 @@ sudo yum update -y
 
 to update packages on the instace.&#x20;
 
-![](<../../.gitbook/assets/image (121).png>)
+![](<../../.gitbook/assets/image (121) (1).png>)
 
 ### The end&#x20;
 

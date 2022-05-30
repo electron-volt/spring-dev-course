@@ -186,7 +186,7 @@ Click on Add to load balancer.&#x20;
 
 Here are the settings to use:
 
-![](<../../../../.gitbook/assets/image (98) (1).png>)
+![](<../../../../.gitbook/assets/image (98) (1) (1).png>)
 
 When you scroll down, you can see the existing paths used on the HTTP : 80 listener:
 
