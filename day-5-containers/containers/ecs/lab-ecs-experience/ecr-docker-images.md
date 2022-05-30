@@ -8,13 +8,13 @@ Navigate to Amazon ECR.&#x20;
 
 Click **create repository**
 
-Create a _private_ repository called **dogs**.
+Create a _private_ repository called (yourname-)**dogs**.
 
 Leave all the toggles as disabled and click **create repository**.
 
 ### Second repo
 
-Repeat the exact same steps with same settings, except this time the name of the repo is **cats**.
+Repeat the exact same steps with same settings, except this time the name of the repo is (yourname-)**cats**.
 
 ![private animal repos](<../../../../.gitbook/assets/image (19).png>)
 
@@ -67,9 +67,11 @@ Here is how we turn the Dockerfile into a Docker image:
 docker build -t cats . 
 ```
 
+It will take some time and your terminal will be full of output. Just give it a few minutes.&#x20;
+
 ### Build dogs image
 
-You can build the dogs Docker image using the exact same steps as above, just replace cats with dogs.&#x20;
+You can build the dogs Docker image using the exact same steps as above, just replace cats with dogs. This command should work directly: (there will be less output this time)
 
 ```
 cd ../dogs && docker build -t dogs .
@@ -91,11 +93,11 @@ You will see this:
 
 ![](<../../../../.gitbook/assets/image (242).png>)
 
-Very simple: just run these commands (except the 2. as we have already built the dockerfiles) in the cloud9 IDE.&#x20;
+Very simple: **just run these commands (except the 2. build** command as we have already built the dockerfiles) in the cloud9 IDE.&#x20;
 
-#### Retrieve an authentication token...&#x20;
+#### SIDE NOTE: Retrieve an authentication token...&#x20;
 
-Note: if you are planning on getting certified, this bit will probably be in the exam. It's a trick question that often shows up.&#x20;
+If you are planning on getting certified, this bit will probably be in the exam. It's a trick question that often shows up.&#x20;
 
 They will ask you how to authenticate to ECR. They provide the command aws ecr get-login-password and the answer options will be
 
@@ -107,7 +109,9 @@ The `get-login-password` returns something that you then have to pipe to the com
 
 Sneaky.
 
-#### Build your Docker.. SKIP THIS ONE AS WE ALREADY DID IT
+Sidenote ends here.&#x20;
+
+#### Running the commands&#x20;
 
 Here is what running these commands looks like:
 
@@ -132,7 +136,7 @@ If you now go into the ECR dogs repo, what do you see? \
 
 ### Push to Cats repo
 
-Repeat the same steps for cats.&#x20;
+Repeat the same steps but for cats.&#x20;
 
 ![End result.](<../../../../.gitbook/assets/image (220) (1).png>)
 

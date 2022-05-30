@@ -351,7 +351,7 @@ Here is where we finally get to create our ALB.
   1. VPC is **alb-vpc**
   2. Mappings: expand both AZ's. Select the **alb-public-a** and **alb-public-c** subnets in their AZ's.
 
-![first public subnet is selected](<../../.gitbook/assets/image (270).png>)
+![first public subnet is selected](<../../.gitbook/assets/image (270) (1).png>)
 
 * When you get to Security groups, click the link "**Create new security group"**
   1. This opens a new tab and a dialogue to create a new SG
@@ -446,7 +446,7 @@ In the EC2 service,
 4. Check the box next to the HTTP : 80 listener
 5. Click "view/edit rules"
 
-![Editing the listener for HTTP : 80 ](<../../.gitbook/assets/image (394).png>)
+![Editing the listener for HTTP : 80 ](<../../.gitbook/assets/image (394) (1).png>)
 
 ### Create path-based routing rule
 

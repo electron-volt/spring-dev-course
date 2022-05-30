@@ -115,7 +115,7 @@ You can verify that the **outputfile.txt** has the message "This is a message fr
 * [ ] Select **New and old images**
 * [ ] &#x20;Click **Enable**.&#x20;
 
-![](<../../.gitbook/assets/image (398).png>)
+![](<../../.gitbook/assets/image (398) (1).png>)
 
 There are different choices for what information is written to the stream. The options are&#x20;
 

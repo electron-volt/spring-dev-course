@@ -76,9 +76,9 @@ Let's go to ECS and find our cluster. In the Services tab there is a blue button
 
 ### Configure service
 
-Pick EC2, task def web, cluster ECS-LAB, service name web and number of tasks 2.
+Pick EC2, task def web, cluster yourname-ECS-LAB, service name web and number of tasks 2.
 
-![](<../../../../.gitbook/assets/image (272) (1).png>)
+![](<../../../../.gitbook/assets/image (422).png>)
 
 #### Deployment type
 
@@ -91,6 +91,8 @@ AZ balanced spread
 #### Tags
 
 Enable ECS managed tags
+
+do not propagate
 
 ### Configure network
 

@@ -36,6 +36,8 @@ Launch type compatibility: EC2
 
 Task size: leave these as blank. They are optional for the EC2 launch type.&#x20;
 
+![](<../../../../.gitbook/assets/image (270).png>)
+
 ### Add container
 
 Click Add container.&#x20;
@@ -106,6 +108,12 @@ Call it dogsdef and pick Linux as OS.
 Pick ECSTaskExecutionRole
 
 ![role](<../../../../.gitbook/assets/image (228).png>)
+
+You may alternatively see this:
+
+![](<../../../../.gitbook/assets/image (136).png>)
+
+In that case just continue as normal.&#x20;
 
 ### Task size
 

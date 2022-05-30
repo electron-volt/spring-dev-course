@@ -135,7 +135,7 @@ Accept the defaults:&#x20;
 
 Use these settings:
 
-![buildspec settings](<../../../.gitbook/assets/image (422).png>)
+![buildspec settings](<../../../.gitbook/assets/image (422) (1).png>)
 
 For buildspec name, put in&#x20;
 

@@ -115,5 +115,5 @@ Then&#x20;
 
 This is a sign of success:
 
-![uuh capitol hill](<../../.gitbook/assets/image (136).png>)
+![uuh capitol hill](<../../.gitbook/assets/image (136) (1).png>)
 

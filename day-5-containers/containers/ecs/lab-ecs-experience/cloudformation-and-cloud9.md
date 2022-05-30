@@ -283,7 +283,7 @@ Resources:
 
 Once you have taken a look in Designer, then you can hit Next.&#x20;
 
-Give the stack the name "ECS-lab-stack".
+Give the stack the name "yourname-ECS-lab-stack".
 
 Keep clicking next until you get to review. There will be a section called Capabilities that asks you to confirm this: "**I acknowledge that AWS CloudFormation might create IAM resources."**&#x20;
 
@@ -295,7 +295,7 @@ Then just sit back and watch as CloudFormation does everything for you.&#x20;
 
 You will have two stacks in CloudFormation:
 
-* ECS-lab-stack
+* (yourname)-ECS-lab-stack
 * aws-cloud9-ecsworkshop-\<gibberish>.
 
 ![Stacks are complete.](<../../../../.gitbook/assets/image (234).png>)
@@ -316,7 +316,7 @@ Next we will configure our IDE.
 
 ### Assign IAM role to EC2 instance
 
-Go to IAM > Roles. There you will find **ECS-lab-stack-WorkstationRole-\<random string>**. Check that it has the following policies:&#x20;
+Go to IAM > Roles. There you will find **yourname-ECS-lab-stack-WorkstationRole-\<random string>**. Check that it has the following policies:&#x20;
 
 ![policies for our role.](<../../../../.gitbook/assets/image (344).png>)
 
